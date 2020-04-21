@@ -1,0 +1,10 @@
+INSERT INTO divisions VALUES (DEFAULT, 'Юридический отдел',  null,  97);
+INSERT INTO divisions VALUES (DEFAULT, 'Юридический отдел',  2,     80);
+INSERT INTO divisions VALUES (DEFAULT, 'Отдел разработки',   2,     61);
+INSERT INTO divisions VALUES (DEFAULT, 'Отдел торговли',     2,     54);
+INSERT INTO divisions VALUES (DEFAULT, 'Совет директоров',   5,     1);
+INSERT INTO divisions VALUES (DEFAULT, 'Совет директоров',   3,     3);
+INSERT INTO divisions VALUES (DEFAULT, 'Совет директоров',   null,  1);
+INSERT INTO divisions VALUES (DEFAULT, 'Отдел аналитики',    3,     24);
+INSERT INTO divisions VALUES (DEFAULT, 'Отдел аналитики',    8,     92);
+INSERT INTO divisions VALUES (DEFAULT, 'Отдел торговли',     null,  3);

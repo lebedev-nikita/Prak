@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<project name="HelloWorld" default="info">
+    <target name="info">
+        <echo>Available targets:</echo>
+        <echo>======================================================</echo>
+        <echo>info:          print this information</echo>
+        <echo>create_tables: create tables</echo>
+        <echo>drop_tables:   drop tables</echo>
+        <echo>fill_tables:   fill tables with data from .csv files</echo>
+        <echo>print_tables:  print tables</echo>
+    </target>
+
+    <target name="tables" depends="drop_tables, create_tables, fill_tables">
+    </target>
+
+    <target name="create_tables">
+        <exec executable="psql">
+            <arg value="-f"/>
+            <arg value="create_tables.sql"/>
+        </exec>
+    </target>
+    <target name="drop_tables">
+        <exec executable="psql">
+            <arg value="-f"/>
+            <arg value="drop_tables.sql"/>
+        </exec>
+    </target>
+    <target name="fill_tables">
+        <exec executable="psql">
+            <arg value="-f"/>
+            <arg value="fill_tables.sql"/>
+        </exec>
+    </target>
+    <target name="print_tables">
+        <exec executable="psql">
+            <arg value="-f"/>
+            <arg value="print_tables.sql"/>
+        </exec>
+    </target>
+</project>

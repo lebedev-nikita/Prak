@@ -1,0 +1,10 @@
+INSERT INTO positions VALUES (DEFAULT, 9, 'веб-дизайнер','работа с документами');
+INSERT INTO positions VALUES (DEFAULT, 6, 'автослесарь','общение с клиентами');
+INSERT INTO positions VALUES (DEFAULT, 8, 'веб-дизайнер','стратегическое планирование');
+INSERT INTO positions VALUES (DEFAULT, 7, 'юрист','управление командой');
+INSERT INTO positions VALUES (DEFAULT, 7, 'менеджер','стратегическое планирование');
+INSERT INTO positions VALUES (DEFAULT, 8, 'проектировщик','управление командой');
+INSERT INTO positions VALUES (DEFAULT, 3, 'веб-разработчик','уборка территории');
+INSERT INTO positions VALUES (DEFAULT, 3, 'руководитель','покупка рекламы');
+INSERT INTO positions VALUES (DEFAULT, 6, 'повар','общение с клиентами');
+INSERT INTO positions VALUES (DEFAULT, 7, 'повар','стратегическое планирование');

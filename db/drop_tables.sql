@@ -1,0 +1,4 @@
+DROP TABLE IF EXISTS emp_pos;
+DROP TABLE IF EXISTS positions;
+DROP TABLE IF EXISTS divisions;
+DROP TABLE IF EXISTS employees;
