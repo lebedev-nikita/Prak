@@ -6,9 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9162be5-4bfd-418f-9546-fdecda66f82b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d9162be5-4bfd-418f-9546-fdecda66f82b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,9 +51,9 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
   </component>
   <component name="RunManager">
@@ -166,7 +164,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587493857766</updated>
-      <workItem from="1587493860071" duration="1620000" />
+      <workItem from="1587493860071" duration="1862000" />
     </task>
     <servers />
   </component>
@@ -181,6 +179,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="240" y="78" key="#Deployment/0.23.1280.777@0.23.1280.777" timestamp="1587498377866" />
+    <state x="240" y="78" key="#Project_Structure" timestamp="1587499350398">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="240" y="78" key="#Project_Structure/0.23.1280.777@0.23.1280.777" timestamp="1587499350398" />
     <state x="104" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587498987123">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
