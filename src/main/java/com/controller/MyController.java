@@ -1,6 +1,7 @@
 package com.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
@@ -8,7 +9,9 @@ public class MyController {
 
     //    TODO: УДАЛИТЬ
     @GetMapping("/")
-    public String sayHello() {
+    public String sayHello(ModelMap model)
+    {
+        model.addAttribute("message", "hello");
         return "hello.jsp";
     }
 

@@ -8,6 +8,8 @@
 <body>
 <h2>Hello World!</h2>
 Math: <%= 10+4 %>
+<br/>
+Message: ${message}
 </body>
 
 </html>

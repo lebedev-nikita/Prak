@@ -7,33 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9162be5-4bfd-418f-9546-fdecda66f82b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/build.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/create_tables.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/drop_tables.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/fill_div.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/fill_emp.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/fill_emp_pos.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/fill_pos.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/print_tables.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/db/DAO/DivisionTableManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/db/DAO/EmpPosTableManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/db/DAO/EmployeeTableManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/db/DAO/PositionTableManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/db/entity/Division.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/db/entity/EmpPos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/db/entity/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/db/entity/Position.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tests/DivisionTableManagerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tests/DivisionTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tests/EmpPosTableManagerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tests/EmpPosTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tests/EmployeeTableManagerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tests/EmployeeTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tests/PositionTableManagerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tests/PositionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/hello.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/hello.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +29,7 @@
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
-    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_WARNINGS" value="true" />
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
@@ -83,6 +60,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="GlassFish 5.0.1" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.0.1" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
@@ -164,6 +146,7 @@
     <option name="viewStates">
       <list>
         <serviceView>
+          <option name="contentProportion" value="0.1993383" />
           <treeState>
             <expand>
               <path>
@@ -215,38 +198,38 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="104" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.777@0.23.1280.777" timestamp="1587498987123" />
-    <state width="846" height="197" key="GridCell.Tab.0.bottom" timestamp="1587500043612">
+    <state width="846" height="191" key="GridCell.Tab.0.bottom" timestamp="1587648815629">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="846" height="197" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1587500043612" />
-    <state width="846" height="197" key="GridCell.Tab.0.center" timestamp="1587500043611">
+    <state width="846" height="191" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1587648815629" />
+    <state width="846" height="191" key="GridCell.Tab.0.center" timestamp="1587648815626">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="846" height="197" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1587500043611" />
-    <state width="846" height="197" key="GridCell.Tab.0.left" timestamp="1587500043610">
+    <state width="846" height="191" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1587648815626" />
+    <state width="846" height="191" key="GridCell.Tab.0.left" timestamp="1587648815625">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="846" height="197" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1587500043610" />
-    <state width="846" height="197" key="GridCell.Tab.0.right" timestamp="1587500043611">
+    <state width="846" height="191" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1587648815625" />
+    <state width="846" height="191" key="GridCell.Tab.0.right" timestamp="1587648815627">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="846" height="197" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1587500043611" />
-    <state width="846" height="197" key="GridCell.Tab.1.bottom" timestamp="1587500043613">
+    <state width="846" height="191" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1587648815627" />
+    <state width="967" height="178" key="GridCell.Tab.1.bottom" timestamp="1587649121590">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="846" height="197" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1587500043613" />
-    <state width="846" height="197" key="GridCell.Tab.1.center" timestamp="1587500043612">
+    <state width="967" height="178" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1587649121590" />
+    <state width="967" height="178" key="GridCell.Tab.1.center" timestamp="1587649121589">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="846" height="197" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1587500043612" />
-    <state width="846" height="197" key="GridCell.Tab.1.left" timestamp="1587500043612">
+    <state width="967" height="178" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1587649121589" />
+    <state width="967" height="178" key="GridCell.Tab.1.left" timestamp="1587649121589">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="846" height="197" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1587500043612" />
-    <state width="846" height="197" key="GridCell.Tab.1.right" timestamp="1587500043613">
+    <state width="967" height="178" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1587649121589" />
+    <state width="967" height="178" key="GridCell.Tab.1.right" timestamp="1587649121590">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="846" height="197" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1587500043613" />
+    <state width="967" height="178" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1587649121590" />
     <state x="128" y="23" key="SettingsEditor" timestamp="1587498884611">
       <screen x="0" y="23" width="1280" height="777" />
     </state>

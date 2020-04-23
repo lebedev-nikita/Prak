@@ -7,7 +7,9 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import com.db.entity.Employee;
+import org.springframework.stereotype.Component;
 
+@Component
 public class EmployeeTableManager
 {
 	private static SessionFactory sessionFactory = null;

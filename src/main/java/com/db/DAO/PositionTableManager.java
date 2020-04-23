@@ -7,7 +7,9 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import com.db.entity.Position;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PositionTableManager
 {
 	private static SessionFactory sessionFactory = null;
