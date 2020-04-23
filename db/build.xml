@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<project name="HelloWorld" default="info">
-    <target name="info">
+<project name="HelloWorld" default="tables">
+    <target name="help">
         <echo>Available targets:</echo>
         <echo>======================================================</echo>
-        <echo>info:          print this information</echo>
+        <echo>help:          print this information</echo>
         <echo>create_tables: create tables</echo>
         <echo>drop_tables:   drop tables</echo>
         <echo>fill_tables:   fill tables with data from .csv files</echo>

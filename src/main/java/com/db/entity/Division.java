@@ -67,7 +67,7 @@ public class Division
 
 	@Override
 	public String toString() {
-		return "Division [id=" + id + ", name=" + name + ", headDivId=" + headDivId + ", chiefId=" + chiefId + "]";
+		return "Division {id=" + id + ", name=" + name + ", headDivId=" + headDivId + ", chiefId=" + chiefId + "}";
 	}
 
 

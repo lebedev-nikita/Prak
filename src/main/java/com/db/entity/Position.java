@@ -62,7 +62,7 @@ public class Position
 
 	@Override
 	public String toString() {
-		return "Position [id=" + id + ", divisionId=" + divisionId + ", name=" + name + ", responsibilities="
-				+ responsibilities + "]";
+		return "Position {id=" + id + ", divisionId=" + divisionId + ", name=" + name + ", responsibilities="
+				+ responsibilities + "}";
 	}
 }
