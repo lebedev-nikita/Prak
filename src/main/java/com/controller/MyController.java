@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import sun.tools.java.ClassPath;
 
 @Controller
@@ -31,6 +32,13 @@ public class MyController
     public String divisions(Model model) {
         model.addAttribute("divisionList", dtm.listAllDivisions());
         return "divisions.jsp";
+    }
+
+    @GetMapping("/divisions/{id}")
+    public String division(Model model, @PathVariable String id) {
+        Division div = dtm.getById(new Integer(id));
+        model.addAttribute("division", div);
+        return "division.jsp";
     }
 
     @GetMapping("/positions")
