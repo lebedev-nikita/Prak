@@ -4,6 +4,16 @@ a {
 button {
     background: white;
 }
+table {
+    border-collapse: collapse;
+    background-color: white;
+}
+table, tr, td {
+    border: 1px solid black;
+}
+.tableHeader {
+    background-color: lightblue;
+}
 .selectedButton {
     background: lightblue;
 }
