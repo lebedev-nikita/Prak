@@ -27,6 +27,8 @@
         Division name: <input type="text" name="divName" value=""> <br>
         Head division name: <input type="text" name="headDivName" value=""> <br>
         Chief name: <input type="text" name="chiefName" value=""> <br>
+        Chief surname: <input type="text" name="chiefSurame" value=""> <br>
+        Chief patronymic: <input type="text" name="chiefPatronymic" value=""> <br><br>
         <input type="submit" name="" value="Submit">
     </form>
 
@@ -40,18 +42,18 @@
         <c:forEach items="${dtm.listAllDivisions()}" var="division">
             <tr>
                 <td>
-                    <a href="divisions/${division.getId()}">
+                    <a href="/divisions/${division.getId()}">
                         ${division.getName()}
                     </a>
                 </td>
                 <td>
-                    <a href="divisions/${division.getHeadDivId()}">
-                        <c:out value="${dtm.getById(division.getHeadDivId()).getName()}"/>
+                    <a href="/divisions/${division.getHeadDivId()}">
+                        ${dtm.getById(division.getHeadDivId()).getName()}
                     </a>
                 </td>
                 <td>
-                    <a href="employees/${division.getChiefId()}">
-                        <c:out value="${etm.getById(division.getChiefId()).getFullName()}"/>
+                    <a href="/employees/${division.getChiefId()}">
+                        ${etm.getById(division.getChiefId()).getFullName()}
                     </a>
                 </td>
             </tr>

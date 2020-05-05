@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>${employee.getFullName()}</title>
+    <title>${position.getName()}</title>
     <link rel="stylesheet" type="text/css" href="./styles.css">
     <style>
         <%@include file="styles.css"%>
@@ -18,29 +18,22 @@
     <a href="/positions"> <button>Positions</button> </a>
     <br>
 
-    id: ${employee.getId()} <br>
-    surname: ${employee.getSurname()} <br>
-    name: ${employee.getName()} <br>
-    patronymic: ${employee.getPatronymic()} <br>
-    education: ${employee.getEducation()} <br>
+    ID: ${position.getId()} <br>
+    Name: ${position.getName()} <br>
+    Division: ${dtm.getById(position.getDivisionId()).getName()} <br>
+    Responsibilities: ${position.getResponsibilities()} <br>
 
-    <h1>Positions:</h1>
+    <h1>List of Employees:</h1>
     <table>
         <tr class="tableHeader">
             <td>Name</td>
-            <td>Division</td>
             <td>Salary</td>
         </tr>
-        <c:forEach items="${eptm.listByEmpId(employee.getId())}" var="emp_pos">
+        <c:forEach items="${eptm.listByPosId(position.getId())}" var="emp_pos">
             <tr>
                 <td>
-                    <a href="/positions/${emp_pos.getPosId()}">
-                        ${ptm.getById(emp_pos.getPosId()).getName()}
-                    </a>
-                </td>
-                <td>
-                    <a href="divisions/${ptm.getById(emp_pos.getPosId()).getDivisionId()}">
-                        ${dtm.getById(ptm.getById(emp_pos.getPosId()).getDivisionId()).getName()}
+                    <a href="/employee/${emp_pos.getEmpId()}">
+                        ${etm.getById(emp_pos.getEmpId()).getFullName()}
                     </a>
                 </td>
                 <td>

@@ -38,13 +38,27 @@ public class MyController
 
     @GetMapping("/divisions/{id}")
     public String divisionInfo(Model model, @PathVariable String id) {
-        model.addAttribute("divisionId", Integer.parseInt(id));
+        model.addAttribute("division", dtm.getById(Integer.parseInt(id)));
+        model.addAttribute("dtm", dtm);
+        model.addAttribute("etm", etm);
+        model.addAttribute("ptm", ptm);
+        model.addAttribute("eptm", eptm);
         return "divisionInfo.jsp";
     }
 
     @GetMapping("/positions")
     public String positions() {
         return "positions.jsp";
+    }
+
+    @GetMapping("/positions/{id}")
+    public String positionInfo(Model model, @PathVariable String id) {
+        model.addAttribute("position", ptm.getById(Integer.parseInt(id)));
+        model.addAttribute("dtm", dtm);
+        model.addAttribute("etm", etm);
+        model.addAttribute("ptm", ptm);
+        model.addAttribute("eptm", eptm);
+        return "positionInfo.jsp";
     }
 
     @GetMapping("/employees")
@@ -54,7 +68,11 @@ public class MyController
 
     @GetMapping("/employees/{id}")
     public String employeeInfo(Model model, @PathVariable String id) {
-        model.addAttribute("employeeId", Integer.parseInt(id));
+        model.addAttribute("employee", etm.getById(Integer.parseInt(id)));
+        model.addAttribute("dtm", dtm);
+        model.addAttribute("etm", etm);
+        model.addAttribute("ptm", ptm);
+        model.addAttribute("eptm", eptm);
         return "employeeInfo.jsp";
     }
 
