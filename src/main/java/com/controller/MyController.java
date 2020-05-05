@@ -37,10 +37,9 @@ public class MyController
     }
 
     @GetMapping("/divisions/{id}")
-    public String division(Model model, @PathVariable String id) {
-        Division div = dtm.getById(new Integer(id));
-        model.addAttribute("division", div);
-        return "division.jsp";
+    public String divisionInfo(Model model, @PathVariable String id) {
+        model.addAttribute("divisionId", Integer.parseInt(id));
+        return "divisionInfo.jsp";
     }
 
     @GetMapping("/positions")
@@ -52,4 +51,11 @@ public class MyController
     public String employees() {
         return "employees.jsp";
     }
+
+    @GetMapping("/employees/{id}")
+    public String employeeInfo(Model model, @PathVariable String id) {
+        model.addAttribute("employeeId", Integer.parseInt(id));
+        return "employeeInfo.jsp";
+    }
+
 }

@@ -34,20 +34,26 @@
     <table>
         <tr class="tableHeader">
             <td>name</td>
-            <td>id</td>
             <td>headDivName</td>
-            <td>headDivId</td>
             <td>chiefName</td>
-            <td>chiefId</td>
         </tr>
         <c:forEach items="${dtm.listAllDivisions()}" var="division">
             <tr>
-                <td> ${division.getName()} </td>
-                <td> ${division.getId()} </td>
-                <td> <c:out value="${dtm.getById(division.getHeadDivId()).getName()}"/> </td>
-                <td> ${division.getHeadDivId()} </td>
-                <td> <c:out value="${etm.getById(division.getChiefId()).getFullName()}"/> </td>
-                <td> ${division.getChiefId()} </td>
+                <td>
+                    <a href="divisions/${division.getId()}">
+                        ${division.getName()}
+                    </a>
+                </td>
+                <td>
+                    <a href="divisions/${division.getHeadDivId()}">
+                        <c:out value="${dtm.getById(division.getHeadDivId()).getName()}"/>
+                    </a>
+                </td>
+                <td>
+                    <a href="employees/${division.getChiefId()}">
+                        <c:out value="${etm.getById(division.getChiefId()).getFullName()}"/>
+                    </a>
+                </td>
             </tr>
         </c:forEach>
     </table>
