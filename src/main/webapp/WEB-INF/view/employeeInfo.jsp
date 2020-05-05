@@ -39,7 +39,7 @@
                     </a>
                 </td>
                 <td>
-                    <a href="divisions/${ptm.getById(emp_pos.getPosId()).getDivisionId()}">
+                    <a href="/divisions/${ptm.getById(emp_pos.getPosId()).getDivisionId()}">
                         ${dtm.getById(ptm.getById(emp_pos.getPosId()).getDivisionId()).getName()}
                     </a>
                 </td>
