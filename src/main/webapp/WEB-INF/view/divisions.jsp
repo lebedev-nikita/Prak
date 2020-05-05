@@ -30,29 +30,27 @@
         <input type="submit" name="" value="Submit">
     </form>
 
-    <% DivisionTableManager dtm = new DivisionTableManager(); %>
-    <c:if test="${divisionList.size() != 0}">
-        <h3>Table of all divisions: </h3>
-        <table>
-            <tr class="tableHeader">
-                <td>name</td>
-                <td>id</td>
-                <td>headDivName</td>
-                <td>headDivId</td>
-                <td>chiefId</td>
+    <h3>Table of all divisions: </h3>
+    <table>
+        <tr class="tableHeader">
+            <td>name</td>
+            <td>id</td>
+            <td>headDivName</td>
+            <td>headDivId</td>
+            <td>chiefName</td>
+            <td>chiefId</td>
+        </tr>
+        <c:forEach items="${dtm.listAllDivisions()}" var="division">
+            <tr>
+                <td> ${division.getName()} </td>
+                <td> ${division.getId()} </td>
+                <td> <c:out value="${dtm.getById(division.getHeadDivId()).getName()}"/> </td>
+                <td> ${division.getHeadDivId()} </td>
+                <td> <c:out value="${etm.getById(division.getChiefId()).getFullName()}"/> </td>
+                <td> ${division.getChiefId()} </td>
             </tr>
-            <% String testStr = "testString"; %>
-            <c:forEach items="${divisionList}" var="division">
-                <tr>
-                    <td> ${division.getName()} </td>
-                    <td> ${division.getId()} </td>
-                    <td> <c:out value="${dtm.getById(1).getName()}" escapeXml="false" /> </td>
-                    <td> ${division.getHeadDivId()} </td>
-                    <td> ${division.getChiefId()} </td>
-                </tr>
-            </c:forEach>
-        </table>
-    </c:if>
+        </c:forEach>
+    </table>
 
 </body>
 

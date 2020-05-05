@@ -31,6 +31,12 @@ public class Employee
 		this.education = education;
 	}
 
+    public String getFullName() {
+        String ret = surname + " " + name;
+        if (!patronymic.equals("null")) ret += " " + patronymic;
+        return ret;
+    }
+
 	public Integer getId() {
 		return id;
 	}

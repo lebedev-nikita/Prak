@@ -30,7 +30,9 @@ public class MyController
 
     @GetMapping("/divisions")
     public String divisions(Model model) {
-        model.addAttribute("divisionList", dtm.listAllDivisions());
+        model.addAttribute("dtm", dtm);
+        model.addAttribute("etm", etm);
+        model.addAttribute("ptm", ptm);
         return "divisions.jsp";
     }
 
