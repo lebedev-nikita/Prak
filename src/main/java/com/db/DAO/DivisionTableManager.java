@@ -144,13 +144,13 @@ public class DivisionTableManager
 		return listDivisions;
 	}
 
-	public List<Division> listByParams(String divName, String headDivName, String chiefName)
+	public List<Division> listLike(String divName)
 	{
 		Session session = sessionFactory.getCurrentSession();
 		session.beginTransaction();
 
 
-		List<Division> listDivisions = session.createQuery("from Division inner join  where ").list();
+		List<Division> listDivisions = session.createQuery("from Division where name like '%" + divName + "%'").list();
 
 		session.getTransaction().commit();
 		session.close();
