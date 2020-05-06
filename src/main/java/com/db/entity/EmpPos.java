@@ -88,8 +88,8 @@ public class EmpPos
 
 	@Override
 	public String toString() {
-		return "DivPos {employeeId=" + employeeId + ", positionId=" + positionId + ", startDate=" + startDate
-				+ ", finishDate=" + finishDate + ", salary=" + salary + "}";
+		return "DivPos [employeeId=" + employeeId + ", positionId=" + positionId + ", startDate=" + startDate
+				+ ", finishDate=" + finishDate + ", salary=" + salary + "]";
 	}
 
 

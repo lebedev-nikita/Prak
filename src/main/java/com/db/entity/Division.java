@@ -1,11 +1,8 @@
 package com.db.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.db.entity.Employee;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name="divisions")
@@ -22,15 +19,27 @@ public class Division
 	@Column(name="head_div_id")
 	private Integer headDivId;
 
-	@Column(name="chief_id")
-	private Integer chiefId;
+//	@Column(name="chief_id")
+//	private Integer chiefId;
+
+	@ManyToOne
+	@JoinColumn(name = "chief_id")
+	private Employee employees;
+
+	public Employee getEmployees() {
+		return employees;
+	}
+
+	public void setEmployees(Employee employees) {
+		this.employees = employees;
+	}
 
 	public Division() {}
 
 	public Division(String name, Integer headDivId, Integer chiefId) {
 		this.name = name;
 		this.headDivId = headDivId;
-		this.chiefId = chiefId;
+//		this.chiefId = chiefId;
 	}
 
 	public Integer getId() {
@@ -57,17 +66,18 @@ public class Division
 		this.headDivId = headDivId;
 	}
 
-	public Integer getChiefId() {
-		return chiefId;
-	}
-
-	public void setChiefId(Integer chiefId) {
-		this.chiefId = chiefId;
-	}
+//	public Integer getChiefId() {
+//		return chiefId;
+//	}
+//
+//	public void setChiefId(Integer chiefId) {
+//		this.chiefId = chiefId;
+//	}
 
 	@Override
 	public String toString() {
-		return "Division {id=" + id + ", name=" + name + ", headDivId=" + headDivId + ", chiefId=" + chiefId + "}";
+		return "Division [id=" + id + ", name=" + name + ", headDivId=" + headDivId + "]";
+//		return "Division [id=" + id + ", name=" + name + ", headDivId=" + headDivId + ", chiefId=" + chiefId + "]";
 	}
 
 

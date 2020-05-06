@@ -1,6 +1,7 @@
 package com.db.entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name="employees")
@@ -21,6 +22,17 @@ public class Employee
 
 	@Column(name="education")
 	private String education;
+
+	@OneToMany(mappedBy = "employees", cascade = CascadeType.ALL)
+	private Set<Division> divisions;
+
+	public Set<Division> getDivisions() {
+		return divisions;
+	}
+
+	public void setDivisions(Set<Division> divisions) {
+		this.divisions = divisions;
+	}
 
 	public Employee() {}
 
@@ -79,7 +91,7 @@ public class Employee
 
 	@Override
 	public String toString() {
-		return "Employee {id=" + id + ", surname=" + surname + ", name=" + name + ", patronymic=" + patronymic
-				+ ", education=" + education + "}";
+		return "Employee [id=" + id + ", surname=" + surname + ", name=" + name + ", patronymic=" + patronymic
+				+ ", education=" + education + "]";
 	}
 }

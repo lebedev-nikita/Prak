@@ -2,6 +2,7 @@ package com.db.DAO;
 
 import java.util.List;
 
+import com.db.entity.Division;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -21,6 +22,7 @@ public class EmployeeTableManager
 			sessionFactory = new Configuration()
 					   		 .configure("hibernate.cfg.xml")
 					   		 .addAnnotatedClass(Employee.class)
+					   		 .addAnnotatedClass(Division.class)
 					   		 .buildSessionFactory();
 		}
 	}
