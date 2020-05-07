@@ -18,10 +18,7 @@ public class PositionTableManager
 	{
 		if (sessionFactory == null)
 		{
-			sessionFactory = new Configuration()
-					   		 .configure("hibernate.cfg.xml")
-					   		 .addAnnotatedClass(Position.class)
-					   		 .buildSessionFactory();
+			sessionFactory = SessionFactoryFactory.getSessionFactory();
 		}
 	}
 

@@ -19,11 +19,7 @@ public class EmployeeTableManager
 	{
 		if (sessionFactory == null)
 		{
-			sessionFactory = new Configuration()
-					   		 .configure("hibernate.cfg.xml")
-					   		 .addAnnotatedClass(Employee.class)
-					   		 .addAnnotatedClass(Division.class)
-					   		 .buildSessionFactory();
+			sessionFactory = SessionFactoryFactory.getSessionFactory();
 		}
 	}
 
@@ -43,7 +39,6 @@ public class EmployeeTableManager
 
 	public Employee getById(int id)
 	{
-
 		Session session = sessionFactory.getCurrentSession();
 
 		session.beginTransaction();

@@ -18,10 +18,7 @@ public class EmpPosTableManager
 	{
 		if (sessionFactory == null)
 		{
-			sessionFactory = new Configuration()
-					   		 .configure("hibernate.cfg.xml")
-					   		 .addAnnotatedClass(EmpPos.class)
-					   		 .buildSessionFactory();
+			sessionFactory = SessionFactoryFactory.getSessionFactory();
 		}
 	}
 

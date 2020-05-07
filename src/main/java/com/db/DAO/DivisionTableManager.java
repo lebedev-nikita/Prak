@@ -21,13 +21,7 @@ public class DivisionTableManager
 	{
 		if (sessionFactory == null)
 		{
-			sessionFactory = new Configuration()
-					   		 .configure("hibernate.cfg.xml")
-					   		 .addAnnotatedClass(Division.class)
-					   		 .addAnnotatedClass(Employee.class)
-					   		 .addAnnotatedClass(EmpPos.class)
-					   		 .addAnnotatedClass(Position.class)
-					   		 .buildSessionFactory();
+			sessionFactory = SessionFactoryFactory.getSessionFactory();
 		}
 	}
 
