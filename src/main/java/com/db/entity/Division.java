@@ -3,6 +3,7 @@ package com.db.entity;
 import com.db.entity.Employee;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name="divisions")
@@ -16,8 +17,12 @@ public class Division
 	@Column(name="div_name")
 	private String name;
 
-	@Column(name="head_div_id")
-	private Integer headDivId;
+	@ManyToOne
+	@JoinColumn(name = "head_div_id")
+	private Division headDiv;
+
+	@OneToMany(mappedBy = "headDiv", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private Set<Division> subDivisions;
 
 	@ManyToOne
 	@JoinColumn(name = "chief_id")
@@ -30,12 +35,28 @@ public class Division
 	public void setChief(Employee chief) {
 		this.chief = chief;
 	}
+//
+	public Division getHeadDiv() {
+		return headDiv;
+	}
 
+	public void setHeadDiv(Division headDiv) {
+		this.headDiv = headDiv;
+	}
+
+	public Set<Division> getSubDivisions() {
+		return subDivisions;
+	}
+
+	public void setSubDivisions(Set<Division> subDivisions) {
+		this.subDivisions = subDivisions;
+	}
+
+	//
 	public Division() {}
 
-	public Division(String name, Integer headDivId, Integer chiefId) {
+	public Division(String name) {
 		this.name = name;
-		this.headDivId = headDivId;
 	}
 
 	public Integer getId() {
@@ -54,18 +75,9 @@ public class Division
 		this.name = name;
 	}
 
-	public Integer getHeadDivId() {
-		return headDivId;
-	}
-
-	public void setHeadDivId(Integer headDivId) {
-		this.headDivId = headDivId;
-	}
-
 	@Override
 	public String toString() {
-		return "Division [id=" + id + ", name=" + name + ", headDivId=" + headDivId + "]";
-//		return "Division [id=" + id + ", name=" + name + ", headDivId=" + headDivId + ", chiefId=" + chiefId + "]";
+		return "Division [id=" + id + ", name=" + name + "]";
 	}
 
 

@@ -21,12 +21,12 @@
     ID: ${division.getId()} <br>
     Name: ${division.getName()} <br>
     Head division:
-    <a href="/divisions/${division.getHeadDivId()}">
-        ${(division.getHeadDivId() != null)?dtm.getById(division.getHeadDivId()).getName():"none"}
+    <a href="/divisions/${division.getHeadDiv().getId()}">
+        ${division.getHeadDiv().getName()}
     </a> <br>
     Chief:
-    <a href="/employees/${division.getEmployees().getId()}">
-        ${division.getEmployees().getFullName()}
+    <a href="/employees/${division.getChief().getId()}">
+        ${division.getChief().getFullName()}
     </a> <br>
 
     <h1>List of Positions: </h1><br>

@@ -44,8 +44,8 @@
                     </a>
                 </td>
                 <td>
-                    <a href="/divisions/${division.getHeadDivId()}">
-                        ${dtm.getById(division.getHeadDivId()).getName()}
+                    <a href="/divisions/${division.getHeadDiv().getId()}">
+                        ${division.getHeadDiv().getName()}
                     </a>
                 </td>
                 <td>
