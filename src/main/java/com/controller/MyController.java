@@ -21,6 +21,7 @@ public class MyController
     EmpPosTableManager eptm = new EmpPosTableManager();
     PositionTableManager ptm = new PositionTableManager();
 
+    // TODO: Сделать редирект на /divisions
     @GetMapping("/")
     public String sayHello(Model model)
     {

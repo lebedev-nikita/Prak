@@ -49,8 +49,9 @@
                     </a>
                 </td>
                 <td>
-                    <a href="/employees/${division.getChiefId()}">
-                        ${etm.getById(division.getChiefId()).getFullName()}
+                    <!-- Получаем имя руководителя -->
+                    <a href="/employees/${division.getEmployees().getId()}">
+                        ${division.getEmployees().getFullName()}
                     </a>
                 </td>
             </tr>

@@ -25,19 +25,6 @@ public class DivisionTableManager
 		}
 	}
 
-	// public List<Division> hqlRequest(String query)
-	// {
-	// 	Session session = sessionFactory.getCurrentSession();
-	// 	session.beginTransaction();
-	//
-	// 	List<Division> listDivisions = session.createQuery(query).list();
-	//
-	// 	session.getTransaction().commit();
-	// 	session.close();
-	//
-	// 	return listDivisions;
-	// }
-
 	public Division getById(int id)
 	{
 

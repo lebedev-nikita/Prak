@@ -32,7 +32,7 @@
         <c:forEach items="${eptm.listByPosId(position.getId())}" var="emp_pos">
             <tr>
                 <td>
-                    <a href="/employee/${emp_pos.getEmpId()}">
+                    <a href="/employees/${emp_pos.getEmpId()}">
                         ${etm.getById(emp_pos.getEmpId()).getFullName()}
                     </a>
                 </td>

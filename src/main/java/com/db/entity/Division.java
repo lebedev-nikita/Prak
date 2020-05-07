@@ -19,11 +19,9 @@ public class Division
 	@Column(name="head_div_id")
 	private Integer headDivId;
 
-//	@Column(name="chief_id")
-//	private Integer chiefId;
-
 	@ManyToOne
 	@JoinColumn(name = "chief_id")
+	// На самом деле это chief
 	private Employee employees;
 
 	public Employee getEmployees() {
@@ -65,14 +63,6 @@ public class Division
 	public void setHeadDivId(Integer headDivId) {
 		this.headDivId = headDivId;
 	}
-
-//	public Integer getChiefId() {
-//		return chiefId;
-//	}
-//
-//	public void setChiefId(Integer chiefId) {
-//		this.chiefId = chiefId;
-//	}
 
 	@Override
 	public String toString() {
