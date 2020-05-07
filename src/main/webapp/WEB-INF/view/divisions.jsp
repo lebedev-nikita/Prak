@@ -36,7 +36,7 @@
             <td>headDivName</td>
             <td>chiefName</td>
         </tr>
-        <c:forEach items="${dtm.listLike(param.divName)}" var="division">
+        <c:forEach items="${dtm.listLike(param.divName, param.headDivName, param.chiefName, param.chiefSurname, param.chiefPatronymic)}" var="division">
             <tr>
                 <td>
                     <a href="/divisions/${division.getId()}">

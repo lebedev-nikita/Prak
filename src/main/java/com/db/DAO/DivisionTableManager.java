@@ -92,12 +92,19 @@ public class DivisionTableManager
 		return listDivisions;
 	}
 
-	public List<Division> listLike(String divName)
+	public List<Division> listLike(String divName, String headDivName, String chiefName, String chiefSurname, String chiefPatronymic)
 	{
 		Session session = sessionFactory.getCurrentSession();
 		session.beginTransaction();
 
-		List<Division> listDivisions = session.createQuery("from Division where name like '%" + divName + "%'").list();
+		List<Division> listDivisions = session.createQuery(
+				"from Division d left join fetch d.headDiv headDiv where d.name like '%" + divName + "%'"
+					+ "and ((headDiv is null) or (headDiv.name like '%" + headDivName + "%'))"
+					+ "and (d.chief.name like '%" + chiefName + "%')"
+					+ "and (d.chief.surname like '%" + chiefSurname + "%')"
+					+ "and (d.chief.patronymic like '%" + chiefPatronymic + "%')"
+
+		).list();
 
 		session.getTransaction().commit();
 		session.close();
