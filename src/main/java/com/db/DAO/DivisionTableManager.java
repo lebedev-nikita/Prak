@@ -92,19 +92,6 @@ public class DivisionTableManager
 		return listDivisions;
 	}
 
-	public List<Division> listByName(String name)
-	{
-		Session session = sessionFactory.getCurrentSession();
-		session.beginTransaction();
-
-		List<Division> listDivisions = session.createQuery("from Division d where d.name like '%" + name + "%'").list();
-
-		session.getTransaction().commit();
-		session.close();
-
-		return listDivisions;
-	}
-
 	public List<Division> listLike(String divName)
 	{
 		Session session = sessionFactory.getCurrentSession();

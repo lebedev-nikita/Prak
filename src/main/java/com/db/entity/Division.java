@@ -28,6 +28,17 @@ public class Division
 	@JoinColumn(name = "chief_id")
 	private Employee chief;
 
+	@OneToMany(mappedBy = "division", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private Set<Position> positions;
+
+	public Set<Position> getPositions() {
+		return positions;
+	}
+
+	public void setPositions(Set<Position> positions) {
+		this.positions = positions;
+	}
+
 	public Employee getChief() {
 		return chief;
 	}
@@ -35,7 +46,7 @@ public class Division
 	public void setChief(Employee chief) {
 		this.chief = chief;
 	}
-//
+
 	public Division getHeadDiv() {
 		return headDiv;
 	}
@@ -52,7 +63,6 @@ public class Division
 		this.subDivisions = subDivisions;
 	}
 
-	//
 	public Division() {}
 
 	public Division(String name) {

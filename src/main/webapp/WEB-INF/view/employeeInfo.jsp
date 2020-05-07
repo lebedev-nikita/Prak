@@ -31,7 +31,7 @@
             <td>Division</td>
             <td>Salary</td>
         </tr>
-        <c:forEach items="${employee.getEp()}" var="emp_pos">
+        <c:forEach items="${employee.getEmpPos()}" var="emp_pos">
             <tr>
                 <td>
                     <a href="/positions/${emp_pos.getPos().getId()}">
@@ -39,8 +39,8 @@
                     </a>
                 </td>
                 <td>
-                    <a href="/divisions/${emp_pos.getPos().getDivisionId()}">
-                        ${dtm.getById(emp_pos.getPos().getDivisionId()).getName()}
+                    <a href="/divisions/${emp_pos.getPos().getDivision().getId()}">
+                        ${emp_pos.getPos().getDivision().getName()}
                     </a>
                 </td>
                 <td>

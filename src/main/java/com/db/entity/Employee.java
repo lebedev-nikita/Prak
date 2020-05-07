@@ -27,14 +27,14 @@ public class Employee
 	private Set<Division> divisions;
 
 	@OneToMany(mappedBy = "emp", cascade = CascadeType.ALL, fetch=FetchType.EAGER)
-	private Set<EmpPos> ep;
+	private Set<EmpPos> empPos;
 
-	public Set<EmpPos> getEp() {
-		return ep;
+	public Set<EmpPos> getEmpPos() {
+		return empPos;
 	}
 
-	public void setEp(Set<EmpPos> ep) {
-		this.ep = ep;
+	public void setEmpPos(Set<EmpPos> empPos) {
+		this.empPos = empPos;
 	}
 
 	public Set<Division> getDivisions() {

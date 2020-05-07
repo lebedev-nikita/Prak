@@ -12,8 +12,12 @@ public class Position
 	@Column(name="pos_id")
 	private Integer id;
 
-	@Column(name="div_id")
-	private Integer divisionId;
+	@ManyToOne
+	@JoinColumn(name = "div_id")
+	private Division division;
+
+//	@Column(name="div_id")
+//	private Integer divisionId;
 
 	@Column(name="pos_name")
 	private String name;
@@ -22,20 +26,28 @@ public class Position
 	private String responsibilities;
 
 	@OneToMany(mappedBy = "pos", cascade = CascadeType.ALL, fetch=FetchType.EAGER)
-	private Set<EmpPos> ep;
+	private Set<EmpPos> empPos;
 
-	public Set<EmpPos> getEp() {
-		return ep;
+	public Division getDivision() {
+		return division;
 	}
 
-	public void setEp(Set<EmpPos> ep) {
-		this.ep = ep;
+	public void setDivision(Division division) {
+		this.division = division;
+	}
+
+	public Set<EmpPos> getEmpPos() {
+		return empPos;
+	}
+
+	public void setEmpPos(Set<EmpPos> empPos) {
+		this.empPos = empPos;
 	}
 
 	public Position() {}
 
 	public Position(Integer divisionId, String name, String responsibilities) {
-		this.divisionId = divisionId;
+//		this.divisionId = divisionId;
 		this.name = name;
 		this.responsibilities = responsibilities;
 	}
@@ -48,13 +60,13 @@ public class Position
 		this.id = id;
 	}
 
-	public Integer getDivisionId() {
-		return divisionId;
-	}
-
-	public void setDivisionId(Integer divisionId) {
-		this.divisionId = divisionId;
-	}
+//	public Integer getDivisionId() {
+//		return divisionId;
+//	}
+//
+//	public void setDivisionId(Integer divisionId) {
+//		this.divisionId = divisionId;
+//	}
 
 	public String getName() {
 		return name;
@@ -74,7 +86,7 @@ public class Position
 
 	@Override
 	public String toString() {
-		return "Position [id=" + id + ", divisionId=" + divisionId + ", name=" + name + ", responsibilities="
-				+ responsibilities + "]";
+		return "Position [id=" + id + ", name=" + name + ", responsibilities=" + responsibilities + "]";
+//		return "Position [id=" + id + ", divisionId=" + divisionId + ", name=" + name + ", responsibilities=" + responsibilities + "]";
 	}
 }

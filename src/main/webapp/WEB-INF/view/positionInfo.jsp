@@ -20,7 +20,7 @@
 
     ID: ${position.getId()} <br>
     Name: ${position.getName()} <br>
-    Division: ${dtm.getById(position.getDivisionId()).getName()} <br>
+    Division: ${position.getDivision().getName()} <br>
     Responsibilities: ${position.getResponsibilities()} <br>
 
     <h1>List of Employees:</h1>
@@ -29,7 +29,7 @@
             <td>Name</td>
             <td>Salary</td>
         </tr>
-        <c:forEach items="${position.getEp()}" var="emp_pos">
+        <c:forEach items="${position.getEmpPos()}" var="emp_pos">
             <tr>
                 <td>
                     <a href="/employees/${emp_pos.getEmp().getId()}">

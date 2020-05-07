@@ -36,7 +36,7 @@
             <td>Responsibilities</td>
             <td>Employees</td>
         </tr>
-        <c:forEach items="${ptm.listByDivisionId(division.getId())}" var="position">
+        <c:forEach items="${division.getPositions()}" var="position">
             <tr>
                 <td>
                     <a href="/positions/${position.getId()}">
@@ -47,7 +47,7 @@
                     ${position.getResponsibilities()}
                 </td>
                 <td>
-                    <c:forEach items="${position.getEp()}" var="emp_pos">
+                    <c:forEach items="${position.getEmpPos()}" var="emp_pos">
                         <a href="/employees/${emp_pos.getEmp().getId()}">
                             ${emp_pos.getEmp().getFullName()}
                         </a> <br>
