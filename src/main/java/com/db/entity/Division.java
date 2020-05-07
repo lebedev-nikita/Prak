@@ -21,15 +21,14 @@ public class Division
 
 	@ManyToOne
 	@JoinColumn(name = "chief_id")
-	// На самом деле это chief
-	private Employee employees;
+	private Employee chief;
 
-	public Employee getEmployees() {
-		return employees;
+	public Employee getChief() {
+		return chief;
 	}
 
-	public void setEmployees(Employee employees) {
-		this.employees = employees;
+	public void setChief(Employee chief) {
+		this.chief = chief;
 	}
 
 	public Division() {}
@@ -37,7 +36,6 @@ public class Division
 	public Division(String name, Integer headDivId, Integer chiefId) {
 		this.name = name;
 		this.headDivId = headDivId;
-//		this.chiefId = chiefId;
 	}
 
 	public Integer getId() {

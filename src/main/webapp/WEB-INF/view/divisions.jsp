@@ -50,8 +50,8 @@
                 </td>
                 <td>
                     <!-- Получаем имя руководителя -->
-                    <a href="/employees/${division.getEmployees().getId()}">
-                        ${division.getEmployees().getFullName()}
+                    <a href="/employees/${division.getChief().getId()}">
+                        ${division.getChief().getFullName()}
                     </a>
                 </td>
             </tr>

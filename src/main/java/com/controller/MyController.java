@@ -34,6 +34,7 @@ public class MyController
         model.addAttribute("dtm", dtm);
         model.addAttribute("etm", etm);
         model.addAttribute("ptm", ptm);
+        model.addAttribute("eptm", ptm);
         return "divisions.jsp";
     }
 

@@ -23,7 +23,7 @@ public class Employee
 	@Column(name="education")
 	private String education;
 
-	@OneToMany(mappedBy = "employees", cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+	@OneToMany(mappedBy = "chief", cascade = CascadeType.ALL, fetch=FetchType.EAGER)
 	private Set<Division> divisions;
 
 	public Set<Division> getDivisions() {
