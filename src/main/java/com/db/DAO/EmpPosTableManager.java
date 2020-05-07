@@ -22,20 +22,6 @@ public class EmpPosTableManager
 		}
 	}
 
-	// public List<EmpPos> hqlRequest(String query)
-	// {
-	// 	Session session = sessionFactory.getCurrentSession();
-	// 	session.beginTransaction();
-	//
-	// 	List<EmpPos> listDivPos = session.createQuery(query).list();
-	//
-	//
-	// 	session.getTransaction().commit();
-	// 	session.close();
-	//
-	// 	return listDivPos;
-	// }
-
 	public void save(EmpPos empPos)
 	{
 		Session session = sessionFactory.getCurrentSession();
@@ -82,39 +68,5 @@ public class EmpPosTableManager
 		session.close();
 
 		return ret;
-	}
-
-
-	// unchecked
-
-	public List<EmpPos> listByEmpId(int empId)
-	{
-
-		Session session = sessionFactory.getCurrentSession();
-		session.beginTransaction();
-
-		List<EmpPos> listEmpPos = session.createQuery("from EmpPos where employeeId=" + empId).list();
-
-		session.getTransaction().commit();
-
-		session.close();
-
-		return listEmpPos;
-	}
-
-	public List<EmpPos> listByPosId(int posId)
-	{
-
-		Session session = sessionFactory.getCurrentSession();
-
-		session.beginTransaction();
-
-		List<EmpPos> listEmpPos = session.createQuery("from EmpPos where positionId=" + posId).list();
-
-		session.getTransaction().commit();
-
-		session.close();
-
-		return listEmpPos;
 	}
 }

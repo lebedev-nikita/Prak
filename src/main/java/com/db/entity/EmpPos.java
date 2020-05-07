@@ -13,11 +13,16 @@ public class EmpPos
 	@Column(name="emp_pos_id")
 	private Integer id;
 
-	@Column(name="emp_id")
-	private Integer employeeId;
+	@ManyToOne
+	@JoinColumn(name = "emp_id")
+	private Employee emp;
 
-	@Column(name="pos_id")
-	private Integer positionId;
+	@ManyToOne
+	@JoinColumn(name = "pos_id")
+	private Position pos;
+
+//	@Column(name="pos_id")
+//	private Integer positionId;
 
 	@Column(name="start_date")
 	private Date startDate;
@@ -30,12 +35,26 @@ public class EmpPos
 
 	public EmpPos() {}
 
-	public EmpPos(Integer employeeId, Integer positionId, String startDate, String finishDate, Integer salary) {
-		this.employeeId = employeeId;
-		this.positionId = positionId;
-		this.startDate = Date.valueOf(startDate);
-		this.finishDate = Date.valueOf(finishDate);
-		this.salary = salary;
+	// public EmpPos(Integer employeeId, Integer positionId, String startDate, String finishDate, Integer salary) {
+	// 	this.startDate = Date.valueOf(startDate);
+	// 	this.finishDate = Date.valueOf(finishDate);
+	// 	this.salary = salary;
+	// }
+
+	public Employee getEmp() {
+		return emp;
+	}
+
+	public void setEmp(Employee emp) {
+		this.emp = emp;
+	}
+
+	public Position getPos() {
+		return pos;
+	}
+
+	public void setPos(Position pos) {
+		this.pos = pos;
 	}
 
 	public Integer getId() {
@@ -44,22 +63,6 @@ public class EmpPos
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public Integer getEmpId() {
-		return employeeId;
-	}
-
-	public void setEmpId(Integer employeeId) {
-		this.employeeId = employeeId;
-	}
-
-	public Integer getPosId() {
-		return positionId;
-	}
-
-	public void setPosId(Integer positionId) {
-		this.positionId = positionId;
 	}
 
 	public String getStartDate() {
@@ -88,8 +91,7 @@ public class EmpPos
 
 	@Override
 	public String toString() {
-		return "DivPos [employeeId=" + employeeId + ", positionId=" + positionId + ", startDate=" + startDate
-				+ ", finishDate=" + finishDate + ", salary=" + salary + "]";
+		return "DivPos [startDate=" + startDate	+ ", finishDate=" + finishDate + ", salary=" + salary + "]";
 	}
 
 

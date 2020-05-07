@@ -47,9 +47,9 @@
                     ${position.getResponsibilities()}
                 </td>
                 <td>
-                    <c:forEach items="${eptm.listByPosId(position.getId())}" var="emp_pos">
-                        <a href="/employees/${emp_pos.getEmpId()}">
-                            ${etm.getById(emp_pos.getEmpId()).getFullName()}
+                    <c:forEach items="${position.getEp()}" var="emp_pos">
+                        <a href="/employees/${emp_pos.getEmp().getId()}">
+                            ${emp_pos.getEmp().getFullName()}
                         </a> <br>
                     </c:forEach>
                 </td>

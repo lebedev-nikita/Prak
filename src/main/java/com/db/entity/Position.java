@@ -1,6 +1,7 @@
 package com.db.entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name="positions")
@@ -19,6 +20,17 @@ public class Position
 
 	@Column(name="responsibilities")
 	private String responsibilities;
+
+	@OneToMany(mappedBy = "pos", cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+	private Set<EmpPos> ep;
+
+	public Set<EmpPos> getEp() {
+		return ep;
+	}
+
+	public void setEp(Set<EmpPos> ep) {
+		this.ep = ep;
+	}
 
 	public Position() {}
 

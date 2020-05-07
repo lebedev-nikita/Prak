@@ -210,10 +210,4 @@
 //        dtm.delete(tmpDiv5);
 //        dtm.delete(tmpDiv6);
 //    }
-//
-//    // @Test
-//    // public void hqlRequest()
-//    // {
-//    //     // TODO: удалить этот метод
-//    // }
 //}

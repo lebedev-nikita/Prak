@@ -26,6 +26,17 @@ public class Employee
 	@OneToMany(mappedBy = "chief", cascade = CascadeType.ALL, fetch=FetchType.EAGER)
 	private Set<Division> divisions;
 
+	@OneToMany(mappedBy = "emp", cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+	private Set<EmpPos> ep;
+
+	public Set<EmpPos> getEp() {
+		return ep;
+	}
+
+	public void setEp(Set<EmpPos> ep) {
+		this.ep = ep;
+	}
+
 	public Set<Division> getDivisions() {
 		return divisions;
 	}

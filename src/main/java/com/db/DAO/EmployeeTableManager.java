@@ -23,20 +23,6 @@ public class EmployeeTableManager
 		}
 	}
 
-	// public List<Employee> hqlRequest(String query)
-	// {
-	// 	Session session = sessionFactory.getCurrentSession();
-	// 	session.beginTransaction();
-	//
-	// 	List<Employee> listEmployees = session.createQuery(query).list();
-	//
-	//
-	// 	session.getTransaction().commit();
-	// 	session.close();
-	//
-	// 	return listEmployees;
-	// }
-
 	public Employee getById(int id)
 	{
 		Session session = sessionFactory.getCurrentSession();

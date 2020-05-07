@@ -96,9 +96,4 @@ public class EmployeeTableManagerTest
         etm.delete(tmpEmp2);
         etm.delete(tmpEmp3);
     }
-
-    // @Test
-    // public void hqlRequest() {
-    //     // TODO: удалить этот метод
-    // }
 }

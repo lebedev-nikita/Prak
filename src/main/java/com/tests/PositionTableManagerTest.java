@@ -100,10 +100,4 @@ public class PositionTableManagerTest
         ptm.delete(tmpPos2);
         ptm.delete(tmpPos3);
     }
-
-    // @Test
-    // public void hqlRequest()
-    // {
-    //     // TODO: удалить этот метод
-    // }
 }

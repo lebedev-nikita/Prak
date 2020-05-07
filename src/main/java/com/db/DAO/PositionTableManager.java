@@ -22,20 +22,6 @@ public class PositionTableManager
 		}
 	}
 
-	// public List<Position> hqlRequest(String query)
-	// {
-	// 	Session session = sessionFactory.getCurrentSession();
-	// 	session.beginTransaction();
-	//
-	// 	List<Position> listPositions = session.createQuery(query).list();
-	//
-	//
-	// 	session.getTransaction().commit();
-	// 	session.close();
-	//
-	// 	return listPositions;
-	// }
-
 	public Position getById(int id)
 	{
 

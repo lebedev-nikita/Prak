@@ -29,11 +29,11 @@
             <td>Name</td>
             <td>Salary</td>
         </tr>
-        <c:forEach items="${eptm.listByPosId(position.getId())}" var="emp_pos">
+        <c:forEach items="${position.getEp()}" var="emp_pos">
             <tr>
                 <td>
-                    <a href="/employees/${emp_pos.getEmpId()}">
-                        ${etm.getById(emp_pos.getEmpId()).getFullName()}
+                    <a href="/employees/${emp_pos.getEmp().getId()}">
+                        ${emp_pos.getEmp().getFullName()}
                     </a>
                 </td>
                 <td>

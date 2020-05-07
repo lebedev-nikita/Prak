@@ -92,19 +92,6 @@ public class DivisionTableManager
 		return listDivisions;
 	}
 
-	public List<Division> listByChiefId(int chiefId)
-	{
-		Session session = sessionFactory.getCurrentSession();
-		session.beginTransaction();
-
-		List<Division> listDivisions = session.createQuery("from Division where chiefId=" + chiefId).list();
-
-		session.getTransaction().commit();
-		session.close();
-
-		return listDivisions;
-	}
-
 	public List<Division> listByName(String name)
 	{
 		Session session = sessionFactory.getCurrentSession();
@@ -118,24 +105,10 @@ public class DivisionTableManager
 		return listDivisions;
 	}
 
-	public List<Division> listByHeadDivId(int headDivId)
-	{
-		Session session = sessionFactory.getCurrentSession();
-		session.beginTransaction();
-
-		List<Division> listDivisions = session.createQuery("from Division where headDivId=" + headDivId).list();
-
-		session.getTransaction().commit();
-		session.close();
-
-		return listDivisions;
-	}
-
 	public List<Division> listLike(String divName)
 	{
 		Session session = sessionFactory.getCurrentSession();
 		session.beginTransaction();
-
 
 		List<Division> listDivisions = session.createQuery("from Division where name like '%" + divName + "%'").list();
 
