@@ -5,13 +5,9 @@ import com.db.DAO.EmpPosTableManager;
 import com.db.DAO.EmployeeTableManager;
 import com.db.DAO.PositionTableManager;
 import com.db.entity.Division;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import sun.tools.java.ClassPath;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class MyController
@@ -21,12 +17,12 @@ public class MyController
     EmpPosTableManager eptm = new EmpPosTableManager();
     PositionTableManager ptm = new PositionTableManager();
 
-    // TODO: Сделать редирект на /divisions
     @GetMapping("/")
     public String sayHello(Model model)
     {
-        model.addAttribute("message", "hello");
-        return "hello.jsp";
+        return "redirect:/divisions/";
+//        model.addAttribute("message", "hello");
+//        return "hello.jsp";
     }
 
     @GetMapping("/divisions")
@@ -35,6 +31,24 @@ public class MyController
         model.addAttribute("etm", etm);
         model.addAttribute("ptm", ptm);
         model.addAttribute("eptm", ptm);
+        return "divisions.jsp";
+    }
+
+    @PostMapping("/divisions")
+    public String addDivision(
+            @ModelAttribute("postDivision") PostDivision postDivision,
+            Model model
+    ) {
+//        System.out.println(postDivision.getName());
+//        System.out.println(postDivision.getHeadDivId());
+//        System.out.println(postDivision.getChiefId());
+        Division div = new Division();
+        div.setName(postDivision.getName());
+        div.setChief(etm.getById(postDivision.getChiefId()));
+        div.setHeadDiv(dtm.getById(postDivision.getHeadDivId()));
+        dtm.save(div);
+
+//        dtm.save(division);
         return "divisions.jsp";
     }
 
@@ -78,4 +92,8 @@ public class MyController
         return "employeeInfo.jsp";
     }
 
+    @ModelAttribute
+    public void addAtributes(Model model) {
+        model.addAttribute("postDivision", new PostDivision());
+    }
 }
