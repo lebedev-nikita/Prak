@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 public class MyController
 {
@@ -18,13 +20,28 @@ public class MyController
     PositionTableManager ptm = new PositionTableManager();
 
     @GetMapping("/")
-    public String sayHello(Model model)
-    {
+    public String sayHello(Model model) {
+        
         return "redirect:/divisions/";
     }
 
     @GetMapping("/divisions")
     public String divisions(Model model) {
+        List<Division> divisionList = dtm.listAllDivisions();
+        model.addAttribute("divisionList", divisionList);
+        model.addAttribute("divisionRequest", new DivisionRequest());
+
+        return "divisions.jsp";
+    }
+
+    @GetMapping("/divisions/filter")
+    public String divisionsFilter(
+            @ModelAttribute("divisionRequest") DivisionRequest dr,
+            Model model
+    ) {
+        List<Division> divisionList = dtm.listLike(dr.getGetName(), dr.getHeadDivName(), dr.getChiefName(), dr.getChiefSurname(), dr.getChiefPatronymic());
+        model.addAttribute("divisionList", divisionList);
+
         return "divisions.jsp";
     }
 
@@ -51,7 +68,7 @@ public class MyController
 
     @GetMapping("/positions")
     public String positions() {
-        
+
         return "positions.jsp";
     }
 
@@ -76,7 +93,6 @@ public class MyController
 
     @ModelAttribute
     public void addAtributes(Model model) {
-        model.addAttribute("postDivision", new PostDivision());
         model.addAttribute("dtm", dtm);
         model.addAttribute("etm", etm);
         model.addAttribute("ptm", ptm);

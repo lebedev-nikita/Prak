@@ -20,31 +20,32 @@
     <br><br>
 
     <h2> Create division: </h2>
-    <form:form method="post" action="/divisions" modelAttribute="postDivision">
-        Division name: <form:input path="name"/> <br>
+    <form:form method="post" action="/divisions" modelAttribute="divisionRequest">
+        Division name: <form:input path="postName"/> <br>
         Head division id: <form:input path="headDivId"/> <br>
         Chief id: <form:input path="chiefId"/> <br><br>
         <input type="submit" value="Submit"/>
     </form:form>
 
     <h2> Filter divisions: </h2>
-    <form action="/divisions" method="get">
-        Division name: <input type="text" name="getDivName" value="${param.getDivName}"> <br>
-        Head division name: <input type="text" name="getHeadDivName" value="${param.getHeadDivName}"> <br>
-        Chief name: <input type="text" name="getChiefName" value="${param.getChiefName}"> <br>
-        Chief surname: <input type="text" name="getChiefSurame" value="${param.getChiefSurame}"> <br>
-        Chief patronymic: <input type="text" name="getChiefPatronymic" value="${param.getChiefPatronymic}"> <br><br>
+    <form:form method="get" action="/divisions/filter" modelAttribute="divisionRequest">
+        Division name: <form:input path="getName"/> <br>
+        Head division name: <form:input path="headDivName"/> <br>
+        Chief name: <form:input path="chiefName"/> <br>
+        Chief surname: <form:input path="chiefSurname"/> <br>
+        Chief patronymic: <input path="chiefPatronymic"/> <br><br>
         <input type="submit" name="" value="Submit">
-    </form>
+    </form:form>
 
     <h2>List of divisions: </h2>
+    Amount of lines: ${divisionList.size()} <br><br>
     <table>
         <tr class="tableHeader">
             <th>Division name</th>
             <th>Head division name</th>
             <th>Chief name</th>
         </tr>
-        <c:forEach items="${dtm.listLike(param.getDivName, param.getHeadDivName, param.getChiefName, param.chiefSurname, param.getChiefPatronymic)}" var="division">
+        <c:forEach items="${divisionList}" var="division">
             <tr>
                 <td>
                     <a href="/divisions/${division.getId()}">
@@ -57,7 +58,6 @@
                     </a>
                 </td>
                 <td>
-                    <!-- Получаем имя руководителя -->
                     <a href="/employees/${division.getChief().getId()}">
                         ${division.getChief().getFullName()}
                     </a>
