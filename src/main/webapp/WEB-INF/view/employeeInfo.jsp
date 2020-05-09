@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <a href="/"> <button>Hello</button> </a>
+    
     <a href="/divisions"> <button>Divisions</button> </a>
     <a href="/employees"> <button>Employees</button> </a>
     <a href="/positions"> <button>Positions</button> </a>
