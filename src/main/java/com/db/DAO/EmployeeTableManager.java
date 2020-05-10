@@ -74,13 +74,36 @@ public class EmployeeTableManager
 
 	}
 
-	public List<Employee> listByNameSurname(String name, String surname)
+	public List<Employee> listAllEmployees()
 	{
 		Session session = sessionFactory.getCurrentSession();
 		session.beginTransaction();
 
-		List<Employee> listEmployees = session.createQuery("from Employee where name like '%" + name +
-														   "%' and surname like '%" + surname + "%'").list();
+		List<Employee> listEmployees = session.createQuery("from Employee").list();
+
+		session.getTransaction().commit();
+		session.close();
+
+		return listEmployees;
+	}
+
+	public List<Employee> listLike(String name, String surname, String patronymic, String education)
+	{
+        if (name == null) { name = ""; }
+        if (surname == null) { surname = ""; }
+        if (patronymic == null) { patronymic = ""; }
+        if (education == null) { education = ""; }
+        String patronymicFilter = (!patronymic.equals("")) ? " and patronymic like '%" + patronymic + "%'" : "";
+
+		Session session = sessionFactory.getCurrentSession();
+		session.beginTransaction();
+
+		List<Employee> listEmployees = session.createQuery( "from Employee where"
+            + " name like '%" + name + "%'"
+            + " and surname like '%" + surname + "%'"
+            + patronymicFilter
+            + " and education like '%" + education + "%'"
+        ).list();
 
 		session.getTransaction().commit();
 		session.close();

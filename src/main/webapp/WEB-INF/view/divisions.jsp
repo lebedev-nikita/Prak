@@ -40,7 +40,7 @@
         Chief name: <form:input path="chiefName" /> <br>
         Chief surname: <form:input path="chiefSurname" /> <br>
         Chief patronymic: <input path="chiefPatronymic" /> <br><br>
-        <input type="submit" name="" value="Filter">
+        <input type="submit" value="Filter">
     </form:form>
 
     <h2>List of divisions: </h2>

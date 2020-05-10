@@ -5,6 +5,7 @@ import com.db.DAO.EmpPosTableManager;
 import com.db.DAO.EmployeeTableManager;
 import com.db.DAO.PositionTableManager;
 import com.db.entity.Division;
+import com.db.entity.Employee;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -29,7 +30,6 @@ public class MyController
 
     @GetMapping("/divisions")
     public String divisions(Model model) {
-        System.out.println("=========== " + "divisions" + " ===========");
         List<Division> divisionList = dtm.listAllDivisions();
         model.addAttribute("divisionList", divisionList);
         model.addAttribute("divisionRequest", new DivisionRequest());
@@ -42,7 +42,6 @@ public class MyController
         @ModelAttribute("divisionRequest") DivisionRequest dr,
         Model model
     ) {
-        System.out.println("=========== " + "divisionsFilter" + " ===========");
         List<Division> divisionList = dtm.listLike(dr.getGetName(), dr.getHeadDivName(), dr.getChiefName(), dr.getChiefSurname(), dr.getChiefPatronymic());
         model.addAttribute("divisionList", divisionList);
 
@@ -54,7 +53,6 @@ public class MyController
         @ModelAttribute("divisionRequest") DivisionRequest dr,
         Model model
     ) {
-        System.out.println("=========== " + "deleteDivision" + " ===========");
         dtm.delete(dtm.getById(dr.getId()));
 
         return "redirect:/divisions";
@@ -62,7 +60,6 @@ public class MyController
 
     @GetMapping("/divisions/{id}")
     public String divisionInfo(Model model, @PathVariable String id) {
-        System.out.println("=========== " + "divisionInfo" + " ===========");
         model.addAttribute("division", dtm.getById(Integer.parseInt(id)));
 
         return "divisionInfo.jsp";
@@ -70,10 +67,9 @@ public class MyController
 
     @PostMapping("/divisions")
     public String addDivision(
-    @ModelAttribute("divisionRequest") DivisionRequest dr,
-    Model model
+        @ModelAttribute("divisionRequest") DivisionRequest dr,
+        Model model
     ) {
-        System.out.println("=========== " + "addDivision" + " ===========");
         Division div = new Division();
         div.setName(dr.getPostName());
         div.setChief(etm.getById(dr.getChiefId()));
@@ -100,17 +96,58 @@ public class MyController
 
     // /employees
 
-    @GetMapping("/employees")
-    public String employees() {
-        return "employees.jsp";
-    }
-
     @GetMapping("/employees/{id}")
     public String employeeInfo(Model model, @PathVariable String id) {
         model.addAttribute("employee", etm.getById(Integer.parseInt(id)));
 
         return "employeeInfo.jsp";
     }
+
+    @GetMapping("/employees")
+    public String employees(Model model) {
+        List<Employee> employeeList = etm.listAllEmployees();
+        model.addAttribute("employeeList", employeeList);
+        model.addAttribute("employeeRequest", new EmployeeRequest());
+
+        return "employees.jsp";
+    }
+
+    @GetMapping("/employees/filter")
+    public String employeesFilter(
+        @ModelAttribute("employeeRequest") EmployeeRequest er,
+        Model model
+    ) {
+        List<Employee> employeeList = etm.listLike(er.getGetName(), er.getGetSurname(), er.getGetPatronymic(), er.getGetEducation());
+        model.addAttribute("employeeList", employeeList);
+
+        return "employees.jsp";
+    }
+
+    @GetMapping("/employees/delete")
+    public String employeesDelete(
+        @ModelAttribute("employeeRequest") EmployeeRequest er,
+        Model model
+    ) {
+        etm.delete(etm.getById(er.getId()));
+
+        return "redirect:/employees";
+    }
+
+    @PostMapping("/employees")
+    public String addEmployee(
+        @ModelAttribute("employeeRequest") EmployeeRequest er,
+        Model model
+    ) {
+        Employee emp = new Employee();
+        emp.setName(er.getPostName());
+        emp.setSurname(er.getPostSurname());
+        emp.setPatronymic(er.getPostPatronymic());
+        emp.setEducation(er.getPostEducation());
+        etm.save(emp);
+
+        return "redirect:/employees";
+    }
+
 
     @ModelAttribute
     public void addAtributes(Model model) {
