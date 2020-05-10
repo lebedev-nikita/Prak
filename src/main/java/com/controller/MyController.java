@@ -6,6 +6,7 @@ import com.db.DAO.EmployeeTableManager;
 import com.db.DAO.PositionTableManager;
 import com.db.entity.Division;
 import com.db.entity.Employee;
+import com.db.entity.Position;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -82,7 +83,10 @@ public class MyController
     // /positions
 
     @GetMapping("/positions")
-    public String positions() {
+    public String positions(Model model) {
+        List<Position> positionList = ptm.listAllPositions();
+        model.addAttribute("positionList", positionList);
+        model.addAttribute("positionRequest", new PositionRequest());
 
         return "positions.jsp";
     }
@@ -92,6 +96,41 @@ public class MyController
         model.addAttribute("position", ptm.getById(Integer.parseInt(id)));
 
         return "positionInfo.jsp";
+    }
+
+    @GetMapping("/positions/delete")
+    public String positionsDelete(
+        @ModelAttribute("positionRequest") PositionRequest pr,
+        Model model
+    ) {
+        ptm.delete(ptm.getById(pr.getId()));
+
+        return "redirect:/positions";
+    }
+
+    @GetMapping("/positions/filter")
+    public String positionsFilter(
+        @ModelAttribute("positionRequest") PositionRequest pr,
+        Model model
+    ) {
+        List<Position> positionList = ptm.listLike(pr.getGetName(), pr.getGetResponsibilities(), pr.getGetDivisionId(), pr.getGetDivisionName());
+        model.addAttribute("positionList", positionList);
+
+        return "positions.jsp";
+    }
+
+    @PostMapping("/positions")
+    public String addPosition(
+            @ModelAttribute("positionRequest") PositionRequest pr,
+            Model model
+    ) {
+        Position pos = new Position();
+        pos.setName(pr.getPostName());
+        pos.setResponsibilities(pr.getPostResponsibilities());
+        pos.setDivision(dtm.getById(pr.getPostDivisionId()));
+        ptm.save(pos);
+
+        return "redirect:/positions";
     }
 
     // /employees
@@ -150,7 +189,7 @@ public class MyController
 
 
     @ModelAttribute
-    public void addAtributes(Model model) {
+    public void addAttributes(Model model) {
         model.addAttribute("dtm", dtm);
         model.addAttribute("etm", etm);
         model.addAttribute("ptm", ptm);

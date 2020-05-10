@@ -85,12 +85,38 @@ public class PositionTableManager
 		return listPositions;
 	}
 
-	public List<Position> listByName(String name)
+// listLike(pr.getGetName(), pr.getGetResponsibilities(), pr.getGetDivisionId(), pr.getGetDivisionName());
+
+	public List<Position> listLike(String name, String responsibilities, int divisionId, String divisionName)
 	{
+		if (name == null) { name = ""; }
+		if (responsibilities == null) { responsibilities = ""; }
+		if (divisionName == null) { divisionName = ""; }
+        String divIdFilter = (divisionId != 0) ? " and div.id = " + divisionId : "";
+
+
 		Session session = sessionFactory.getCurrentSession();
 		session.beginTransaction();
 
-		List<Position> listPositions = session.createQuery("FROM Position WHERE name LIKE '%" + name +"%'").list();
+		List<Position> listPositions = session.createQuery(
+            "from Position p left join fetch p.division div"
+            + " where p.name like '%" + name +"%'"
+            + " and p.responsibilities like '%" + responsibilities + "%'"
+            + divIdFilter
+            + " and div.name like '%" + divisionName + "%'"
+        ).list();
+
+		session.getTransaction().commit();
+		session.close();
+
+		return listPositions;
+	}
+
+	public List<Position> listAllPositions() {
+		Session session = sessionFactory.getCurrentSession();
+		session.beginTransaction();
+
+		List<Position> listPositions = session.createQuery("from Position").list();
 
 		session.getTransaction().commit();
 		session.close();
