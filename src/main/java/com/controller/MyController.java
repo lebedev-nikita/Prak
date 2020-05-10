@@ -21,8 +21,8 @@ public class MyController
 
     @GetMapping("/")
     public String sayHello(Model model) {
-        
-        return "redirect:/divisions/";
+
+        return "redirect:/divisions";
     }
 
     @GetMapping("/divisions")
@@ -47,16 +47,16 @@ public class MyController
 
     @PostMapping("/divisions")
     public String addDivision(
-            @ModelAttribute("postDivision") PostDivision postDivision,
+            @ModelAttribute("divisionRequest") DivisionRequest dr,
             Model model
     ) {
         Division div = new Division();
-        div.setName(postDivision.getName());
-        div.setChief(etm.getById(postDivision.getChiefId()));
-        div.setHeadDiv(dtm.getById(postDivision.getHeadDivId()));
+        div.setName(dr.getPostName());
+        div.setChief(etm.getById(dr.getChiefId()));
+        div.setHeadDiv(dtm.getById(dr.getHeadDivId()));
         dtm.save(div);
 
-        return "divisions.jsp";
+        return "redirect:/divisions";
     }
 
     @GetMapping("/divisions/{id}")
