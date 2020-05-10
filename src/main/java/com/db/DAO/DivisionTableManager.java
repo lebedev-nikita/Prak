@@ -71,7 +71,6 @@ public class DivisionTableManager
 
 		session.delete(division);
 
-
 		session.getTransaction().commit();
 		session.close();
 

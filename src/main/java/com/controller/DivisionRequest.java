@@ -8,6 +8,15 @@ public class DivisionRequest {
     private String chiefSurname;
     private String chiefPatronymic;
     private int headDivId;
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getHeadDivId() {
         return headDivId;

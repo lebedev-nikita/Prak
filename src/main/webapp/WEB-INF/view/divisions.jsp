@@ -21,32 +21,42 @@
 
     <h2> Create division: </h2>
     <form:form method="post" action="/divisions" modelAttribute="divisionRequest">
-        Division name: <form:input path="postName"/> <br>
-        Head division id: <form:input path="headDivId"/> <br>
-        Chief id: <form:input path="chiefId"/> <br><br>
-        <input type="submit" value="Submit"/>
+        Division name: <form:input path="postName" /> <br>
+        Head division id: <form:input path="headDivId" /> <br>
+        Chief id: <form:input path="chiefId" /> <br><br>
+        <input type="submit" value="Create" />
+    </form:form>
+
+    <h2>Delete division:</h2>
+    <form:form method="get" action="/divisions/delete" modelAttribute="divisionRequest">
+        id: <form:input path="id" /> <br><br>
+        <input type="submit" value="Delete" />
     </form:form>
 
     <h2> Filter divisions: </h2>
     <form:form method="get" action="/divisions/filter" modelAttribute="divisionRequest">
-        Division name: <form:input path="getName"/> <br>
-        Head division name: <form:input path="headDivName"/> <br>
-        Chief name: <form:input path="chiefName"/> <br>
-        Chief surname: <form:input path="chiefSurname"/> <br>
-        Chief patronymic: <input path="chiefPatronymic"/> <br><br>
-        <input type="submit" name="" value="Submit">
+        Division name: <form:input path="getName" /> <br>
+        Head division name: <form:input path="headDivName" /> <br>
+        Chief name: <form:input path="chiefName" /> <br>
+        Chief surname: <form:input path="chiefSurname" /> <br>
+        Chief patronymic: <input path="chiefPatronymic" /> <br><br>
+        <input type="submit" name="" value="Filter">
     </form:form>
 
     <h2>List of divisions: </h2>
     Amount of lines: ${divisionList.size()} <br><br>
     <table>
         <tr class="tableHeader">
+            <th>id</th>
             <th>Division name</th>
             <th>Head division name</th>
             <th>Chief name</th>
         </tr>
         <c:forEach items="${divisionList}" var="division">
             <tr>
+                <td>
+                    ${division.getId()}
+                </td>
                 <td>
                     <a href="/divisions/${division.getId()}">
                         ${division.getName()}

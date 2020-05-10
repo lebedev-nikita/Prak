@@ -25,8 +25,11 @@ public class MyController
         return "redirect:/divisions";
     }
 
+    // /divisions
+
     @GetMapping("/divisions")
     public String divisions(Model model) {
+        System.out.println("=========== " + "divisions" + " ===========");
         List<Division> divisionList = dtm.listAllDivisions();
         model.addAttribute("divisionList", divisionList);
         model.addAttribute("divisionRequest", new DivisionRequest());
@@ -36,20 +39,41 @@ public class MyController
 
     @GetMapping("/divisions/filter")
     public String divisionsFilter(
-            @ModelAttribute("divisionRequest") DivisionRequest dr,
-            Model model
+        @ModelAttribute("divisionRequest") DivisionRequest dr,
+        Model model
     ) {
+        System.out.println("=========== " + "divisionsFilter" + " ===========");
         List<Division> divisionList = dtm.listLike(dr.getGetName(), dr.getHeadDivName(), dr.getChiefName(), dr.getChiefSurname(), dr.getChiefPatronymic());
         model.addAttribute("divisionList", divisionList);
 
         return "divisions.jsp";
     }
 
+    @GetMapping("/divisions/delete")
+    public String deleteDivision(
+        @ModelAttribute("divisionRequest") DivisionRequest dr,
+        Model model
+    ) {
+        System.out.println("=========== " + "deleteDivision" + " ===========");
+        dtm.delete(dtm.getById(dr.getId()));
+
+        return "redirect:/divisions";
+    }
+
+    @GetMapping("/divisions/{id}")
+    public String divisionInfo(Model model, @PathVariable String id) {
+        System.out.println("=========== " + "divisionInfo" + " ===========");
+        model.addAttribute("division", dtm.getById(Integer.parseInt(id)));
+
+        return "divisionInfo.jsp";
+    }
+
     @PostMapping("/divisions")
     public String addDivision(
-            @ModelAttribute("divisionRequest") DivisionRequest dr,
-            Model model
+    @ModelAttribute("divisionRequest") DivisionRequest dr,
+    Model model
     ) {
+        System.out.println("=========== " + "addDivision" + " ===========");
         Division div = new Division();
         div.setName(dr.getPostName());
         div.setChief(etm.getById(dr.getChiefId()));
@@ -59,12 +83,7 @@ public class MyController
         return "redirect:/divisions";
     }
 
-    @GetMapping("/divisions/{id}")
-    public String divisionInfo(Model model, @PathVariable String id) {
-        model.addAttribute("division", dtm.getById(Integer.parseInt(id)));
-
-        return "divisionInfo.jsp";
-    }
+    // /positions
 
     @GetMapping("/positions")
     public String positions() {
@@ -78,6 +97,8 @@ public class MyController
 
         return "positionInfo.jsp";
     }
+
+    // /employees
 
     @GetMapping("/employees")
     public String employees() {

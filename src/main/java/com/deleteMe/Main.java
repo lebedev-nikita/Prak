@@ -11,7 +11,14 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         DivisionTableManager dtm = new DivisionTableManager();
-        List<Division> divisionList = dtm.listLike("отд", "", "","", "");
+        List<Division> divisionList = dtm.listAllDivisions();
+        for (Division div: divisionList) {
+            System.out.println(div);
+        }
+
+        dtm.delete(dtm.getById(12));
+        System.out.println("================");
+        divisionList = dtm.listAllDivisions();
         for (Division div: divisionList) {
             System.out.println(div);
         }
