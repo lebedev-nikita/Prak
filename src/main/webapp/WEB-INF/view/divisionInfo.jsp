@@ -12,20 +12,20 @@
 </head>
 
 <body>
-    
-    <a href="/divisions"> <button>Divisions</button> </a>
-    <a href="/employees"> <button>Employees</button> </a>
-    <a href="/positions"> <button>Positions</button> </a>
+
+    <a href="/divisions" id="btnDivisions"> <button>Divisions</button> </a>
+    <a href="/employees" id="btnEmployees"> <button>Employees</button> </a>
+    <a href="/positions" id="btnPositions"> <button>Positions</button> </a>
     <br>
 
-    ID: ${division.getId()} <br>
-    Name: ${division.getName()} <br>
+    ID: <p id="ID">${division.getId()}</p> <br>
+    Name: <p id="Name">${division.getName()}</p> <br>
     Head division:
-    <a href="/divisions/${division.getHeadDiv().getId()}">
-        ${division.getHeadDiv().getName()}
+    <a href="/divisions/${division.getHeadDiv().getId()}" id="Head division">
+        <p>${division.getHeadDiv().getName()}</p>
     </a> <br>
     Chief:
-    <a href="/employees/${division.getChief().getId()}">
+    <a href="/employees/${division.getChief().getId()}"  id="Chief">
         ${division.getChief().getFullName()}
     </a> <br>
 
