@@ -7,14 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9162be5-4bfd-418f-9546-fdecda66f82b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webtests/DivisionsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webtests/TestTemplate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/chromedriver" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webtests/EmployeesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/divisionInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/divisionInfo.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/divisions.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/divisions.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/employeeInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/employeeInfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/employees.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/employees.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +77,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DivisionsTest.testFilter">
+  <component name="RunManager" selected="JUnit.EmployeesTest.testFilter">
     <configuration name="GlassFish 5.0.1" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.0.1" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
@@ -156,7 +152,7 @@
         </option>
       </method>
     </configuration>
-    <configuration name="DivisionsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EmployeesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FinalProject" />
       <extension name="coverage">
         <pattern>
@@ -165,13 +161,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.webtests" />
-      <option name="MAIN_CLASS_NAME" value="com.webtests.DivisionsTest" />
+      <option name="MAIN_CLASS_NAME" value="com.webtests.EmployeesTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DivisionsTest.testColumn_DivisionName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EmployeesTest.testColumn_id_and_EmployeeFullName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FinalProject" />
       <extension name="coverage">
         <pattern>
@@ -180,14 +176,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.webtests" />
-      <option name="MAIN_CLASS_NAME" value="com.webtests.DivisionsTest" />
-      <option name="METHOD_NAME" value="testColumn_DivisionName" />
+      <option name="MAIN_CLASS_NAME" value="com.webtests.EmployeesTest" />
+      <option name="METHOD_NAME" value="testColumn_id_and_EmployeeFullName" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DivisionsTest.testColumn_id_and_DivisionName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EmployeesTest.testColumn_id_and_EmployeeFullNameLink" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FinalProject" />
       <extension name="coverage">
         <pattern>
@@ -196,14 +192,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.webtests" />
-      <option name="MAIN_CLASS_NAME" value="com.webtests.DivisionsTest" />
-      <option name="METHOD_NAME" value="testColumn_id_and_DivisionName" />
+      <option name="MAIN_CLASS_NAME" value="com.webtests.EmployeesTest" />
+      <option name="METHOD_NAME" value="testColumn_id_and_EmployeeFullNameLink" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DivisionsTest.testDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EmployeesTest.testDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FinalProject" />
       <extension name="coverage">
         <pattern>
@@ -212,14 +208,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.webtests" />
-      <option name="MAIN_CLASS_NAME" value="com.webtests.DivisionsTest" />
+      <option name="MAIN_CLASS_NAME" value="com.webtests.EmployeesTest" />
       <option name="METHOD_NAME" value="testDelete" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DivisionsTest.testFilter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EmployeesTest.testFilter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FinalProject" />
       <extension name="coverage">
         <pattern>
@@ -228,7 +224,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.webtests" />
-      <option name="MAIN_CLASS_NAME" value="com.webtests.DivisionsTest" />
+      <option name="MAIN_CLASS_NAME" value="com.webtests.EmployeesTest" />
       <option name="METHOD_NAME" value="testFilter" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -237,19 +233,19 @@
     </configuration>
     <list>
       <item itemvalue="GlassFish Server.GlassFish 5.0.1" />
-      <item itemvalue="JUnit.DivisionsTest" />
-      <item itemvalue="JUnit.DivisionsTest.testColumn_id_and_DivisionName" />
-      <item itemvalue="JUnit.DivisionsTest.testDelete" />
-      <item itemvalue="JUnit.DivisionsTest.testColumn_DivisionName" />
-      <item itemvalue="JUnit.DivisionsTest.testFilter" />
+      <item itemvalue="JUnit.EmployeesTest" />
+      <item itemvalue="JUnit.EmployeesTest.testDelete" />
+      <item itemvalue="JUnit.EmployeesTest.testColumn_id_and_EmployeeFullName" />
+      <item itemvalue="JUnit.EmployeesTest.testColumn_id_and_EmployeeFullNameLink" />
+      <item itemvalue="JUnit.EmployeesTest.testFilter" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DivisionsTest.testFilter" />
-        <item itemvalue="JUnit.DivisionsTest" />
-        <item itemvalue="JUnit.DivisionsTest.testDelete" />
-        <item itemvalue="JUnit.DivisionsTest.testColumn_id_and_DivisionName" />
-        <item itemvalue="JUnit.DivisionsTest.testColumn_DivisionName" />
+        <item itemvalue="JUnit.EmployeesTest.testFilter" />
+        <item itemvalue="JUnit.EmployeesTest" />
+        <item itemvalue="JUnit.EmployeesTest.testColumn_id_and_EmployeeFullNameLink" />
+        <item itemvalue="JUnit.EmployeesTest.testColumn_id_and_EmployeeFullName" />
+        <item itemvalue="JUnit.EmployeesTest.testDelete" />
       </list>
     </recent_temporary>
   </component>
@@ -313,7 +309,7 @@
       <workItem from="1589197105651" duration="14317000" />
       <workItem from="1589229008837" duration="2798000" />
       <workItem from="1589279177829" duration="6078000" />
-      <workItem from="1589285866131" duration="3228000" />
+      <workItem from="1589285866131" duration="7711000" />
     </task>
     <servers />
   </component>
@@ -344,38 +340,38 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="453" y="122" key="#com.intellij.ide.util.MemberChooser/0.23.1280.777@0.23.1280.777" timestamp="1589140393258" />
-    <state width="1238" height="200" key="GridCell.Tab.0.bottom" timestamp="1589294868980">
+    <state width="1238" height="82" key="GridCell.Tab.0.bottom" timestamp="1589308573445">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="200" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1589294868980" />
-    <state width="1238" height="200" key="GridCell.Tab.0.center" timestamp="1589294868980">
+    <state width="1238" height="82" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1589308573445" />
+    <state width="1238" height="82" key="GridCell.Tab.0.center" timestamp="1589308573444">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="200" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1589294868980" />
-    <state width="1238" height="200" key="GridCell.Tab.0.left" timestamp="1589294868979">
+    <state width="1238" height="82" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1589308573444" />
+    <state width="1238" height="82" key="GridCell.Tab.0.left" timestamp="1589308573444">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="200" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1589294868979" />
-    <state width="1238" height="200" key="GridCell.Tab.0.right" timestamp="1589294868980">
+    <state width="1238" height="82" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1589308573444" />
+    <state width="1238" height="82" key="GridCell.Tab.0.right" timestamp="1589308573444">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="200" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1589294868980" />
-    <state width="967" height="191" key="GridCell.Tab.1.bottom" timestamp="1589294308121">
+    <state width="1238" height="82" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1589308573444" />
+    <state width="967" height="211" key="GridCell.Tab.1.bottom" timestamp="1589307184245">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="191" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1589294308121" />
-    <state width="967" height="191" key="GridCell.Tab.1.center" timestamp="1589294308121">
+    <state width="967" height="211" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1589307184245" />
+    <state width="967" height="211" key="GridCell.Tab.1.center" timestamp="1589307184245">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="191" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1589294308121" />
-    <state width="967" height="191" key="GridCell.Tab.1.left" timestamp="1589294308121">
+    <state width="967" height="211" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1589307184245" />
+    <state width="967" height="211" key="GridCell.Tab.1.left" timestamp="1589307184245">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="191" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1589294308121" />
-    <state width="967" height="191" key="GridCell.Tab.1.right" timestamp="1589294308121">
+    <state width="967" height="211" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1589307184245" />
+    <state width="967" height="211" key="GridCell.Tab.1.right" timestamp="1589307184245">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="191" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1589294308121" />
+    <state width="967" height="211" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1589307184245" />
     <state width="967" height="173" key="GridCell.Tab.2.bottom" timestamp="1589048473415">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
