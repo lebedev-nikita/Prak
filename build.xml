@@ -2,7 +2,7 @@
 <project name="finalproject" default="all">
 
 
-  <property file="finalproject.properties"/>
+  <property file="build.properties"/>
   <!-- Uncomment the following property if no tests compilation is needed -->
   <!--
   <property name="skip.tests" value="true"/>
@@ -86,7 +86,6 @@
       <include name="lib/packager.jar"/>
       <include name="lib/sa-jdi.jar"/>
       <include name="lib/tools.jar"/>
-      <include name="../../../../../../Users/nikita/Work/PersonnelManagementSystem/lib/postgresql-42.2.10.jar"/>
     </fileset>
   </path>
 
@@ -1013,72 +1012,24 @@
     <delete dir="${artifacts.temp.dir}"/>
   </target>
 
-  <!-- =============================================================== -->
+  <!-- ==================================================================== -->
 
-  <target name="run">
-    <java classname="Main"  fork="true">
-      <classpath>
-        <pathelement location="${module.finalproject.basedir}/out/artifacts/finalproject_jar/finalproject.jar"/>
-        <pathelement path="."/>
-      </classpath>
-    </java>
-  </target>
-
-  <path id="application" location="${module.finalproject.basedir}/out/artifacts/finalproject_jar/finalproject.jar"/>
-  <target name="finalproject.junit">
-    <junit printsummary="yes" showoutput="yes">
-      <classpath>
-        <path refid="application"/>
-      </classpath>
-      <test name="mx.test_findByID"></test>
-      <test name="mx.test_generatorClientPages"></test>
-      <test name="mx.test_generatorConnectPage"></test>
-      <test name="mx.test_generatorContactPage"></test>
-      <test name="mx.test_generatorOneClientPage"></test>
-      <test name="mx.test_generatorOneServicePage"></test>
-      <test name="mx.test_generatorServicePage"></test>
-      <test name="mx.test_generatorTariffPage"></test>
-      <test name="mx.test_IDU_ALL"></test>
-      <test name="mx.test_day"></test>
-    </junit>
-  </target>
-
-
-  <path id="application" location="${module.finalproject.basedir}/out/artifacts/finalproject_jar/finalproject.jar"/>
-  <target name="test">
-    <junit printsummary="yes" showoutput="yes">
-      <classpath>
-        <path refid="application"/>
-      </classpath>
-      <test name="selenium.balanceTest"></test>
-      <test name="selenium.clientAddTest"></test>
-      <test name="selenium.clientExtendedTest"></test>
-      <test name="selenium.connectTest"></test>
-      <test name="selenium.contactTest"></test>
-      <test name="selenium.oneClientAddDeleteContactTest"></test>
-      <test name="selenium.oneClientTest"></test>
-      <test name="selenium.oneServiceTest"></test>
-      <test name="selenium.serviceTest"></test>
-      <test name="selenium.tariffTest"></test>
-    </junit>
-  </target>
-
-
-  <target name="runServer" depends="stopServer">
-    <exec executable="${module.finalproject.basedir}/glassfish5/bin/asadmin">
-      <arg value="start-domain"/>
-    </exec>
+  <target name="startServer" depends="stopServer">
+      <exec executable="${module.finalproject.basedir}/glassfish5/glassfish/bin/asadmin">
+        <arg value="start-domain"/>
+        <arg value="domain1"/>
+      </exec>
   </target>
 
   <target name="stopServer">
-    <exec executable="${module.finalproject.basedir}/glassfish5/bin/asadmin">
+    <exec executable="${module.finalproject.basedir}/glassfish5/glassfish/bin/asadmin">
       <arg value="stop-domain"/>
       <arg value="domain1"/>
     </exec>
   </target>
 
-  <target name="ServerDeployWar">
-    <exec executable="${module.finalproject.basedir}/glassfish5/bin/asadmin">
+  <target name="deployWar" depends="startServer, all">
+    <exec executable="${module.finalproject.basedir}/glassfish5/glassfish/bin/asadmin">
       <arg value="deploy"/>
       <arg value="--force"/>
       <arg value="--contextroot"/>
@@ -1086,20 +1037,18 @@
       <arg value="${module.finalproject.basedir}/target/FinalProject.war"/>
     </exec>
   </target>
-  <!-- <arg value="${module.finalproject.basedir}/out/artifacts/finalproject_war_exploded/finalproject_war_exploded.war"/> -->
 
-  <target name="ServerUndeployWar">
-    <exec executable="${module.finalproject.basedir}/glassfish5/bin/asadmin">
+  <target name="undeployWar">
+    <exec executable="${module.finalproject.basedir}/glassfish5/glassfish/bin/asadmin">
       <arg value="undeploy"/>
-      <arg value="finalproject_war_exploded"/>
+      <arg value="FinalProject"/>
     </exec>
   </target>
-  <!-- <arg value="finalproject_war_exploded"/> -->
 
-  <target name="startApp" depends="all,runServer,ServerDeployWar" />
-  <target name="stopApp" depends="ServerUndeployWar,stopServer" />
+  <target name="startApp" depends="all, deployWar"></target>
+  <target name="stopApp" depends="stopServer"></target>
 
-  <!-- =============================================================== -->
+  <!-- ==================================================================== -->
 
   <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
 </project>

@@ -7,20 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9162be5-4bfd-418f-9546-fdecda66f82b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/ant.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ant.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalproject.xml" beforeDir="false" afterPath="$PROJECT_DIR$/finalproject.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/config/domain.xml" beforeDir="false" afterPath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/config/domain.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/config/domain.xml.bak" beforeDir="false" afterPath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/config/domain.xml.bak" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/config/local-password" beforeDir="false" afterPath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/config/local-password" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/config/pid.prev" beforeDir="false" afterPath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/config/pid.prev" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/generated/jsp/FinalProject/org/apache/jsp/WEB_002dINF/view/divisionInfo_jsp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/generated/jsp/FinalProject/org/apache/jsp/WEB_002dINF/view/divisions_jsp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/generated/jsp/FinalProject/org/apache/jsp/WEB_002dINF/view/employeeInfo_jsp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/generated/jsp/FinalProject/org/apache/jsp/WEB_002dINF/view/employees_jsp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/generated/jsp/FinalProject/org/apache/jsp/WEB_002dINF/view/positionInfo_jsp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/generated/jsp/FinalProject/org/apache/jsp/WEB_002dINF/view/positions_jsp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/generated/policy/FinalProject/FinalProject/granted.policy" beforeDir="false" afterPath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/generated/policy/FinalProject/FinalProject/granted.policy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/logs/server.log" beforeDir="false" afterPath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/logs/server.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalproject.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalproject.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +62,7 @@
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="true" />
     <property name="GenerateAntBuildDialog.generateSingleFile" value="true" />
-    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="finalproject" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="build" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
