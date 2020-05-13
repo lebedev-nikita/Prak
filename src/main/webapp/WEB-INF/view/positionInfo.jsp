@@ -12,13 +12,13 @@
 </head>
 
 <body>
-    
+
     <a href="/divisions"> <button>Divisions</button> </a>
     <a href="/employees"> <button>Employees</button> </a>
     <a href="/positions"> <button>Positions</button> </a>
     <br>
 
-    ID: ${position.getId()} <br>
+    ID: <p id="ID">${position.getId()}</p> <br>
     Name: ${position.getName()} <br>
     Division: ${position.getDivision().getName()} <br>
     Responsibilities: ${position.getResponsibilities()} <br>

@@ -14,8 +14,9 @@ import static org.junit.Assert.*;
 
 public class EmployeesTest {
     public ChromeDriver cd;
-    public DivisionTableManager dtm = new DivisionTableManager();
     public EmployeeTableManager etm = new EmployeeTableManager();
+    public String pageURL = "http://localhost:8080/employees";
+
 
     // ===================================================================================
 
@@ -64,10 +65,10 @@ public class EmployeesTest {
     }
 
     private void deleteLastEmployee() {
-        cd.get("http://localhost:8080/employees");
+        cd.get(pageURL);
         int deleteId = Integer.parseInt(getLastValue("idColumn"));
         etm.delete(etm.getById(deleteId));
-        cd.get("http://localhost:8080/employees");
+        cd.get(pageURL);
     };
 
     // ===================================================================================
@@ -81,7 +82,7 @@ public class EmployeesTest {
         );
 
         cd = new ChromeDriver();
-        cd.get("http://localhost:8080/employees");
+        cd.get(pageURL);
 
         System.out.println("===== " + "test started" + " =====");
     }
@@ -123,7 +124,7 @@ public class EmployeesTest {
         // ArrayList<WebElement> divNameColumn, headDivNameColumn, chiefFullNameColumn;
 
         // 1
-        cd.get("http://localhost:8080/employees");
+        cd.get(pageURL);
 
         getName = cd.findElementById("getName");
         getSurname = cd.findElementById("getSurname");
@@ -150,7 +151,7 @@ public class EmployeesTest {
 
         // 2
 
-        cd.get("http://localhost:8080/employees");
+        cd.get(pageURL);
         getName = cd.findElementById("getName");
         getSurname = cd.findElementById("getSurname");
         getPatronymic = cd.findElementById("getPatronymic");
@@ -178,7 +179,7 @@ public class EmployeesTest {
 
 
         // 3
-        cd.get("http://localhost:8080/employees");
+        cd.get(pageURL);
         getName = cd.findElementById("getName");
         getSurname = cd.findElementById("getSurname");
         getPatronymic = cd.findElementById("getPatronymic");

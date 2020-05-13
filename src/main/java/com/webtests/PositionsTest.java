@@ -2,39 +2,35 @@ package com.webtests;
 
 import com.db.DAO.DivisionTableManager;
 import com.db.DAO.EmployeeTableManager;
-import com.db.entity.Division;
-import com.sun.source.tree.AssertTree;
-import com.sun.xml.internal.xsom.impl.scd.Iterators;
+import com.db.DAO.PositionTableManager;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class DivisionsTest {
+public class PositionsTest {
     public ChromeDriver cd;
     public DivisionTableManager dtm = new DivisionTableManager();
     public EmployeeTableManager etm = new EmployeeTableManager();
-    public String pageURL = "http://localhost:8080/divisions";
+    public PositionTableManager ptm = new PositionTableManager();
+    public String pageURL = "http://localhost:8080/positions";
 
     // ===================================================================================
 
-    private void createNewDivision(String name, int headDivId, int chiefId) {
+    private void createNewPosition(String postName, int postDivisionId, String postResponsibilities) {
         cd.findElementById("postName").clear();
-        cd.findElementById("postName").sendKeys(name);
+        cd.findElementById("postName").sendKeys(postName);
 
-        cd.findElementById("headDivId").clear();
-        cd.findElementById("headDivId").sendKeys(Integer.toString(headDivId));
+        cd.findElementById("postDivisionId").clear();
+        cd.findElementById("postDivisionId").sendKeys(Integer.toString(postDivisionId));
 
-        cd.findElementById("chiefId").clear();
-        cd.findElementById("chiefId").sendKeys(Integer.toString(chiefId));
+        cd.findElementById("postResponsibilities").clear();
+        cd.findElementById("postResponsibilities").sendKeys(postResponsibilities);
 
         cd.findElementById("Create").click();
     }
@@ -67,10 +63,11 @@ public class DivisionsTest {
     }
 
 
-    private void deleteLastDivision() {
+    private void deleteLastPosition() {
         cd.get(pageURL);
         int deleteId = Integer.parseInt(getLastValue("idColumn"));
-        dtm.delete(dtm.getById(deleteId));
+        ptm.delete(ptm.getById(deleteId));
+        cd.get(pageURL);
     };
 
     // ===================================================================================
@@ -115,41 +112,43 @@ public class DivisionsTest {
     @Test
     public void testFilter() {
 
-        createNewDivision("testFilter1", 1, 1);
-        createNewDivision("testFilter2", 1, 2);
-        createNewDivision("testFilter3", 2, 1);
-        createNewDivision("testFilter4", 2, 2);
+        createNewPosition("testFilter1", 1, "Есть");
+        createNewPosition("testFilter2", 2, "Спать");
+        createNewPosition("testFilter3", 3, "Есть");
+        createNewPosition("testFilter4", 4, "Спать");
 
-        WebElement getName, headDivName, chiefName, chiefSurname, chiefPatronymic, Filter;
-        ArrayList<WebElement> divNameColumn, headDivNameColumn, chiefFullNameColumn;
+        // WebElement getName, headDivName, chiefName, chiefSurname, chiefPatronymic, Filter;
+        // ArrayList<WebElement> divNameColumn, headDivNameColumn, chiefFullNameColumn;
+        WebElement getName, getResponsibilities, getDivisionName, getDivisionId, Filter;
+        ArrayList<WebElement> idColumn, nameColumn, responsibilitiesColumn, divisionNameColumn, divisionIdColumn;
 
         // 1
         cd.get(pageURL);
 
         getName = cd.findElementById("getName");
-        headDivName = cd.findElementById("headDivName");
-        chiefName = cd.findElementById("chiefName");
-        chiefSurname = cd.findElementById("chiefSurname");
-        chiefPatronymic = cd.findElementById("chiefPatronymic");
+        getResponsibilities = cd.findElementById("getResponsibilities");
+        getDivisionName = cd.findElementById("getDivisionName");
+        getDivisionId = cd.findElementById("getDivisionId");
 
         Filter = cd.findElementById("Filter");
 
         getName.clear();
-        headDivName.clear();
-        chiefName.clear();
-        chiefSurname.clear();
-        chiefPatronymic.clear();
+        getResponsibilities.clear();
+        getDivisionName.clear();
+        getDivisionId.clear();
 
         getName.sendKeys("testFilter");
         Filter.click();
 
-        divNameColumn = getColumn("divNameColumn");
-        headDivNameColumn = getColumn("headDivNameColumn");
-        chiefFullNameColumn = getColumn("chiefFullNameColumn");
+        idColumn = getColumn("idColumn");
+        nameColumn = getColumn("nameColumn");
+        responsibilitiesColumn = getColumn("responsibilitiesColumn");
+        divisionNameColumn = getColumn("divisionNameColumn");
+        divisionIdColumn = getColumn("divisionIdColumn");
 
-        for (int i = 0; i < divNameColumn.size(); i++) {
-            System.out.println(divNameColumn.get(i).getText());
-            assertTrue(divNameColumn.get(i).getText().contains("testFilter"));
+        for (int i = 0; i < idColumn.size(); i++) {
+            System.out.println(nameColumn.get(i).getText());
+            assertTrue(nameColumn.get(i).getText().contains("testFilter"));
         }
         System.out.println("Stage 1 passed");
 
@@ -157,30 +156,30 @@ public class DivisionsTest {
         cd.get(pageURL);
 
         getName = cd.findElementById("getName");
-        headDivName = cd.findElementById("headDivName");
-        chiefName = cd.findElementById("chiefName");
-        chiefSurname = cd.findElementById("chiefSurname");
-        chiefPatronymic = cd.findElementById("chiefPatronymic");
+        getResponsibilities = cd.findElementById("getResponsibilities");
+        getDivisionName = cd.findElementById("getDivisionName");
+        getDivisionId = cd.findElementById("getDivisionId");
 
         Filter = cd.findElementById("Filter");
 
         getName.clear();
-        headDivName.clear();
-        chiefName.clear();
-        chiefSurname.clear();
-        chiefPatronymic.clear();
+        getResponsibilities.clear();
+        getDivisionName.clear();
+        getDivisionId.clear();
 
         getName.sendKeys("testFilter");
-        chiefName.sendKeys(etm.getById(1).getName());
+        getResponsibilities.sendKeys("Есть");
         Filter.click();
 
-        divNameColumn = getColumn("divNameColumn");
-        headDivNameColumn = getColumn("headDivNameColumn");
-        chiefFullNameColumn = getColumn("chiefFullNameColumn");
+        idColumn = getColumn("idColumn");
+        nameColumn = getColumn("nameColumn");
+        responsibilitiesColumn = getColumn("responsibilitiesColumn");
+        divisionNameColumn = getColumn("divisionNameColumn");
+        divisionIdColumn = getColumn("divisionIdColumn");
 
-        for (int i = 0; i < divNameColumn.size(); i++) {
-            assertTrue(divNameColumn.get(i).getText().contains("testFilter"));
-            assertTrue(chiefFullNameColumn.get(i).getText().contains(etm.getById(1).getFullName()));
+        for (int i = 0; i < idColumn.size(); i++) {
+            assertTrue(nameColumn.get(i).getText().contains("testFilter"));
+            assertTrue(responsibilitiesColumn.get(i).getText().contains("Есть"));
         }
         System.out.println("Stage 2 passed");
 
@@ -189,45 +188,45 @@ public class DivisionsTest {
         cd.get(pageURL);
 
         getName = cd.findElementById("getName");
-        headDivName = cd.findElementById("headDivName");
-        chiefName = cd.findElementById("chiefName");
-        chiefSurname = cd.findElementById("chiefSurname");
-        chiefPatronymic = cd.findElementById("chiefPatronymic");
+        getResponsibilities = cd.findElementById("getResponsibilities");
+        getDivisionName = cd.findElementById("getDivisionName");
+        getDivisionId = cd.findElementById("getDivisionId");
 
         Filter = cd.findElementById("Filter");
 
         getName.clear();
-        headDivName.clear();
-        chiefName.clear();
-        chiefSurname.clear();
-        chiefPatronymic.clear();
+        getResponsibilities.clear();
+        getDivisionName.clear();
+        getDivisionId.clear();
 
         getName.sendKeys("testFilter");
-        chiefName.sendKeys(etm.getById(1).getName());
-        headDivName.sendKeys(dtm.getById(2).getName());
+        getResponsibilities.sendKeys("Спать");
+        getDivisionName.sendKeys("отдел");
         Filter.click();
 
-        divNameColumn = getColumn("divNameColumn");
-        headDivNameColumn = getColumn("headDivNameColumn");
-        chiefFullNameColumn = getColumn("chiefFullNameColumn");
+        idColumn = getColumn("idColumn");
+        nameColumn = getColumn("nameColumn");
+        responsibilitiesColumn = getColumn("responsibilitiesColumn");
+        divisionNameColumn = getColumn("divisionNameColumn");
+        divisionIdColumn = getColumn("divisionIdColumn");
 
-        for (int i = 0; i < divNameColumn.size(); i++) {
-            assertTrue(divNameColumn.get(i).getText().contains("testFilter"));
-            assertTrue(headDivNameColumn.get(i).getText().contains(dtm.getById(2).getName()));
-            assertTrue(chiefFullNameColumn.get(i).getText().contains(etm.getById(1).getFullName()));
+        for (int i = 0; i < idColumn.size(); i++) {
+            assertTrue(nameColumn.get(i).getText().contains("testFilter"));
+            assertTrue(responsibilitiesColumn.get(i).getText().contains("Спать"));
+            assertTrue(divisionNameColumn.get(i).getText().contains("отдел"));
         }
         System.out.println("Stage 3 passed");
 
 
-        deleteLastDivision();
-        deleteLastDivision();
-        deleteLastDivision();
-        deleteLastDivision();
+        deleteLastPosition();
+        deleteLastPosition();
+        deleteLastPosition();
+        deleteLastPosition();
     }
 
     @Test
     public void testDelete() {
-        createNewDivision("testDelete", 1,1);
+        createNewPosition("testDelete", 1,"Должна удаляться успешно");
 
         System.out.println("Title: " + cd.getTitle());
         int size1 = getColumn("idColumn").size();
@@ -245,34 +244,34 @@ public class DivisionsTest {
     }
 
     @Test
-    public void testColumn_id_and_DivisionName() {
-        createNewDivision("testColumn_id_and_DivisionName", 1, 1);
+    public void testColumn_id_and_PositionName() {
+        createNewPosition("testColumn_id_and_DivisionName", 1, "Some responsibilities");
 
-        ArrayList<WebElement> divName = getColumn("divNameColumn");
+        ArrayList<WebElement> nameColumn = getColumn("nameColumn");
 
         String valueInColumn = getLastValue("idColumn");
         System.out.println("Value in column: " + valueInColumn);
 
-        System.out.println("divNameColumn size: " + divName.size());
-        divName.get(findMaxIdOffset()).click();
+        System.out.println("divNameColumn size: " + nameColumn.size());
+        nameColumn.get(findMaxIdOffset()).click();
 
         String valueInDivisionInfo = cd.findElementById("ID").getText();
         System.out.println(valueInDivisionInfo);
 
         assertEquals(valueInDivisionInfo, valueInColumn);
 
-        deleteLastDivision();
+        deleteLastPosition();
     }
 
     @Test
-    public void testColumn_DivisionName() {
-        createNewDivision("testColumn_DivisionName", 1, 1);
-        String lastName = getLastValue("divNameColumn");
-        System.out.println("Last divName in column: " + lastName);
+    public void testColumn_PositionName() {
+        createNewPosition("testColumn_PositionName", 1, "test");
+        String lastPosName = getLastValue("nameColumn");
+        System.out.println("Last posName in column: " + lastPosName);
 
-        assertEquals(lastName, "testColumn_DivisionName");
+        assertEquals("testColumn_PositionName", lastPosName);
 
-        deleteLastDivision();
+        deleteLastPosition();
     }
 
     @Test

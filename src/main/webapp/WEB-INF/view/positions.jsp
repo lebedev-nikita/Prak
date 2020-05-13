@@ -14,33 +14,33 @@
 
 <body>
 
-    <a href="/divisions"> <button>Divisions</button> </a>
-    <a href="/employees"> <button>Employees</button> </a>
-    <a href="/positions"> <button class="selectedButton">Positions</button> </a>
+    <a href="/divisions" id="btnDivisions"> <button>Divisions</button> </a>
+    <a href="/employees" id="btnEmployees"> <button>Employees</button> </a>
+    <a href="/positions" id="btnPositions"> <button class="selectedButton">Positions</button> </a>
     <br><br>
+
     <h2> Create position: </h2>
     <form:form method="post" action="/positions" modelAttribute="positionRequest">
-        Name: <form:input path="postName" /> <br>
-        Division id: <form:input path="postDivisionId" /> <br>
-        Responsibilities: <form:input path="postResponsibilities" /> <br>
-        <input type="submit" value="Create" />
+        Name: <form:input path="postName"                         id="postName"/> <br>
+        Division id: <form:input path="postDivisionId"            id="postDivisionId" /> <br>
+        Responsibilities: <form:input path="postResponsibilities" id="postResponsibilities"/> <br>
+        <input type="submit" value="Create"                     id="Create"/>
     </form:form>
 
     <h2>Delete position:</h2>
     <form:form method="get" action="/positions/delete" modelAttribute="positionRequest">
-        id: <form:input path="id" /> <br><br>
-        <input type="submit" value="Delete" />
+        id: <form:input path="id"                   id="deleteId" /> <br><br>
+        <input type="submit" value="Delete"     id="Delete" />
     </form:form>
 
     <h2> Filter positions: </h2>
     <form:form method="get" action="/positions/filter" modelAttribute="positionRequest">
-        Name: <form:input path="getName" /> <br>
-        Responsibilities: <form:input path="getResponsibilities" /> <br>
-        Division name: <form:input path="getDivisionName" /> <br>
-        Division id: <form:input path="getDivisionId" /> <br>
-        <input type="submit" value="Filter">
+        Name: <form:input path="getName"                         id="getName" /> <br>
+        Responsibilities: <form:input path="getResponsibilities" id="getResponsibilities" /> <br>
+        Division name: <form:input path="getDivisionName"        id="getDivisionName" /> <br>
+        Division id: <form:input path="getDivisionId"            id="getDivisionId" /> <br>
+        <input type="submit" value="Filter"                 id="Filter">
     </form:form>
-<%-- --%>
 
     <h2>List of positions: </h2>
     Amount of lines: ${positionList.size()} <br><br>
@@ -55,21 +55,21 @@
         </tr>
         <c:forEach items="${positionList}" var="position">
             <tr>
-                <td>
+                <td id="idColumn">
                     ${position.getId()}
                 </td>
-                <td>
+                <td id="nameColumn">
                     <a href="/positions/${position.getId()}">
                         ${position.getName()}
                     </a>
                 </td>
-                <td>
+                <td id="responsibilitiesColumn">
                     ${position.getResponsibilities()}
                 </td>
-                <td>
+                <td id="divisionNameColumn">
                     ${position.getDivision().getName()}
                 </td>
-                <td>
+                <td id="divisionIdColumn">
                     ${position.getDivision().getId()}
                 </td>
                 <td>
