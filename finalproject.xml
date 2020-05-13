@@ -1,0 +1,1105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="finalproject" default="all">
+
+
+  <property file="finalproject.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!--
+  <property name="skip.tests" value="true"/>
+   -->
+
+  <!-- Compiler options -->
+
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*.yarb/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.egg"/>
+    <include name="*.jar"/>
+    <include name="*.ear"/>
+    <include name="*.ane"/>
+    <include name="*.klib"/>
+    <include name="*.swc"/>
+    <include name="*.war"/>
+    <include name="*.zip"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+    <exclude name="**/?*.aj"/>
+  </patternset>
+
+  <!-- JDK definitions -->
+
+  <property name="jdk.bin.1.8" value="${jdk.home.1.8}/bin"/>
+  <path id="jdk.classpath.1.8">
+    <fileset dir="${jdk.home.1.8}">
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/ext/cldrdata.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/jaccess.jar"/>
+      <include name="jre/lib/ext/jfxrt.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/nashorn.jar"/>
+      <include name="jre/lib/ext/sunec.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+      <include name="jre/lib/ext/sunpkcs11.jar"/>
+      <include name="jre/lib/ext/zipfs.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jfr.jar"/>
+      <include name="jre/lib/jfxswt.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/rt.jar"/>
+      <include name="lib/ant-javafx.jar"/>
+      <include name="lib/dt.jar"/>
+      <include name="lib/javafx-mx.jar"/>
+      <include name="lib/jconsole.jar"/>
+      <include name="lib/packager.jar"/>
+      <include name="lib/sa-jdi.jar"/>
+      <include name="lib/tools.jar"/>
+      <include name="../../../../../../Users/nikita/Work/PersonnelManagementSystem/lib/postgresql-42.2.10.jar"/>
+    </fileset>
+  </path>
+
+  <property name="project.jdk.home" value="${jdk.home.1.8}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.8}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.8"/>
+
+
+  <!-- Project Libraries -->
+
+  <path id="library.maven:_antlr:antlr:2.7.7.classpath">
+    <pathelement location="${path.variable.maven_repository}/antlr/antlr/2.7.7/antlr-2.7.7.jar"/>
+  </path>
+
+  <path id="library.maven:_com.fasterxml:classmate:1.5.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar"/>
+  </path>
+
+  <path id="library.maven:_com.google.auto.service:auto-service-annotations:1.0-rc6.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/google/auto/service/auto-service-annotations/1.0-rc6/auto-service-annotations-1.0-rc6.jar"/>
+  </path>
+
+  <path id="library.maven:_com.google.auto.service:auto-service:1.0-rc6.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/google/auto/service/auto-service/1.0-rc6/auto-service-1.0-rc6.jar"/>
+  </path>
+
+  <path id="library.maven:_com.google.auto:auto-common:0.10.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/google/auto/auto-common/0.10/auto-common-0.10.jar"/>
+  </path>
+
+  <path id="library.maven:_com.google.code.findbugs:jsr305:3.0.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar"/>
+  </path>
+
+  <path id="library.maven:_com.google.errorprone:error_prone_annotations:2.3.4.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/google/errorprone/error_prone_annotations/2.3.4/error_prone_annotations-2.3.4.jar"/>
+  </path>
+
+  <path id="library.maven:_com.google.guava:failureaccess:1.0.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar"/>
+  </path>
+
+  <path id="library.maven:_com.google.guava:guava:28.2-jre.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/google/guava/guava/28.2-jre/guava-28.2-jre.jar"/>
+  </path>
+
+  <path id="library.maven:_com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar"/>
+  </path>
+
+  <path id="library.maven:_com.google.j2objc:j2objc-annotations:1.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar"/>
+  </path>
+
+  <path id="library.maven:_com.squareup.okhttp3:okhttp:4.4.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/squareup/okhttp3/okhttp/4.4.1/okhttp-4.4.1.jar"/>
+  </path>
+
+  <path id="library.maven:_com.squareup.okio:okio:2.4.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/squareup/okio/okio/2.4.3/okio-2.4.3.jar"/>
+  </path>
+
+  <path id="library.maven:_com.sun.activation:javax.activation:1.2.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/sun/activation/javax.activation/1.2.0/javax.activation-1.2.0.jar"/>
+  </path>
+
+  <path id="library.maven:_com.sun.istack:istack-commons-runtime:3.0.7.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/sun/istack/istack-commons-runtime/3.0.7/istack-commons-runtime-3.0.7.jar"/>
+  </path>
+
+  <path id="library.maven:_com.sun.xml.fastinfoset:fastinfoset:1.2.15.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/sun/xml/fastinfoset/FastInfoset/1.2.15/FastInfoset-1.2.15.jar"/>
+  </path>
+
+  <path id="library.maven:_com.typesafe.netty:netty-reactive-streams:2.0.4.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/typesafe/netty/netty-reactive-streams/2.0.4/netty-reactive-streams-2.0.4.jar"/>
+  </path>
+
+  <path id="library.maven:_io.grpc:grpc-context:1.24.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/io/grpc/grpc-context/1.24.0/grpc-context-1.24.0.jar"/>
+  </path>
+
+  <path id="library.maven:_io.netty:netty-buffer:4.1.47.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/io/netty/netty-buffer/4.1.47.Final/netty-buffer-4.1.47.Final.jar"/>
+  </path>
+
+  <path id="library.maven:_io.netty:netty-codec-http:4.1.47.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/io/netty/netty-codec-http/4.1.47.Final/netty-codec-http-4.1.47.Final.jar"/>
+  </path>
+
+  <path id="library.maven:_io.netty:netty-codec-socks:4.1.46.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/io/netty/netty-codec-socks/4.1.46.Final/netty-codec-socks-4.1.46.Final.jar"/>
+  </path>
+
+  <path id="library.maven:_io.netty:netty-codec:4.1.47.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/io/netty/netty-codec/4.1.47.Final/netty-codec-4.1.47.Final.jar"/>
+  </path>
+
+  <path id="library.maven:_io.netty:netty-common:4.1.47.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/io/netty/netty-common/4.1.47.Final/netty-common-4.1.47.Final.jar"/>
+  </path>
+
+  <path id="library.maven:_io.netty:netty-handler-proxy:4.1.46.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/io/netty/netty-handler-proxy/4.1.46.Final/netty-handler-proxy-4.1.46.Final.jar"/>
+  </path>
+
+  <path id="library.maven:_io.netty:netty-handler:4.1.43.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/io/netty/netty-handler/4.1.43.Final/netty-handler-4.1.43.Final.jar"/>
+  </path>
+
+  <path id="library.maven:_io.netty:netty-resolver:4.1.47.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/io/netty/netty-resolver/4.1.47.Final/netty-resolver-4.1.47.Final.jar"/>
+  </path>
+
+  <path id="library.maven:_io.netty:netty-transport-native-epoll:4.1.47.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/io/netty/netty-transport-native-epoll/4.1.47.Final/netty-transport-native-epoll-4.1.47.Final.jar"/>
+  </path>
+
+  <path id="library.maven:_io.netty:netty-transport-native-epoll:linux-x86_64:4.1.47.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/io/netty/netty-transport-native-epoll/4.1.47.Final/netty-transport-native-epoll-4.1.47.Final-linux-x86_64.jar"/>
+  </path>
+
+  <path id="library.maven:_io.netty:netty-transport-native-kqueue:4.1.47.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/io/netty/netty-transport-native-kqueue/4.1.47.Final/netty-transport-native-kqueue-4.1.47.Final.jar"/>
+  </path>
+
+  <path id="library.maven:_io.netty:netty-transport-native-kqueue:osx-x86_64:4.1.47.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/io/netty/netty-transport-native-kqueue/4.1.47.Final/netty-transport-native-kqueue-4.1.47.Final-osx-x86_64.jar"/>
+  </path>
+
+  <path id="library.maven:_io.netty:netty-transport-native-unix-common:4.1.47.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/io/netty/netty-transport-native-unix-common/4.1.47.Final/netty-transport-native-unix-common-4.1.47.Final.jar"/>
+  </path>
+
+  <path id="library.maven:_io.netty:netty-transport:4.1.47.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/io/netty/netty-transport/4.1.47.Final/netty-transport-4.1.47.Final.jar"/>
+  </path>
+
+  <path id="library.maven:_io.opentelemetry:opentelemetry-api:0.2.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/io/opentelemetry/opentelemetry-api/0.2.0/opentelemetry-api-0.2.0.jar"/>
+  </path>
+
+  <path id="library.maven:_javax.activation:javax.activation-api:1.2.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar"/>
+  </path>
+
+  <path id="library.maven:_javax.persistence:javax.persistence-api:2.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2.jar"/>
+  </path>
+
+  <path id="library.maven:_javax.servlet:jstl:1.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/javax/servlet/jstl/1.2/jstl-1.2.jar"/>
+  </path>
+
+  <path id="library.maven:_javax.xml.bind:jaxb-api:2.3.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar"/>
+  </path>
+
+  <path id="library.maven:_junit:junit:4.13.classpath">
+    <pathelement location="${path.variable.maven_repository}/junit/junit/4.13/junit-4.13.jar"/>
+  </path>
+
+  <path id="library.maven:_net.bytebuddy:byte-buddy:1.10.7.classpath">
+    <pathelement location="${path.variable.maven_repository}/net/bytebuddy/byte-buddy/1.10.7/byte-buddy-1.10.7.jar"/>
+  </path>
+
+  <path id="library.maven:_org.apache.commons:commons-exec:1.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar"/>
+  </path>
+
+  <path id="library.maven:_org.asynchttpclient:async-http-client-netty-utils:2.11.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/asynchttpclient/async-http-client-netty-utils/2.11.0/async-http-client-netty-utils-2.11.0.jar"/>
+  </path>
+
+  <path id="library.maven:_org.asynchttpclient:async-http-client:2.11.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/asynchttpclient/async-http-client/2.11.0/async-http-client-2.11.0.jar"/>
+  </path>
+
+  <path id="library.maven:_org.checkerframework:checker-qual:2.10.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/checkerframework/checker-qual/2.10.0/checker-qual-2.10.0.jar"/>
+  </path>
+
+  <path id="library.maven:_org.dom4j:dom4j:2.1.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/dom4j/dom4j/2.1.1/dom4j-2.1.1.jar"/>
+  </path>
+
+  <path id="library.maven:_org.glassfish.jaxb:jaxb-runtime:2.3.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/jaxb/jaxb-runtime/2.3.1/jaxb-runtime-2.3.1.jar"/>
+  </path>
+
+  <path id="library.maven:_org.glassfish.jaxb:txw2:2.3.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/jaxb/txw2/2.3.1/txw2-2.3.1.jar"/>
+  </path>
+
+  <path id="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"/>
+  </path>
+
+  <path id="library.maven:_org.hibernate.common:hibernate-commons-annotations:5.1.0.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/hibernate/common/hibernate-commons-annotations/5.1.0.Final/hibernate-commons-annotations-5.1.0.Final.jar"/>
+  </path>
+
+  <path id="library.maven:_org.hibernate:hibernate-core:5.4.11.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/hibernate/hibernate-core/5.4.11.Final/hibernate-core-5.4.11.Final.jar"/>
+  </path>
+
+  <path id="library.maven:_org.javassist:javassist:3.24.0-ga.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/javassist/javassist/3.24.0-GA/javassist-3.24.0-GA.jar"/>
+  </path>
+
+  <path id="library.maven:_org.jboss.logging:jboss-logging:3.3.2.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/jboss/logging/jboss-logging/3.3.2.Final/jboss-logging-3.3.2.Final.jar"/>
+  </path>
+
+  <path id="library.maven:_org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.1.1.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.1.1.Final/jboss-transaction-api_1.2_spec-1.1.1.Final.jar"/>
+  </path>
+
+  <path id="library.maven:_org.jboss:jandex:2.1.1.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/jboss/jandex/2.1.1.Final/jandex-2.1.1.Final.jar"/>
+  </path>
+
+  <path id="library.maven:_org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/jetbrains/kotlin/kotlin-stdlib-common/1.3.61/kotlin-stdlib-common-1.3.61.jar"/>
+  </path>
+
+  <path id="library.maven:_org.jetbrains.kotlin:kotlin-stdlib:1.3.61.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/jetbrains/kotlin/kotlin-stdlib/1.3.61/kotlin-stdlib-1.3.61.jar"/>
+  </path>
+
+  <path id="library.maven:_org.jetbrains:annotations:13.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/jetbrains/annotations/13.0/annotations-13.0.jar"/>
+  </path>
+
+  <path id="library.maven:_org.jvnet.staxex:stax-ex:1.8.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/jvnet/staxex/stax-ex/1.8/stax-ex-1.8.jar"/>
+  </path>
+
+  <path id="library.maven:_org.postgresql:postgresql:42.2.10.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/postgresql/postgresql/42.2.10/postgresql-42.2.10.jar"/>
+  </path>
+
+  <path id="library.maven:_org.reactivestreams:reactive-streams:1.0.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar"/>
+  </path>
+
+  <path id="library.maven:_org.seleniumhq.selenium:selenium-api:4.0.0-alpha-5.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-api/4.0.0-alpha-5/selenium-api-4.0.0-alpha-5.jar"/>
+  </path>
+
+  <path id="library.maven:_org.seleniumhq.selenium:selenium-chrome-driver:4.0.0-alpha-5.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-chrome-driver/4.0.0-alpha-5/selenium-chrome-driver-4.0.0-alpha-5.jar"/>
+  </path>
+
+  <path id="library.maven:_org.seleniumhq.selenium:selenium-chromium-driver:4.0.0-alpha-5.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-chromium-driver/4.0.0-alpha-5/selenium-chromium-driver-4.0.0-alpha-5.jar"/>
+  </path>
+
+  <path id="library.maven:_org.seleniumhq.selenium:selenium-devtools:4.0.0-alpha-5.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-devtools/4.0.0-alpha-5/selenium-devtools-4.0.0-alpha-5.jar"/>
+  </path>
+
+  <path id="library.maven:_org.seleniumhq.selenium:selenium-edge-driver:4.0.0-alpha-5.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-edge-driver/4.0.0-alpha-5/selenium-edge-driver-4.0.0-alpha-5.jar"/>
+  </path>
+
+  <path id="library.maven:_org.seleniumhq.selenium:selenium-edgehtml-driver:4.0.0-alpha-5.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-edgehtml-driver/4.0.0-alpha-5/selenium-edgehtml-driver-4.0.0-alpha-5.jar"/>
+  </path>
+
+  <path id="library.maven:_org.seleniumhq.selenium:selenium-firefox-driver:4.0.0-alpha-5.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-firefox-driver/4.0.0-alpha-5/selenium-firefox-driver-4.0.0-alpha-5.jar"/>
+  </path>
+
+  <path id="library.maven:_org.seleniumhq.selenium:selenium-firefox-xpi-driver:4.0.0-alpha-5.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-firefox-xpi-driver/4.0.0-alpha-5/selenium-firefox-xpi-driver-4.0.0-alpha-5.jar"/>
+  </path>
+
+  <path id="library.maven:_org.seleniumhq.selenium:selenium-http:4.0.0-alpha-5.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-http/4.0.0-alpha-5/selenium-http-4.0.0-alpha-5.jar"/>
+  </path>
+
+  <path id="library.maven:_org.seleniumhq.selenium:selenium-ie-driver:4.0.0-alpha-5.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-ie-driver/4.0.0-alpha-5/selenium-ie-driver-4.0.0-alpha-5.jar"/>
+  </path>
+
+  <path id="library.maven:_org.seleniumhq.selenium:selenium-java:4.0.0-alpha-5.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-java/4.0.0-alpha-5/selenium-java-4.0.0-alpha-5.jar"/>
+  </path>
+
+  <path id="library.maven:_org.seleniumhq.selenium:selenium-json:4.0.0-alpha-5.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-json/4.0.0-alpha-5/selenium-json-4.0.0-alpha-5.jar"/>
+  </path>
+
+  <path id="library.maven:_org.seleniumhq.selenium:selenium-opera-driver:4.0.0-alpha-5.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-opera-driver/4.0.0-alpha-5/selenium-opera-driver-4.0.0-alpha-5.jar"/>
+  </path>
+
+  <path id="library.maven:_org.seleniumhq.selenium:selenium-remote-driver:4.0.0-alpha-5.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-remote-driver/4.0.0-alpha-5/selenium-remote-driver-4.0.0-alpha-5.jar"/>
+  </path>
+
+  <path id="library.maven:_org.seleniumhq.selenium:selenium-safari-driver:4.0.0-alpha-5.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-safari-driver/4.0.0-alpha-5/selenium-safari-driver-4.0.0-alpha-5.jar"/>
+  </path>
+
+  <path id="library.maven:_org.seleniumhq.selenium:selenium-support:4.0.0-alpha-5.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-support/4.0.0-alpha-5/selenium-support-4.0.0-alpha-5.jar"/>
+  </path>
+
+  <path id="library.maven:_org.slf4j:slf4j-api:1.7.30.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar"/>
+  </path>
+
+  <path id="library.maven:_org.springframework:spring-aop:5.2.5.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-aop/5.2.5.RELEASE/spring-aop-5.2.5.RELEASE.jar"/>
+  </path>
+
+  <path id="library.maven:_org.springframework:spring-beans:5.2.5.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-beans/5.2.5.RELEASE/spring-beans-5.2.5.RELEASE.jar"/>
+  </path>
+
+  <path id="library.maven:_org.springframework:spring-context:5.2.5.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-context/5.2.5.RELEASE/spring-context-5.2.5.RELEASE.jar"/>
+  </path>
+
+  <path id="library.maven:_org.springframework:spring-core:5.2.5.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-core/5.2.5.RELEASE/spring-core-5.2.5.RELEASE.jar"/>
+  </path>
+
+  <path id="library.maven:_org.springframework:spring-expression:5.2.5.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-expression/5.2.5.RELEASE/spring-expression-5.2.5.RELEASE.jar"/>
+  </path>
+
+  <path id="library.maven:_org.springframework:spring-jcl:5.2.5.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-jcl/5.2.5.RELEASE/spring-jcl-5.2.5.RELEASE.jar"/>
+  </path>
+
+  <path id="library.maven:_org.springframework:spring-web:5.2.5.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-web/5.2.5.RELEASE/spring-web-5.2.5.RELEASE.jar"/>
+  </path>
+
+  <path id="library.maven:_org.springframework:spring-webmvc:5.2.5.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-webmvc/5.2.5.RELEASE/spring-webmvc-5.2.5.RELEASE.jar"/>
+  </path>
+
+
+  <!-- Application Server Libraries -->
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <fileset dir="${javac2.home}">
+      <include name="javac2.jar"/>
+      <include name="jdom.jar"/>
+      <include name="asm-all*.jar"/>
+      <include name="forms-*.jar"/>
+    </fileset>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+
+  <!-- Modules -->
+
+
+  <!-- Module FinalProject -->
+
+  <dirname property="module.finalproject.basedir" file="${ant.file}"/>
+
+
+  <property name="module.jdk.home.finalproject" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.finalproject" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.finalproject" value="${project.jdk.classpath}"/>
+
+  <property name="compiler.args.finalproject" value="-encoding UTF-8 -source 7 -target 1.7 ${compiler.args}"/>
+
+  <property name="finalproject.output.dir" value="${module.finalproject.basedir}/target/classes"/>
+  <property name="finalproject.testoutput.dir" value="${module.finalproject.basedir}/target/test-classes"/>
+
+  <path id="finalproject.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+
+  <path id="finalproject.module.production.classpath">
+    <path refid="${module.jdk.classpath.finalproject}"/>
+    <path refid="library.maven:_junit:junit:4.13.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-core:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-jcl:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-web:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-webmvc:5.2.5.release.classpath"/>
+    <path refid="library.maven:_javax.servlet:jstl:1.2.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-core:5.4.11.final.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging:3.3.2.final.classpath"/>
+    <path refid="library.maven:_javax.persistence:javax.persistence-api:2.2.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.24.0-ga.classpath"/>
+    <path refid="library.maven:_net.bytebuddy:byte-buddy:1.10.7.classpath"/>
+    <path refid="library.maven:_antlr:antlr:2.7.7.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.1.1.final.classpath"/>
+    <path refid="library.maven:_org.jboss:jandex:2.1.1.final.classpath"/>
+    <path refid="library.maven:_com.fasterxml:classmate:1.5.1.classpath"/>
+    <path refid="library.maven:_javax.activation:javax.activation-api:1.2.0.classpath"/>
+    <path refid="library.maven:_org.dom4j:dom4j:2.1.1.classpath"/>
+    <path refid="library.maven:_org.hibernate.common:hibernate-commons-annotations:5.1.0.final.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jaxb-api:2.3.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jaxb:jaxb-runtime:2.3.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jaxb:txw2:2.3.1.classpath"/>
+    <path refid="library.maven:_com.sun.istack:istack-commons-runtime:3.0.7.classpath"/>
+    <path refid="library.maven:_org.jvnet.staxex:stax-ex:1.8.classpath"/>
+    <path refid="library.maven:_com.sun.xml.fastinfoset:fastinfoset:1.2.15.classpath"/>
+    <path refid="library.maven:_org.postgresql:postgresql:42.2.10.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-java:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-api:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-chrome-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_com.google.auto.service:auto-service-annotations:1.0-rc6.classpath"/>
+    <path refid="library.maven:_com.google.auto.service:auto-service:1.0-rc6.classpath"/>
+    <path refid="library.maven:_com.google.auto:auto-common:0.10.classpath"/>
+    <path refid="library.maven:_com.google.guava:guava:28.2-jre.classpath"/>
+    <path refid="library.maven:_com.google.guava:failureaccess:1.0.1.classpath"/>
+    <path refid="library.maven:_com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava.classpath"/>
+    <path refid="library.maven:_com.google.code.findbugs:jsr305:3.0.2.classpath"/>
+    <path refid="library.maven:_org.checkerframework:checker-qual:2.10.0.classpath"/>
+    <path refid="library.maven:_com.google.errorprone:error_prone_annotations:2.3.4.classpath"/>
+    <path refid="library.maven:_com.google.j2objc:j2objc-annotations:1.3.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-chromium-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-devtools:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-http:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-json:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-edge-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-edgehtml-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-firefox-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-firefox-xpi-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-ie-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-opera-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-remote-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_com.squareup.okhttp3:okhttp:4.4.1.classpath"/>
+    <path refid="library.maven:_org.jetbrains.kotlin:kotlin-stdlib:1.3.61.classpath"/>
+    <path refid="library.maven:_org.jetbrains:annotations:13.0.classpath"/>
+    <path refid="library.maven:_com.squareup.okio:okio:2.4.3.classpath"/>
+    <path refid="library.maven:_org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61.classpath"/>
+    <path refid="library.maven:_com.typesafe.netty:netty-reactive-streams:2.0.4.classpath"/>
+    <path refid="library.maven:_io.netty:netty-handler:4.1.43.final.classpath"/>
+    <path refid="library.maven:_org.reactivestreams:reactive-streams:1.0.3.classpath"/>
+    <path refid="library.maven:_io.netty:netty-buffer:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-common:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-codec-http:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-codec:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport-native-epoll:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport-native-epoll:linux-x86_64:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport-native-kqueue:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport-native-kqueue:osx-x86_64:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport-native-unix-common:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-resolver:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.opentelemetry:opentelemetry-api:0.2.0.classpath"/>
+    <path refid="library.maven:_io.grpc:grpc-context:1.24.0.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-exec:1.3.classpath"/>
+    <path refid="library.maven:_org.asynchttpclient:async-http-client:2.11.0.classpath"/>
+    <path refid="library.maven:_org.asynchttpclient:async-http-client-netty-utils:2.11.0.classpath"/>
+    <path refid="library.maven:_io.netty:netty-codec-socks:4.1.46.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-handler-proxy:4.1.46.final.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.30.classpath"/>
+    <path refid="library.maven:_com.sun.activation:javax.activation:1.2.0.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-safari-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-support:4.0.0-alpha-5.classpath"/>
+  </path>
+
+  <path id="finalproject.runtime.production.module.classpath">
+    <pathelement location="${finalproject.output.dir}"/>
+    <path refid="library.maven:_junit:junit:4.13.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-core:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-jcl:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-web:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-webmvc:5.2.5.release.classpath"/>
+    <path refid="library.maven:_javax.servlet:jstl:1.2.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-core:5.4.11.final.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging:3.3.2.final.classpath"/>
+    <path refid="library.maven:_javax.persistence:javax.persistence-api:2.2.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.24.0-ga.classpath"/>
+    <path refid="library.maven:_net.bytebuddy:byte-buddy:1.10.7.classpath"/>
+    <path refid="library.maven:_antlr:antlr:2.7.7.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.1.1.final.classpath"/>
+    <path refid="library.maven:_org.jboss:jandex:2.1.1.final.classpath"/>
+    <path refid="library.maven:_com.fasterxml:classmate:1.5.1.classpath"/>
+    <path refid="library.maven:_javax.activation:javax.activation-api:1.2.0.classpath"/>
+    <path refid="library.maven:_org.dom4j:dom4j:2.1.1.classpath"/>
+    <path refid="library.maven:_org.hibernate.common:hibernate-commons-annotations:5.1.0.final.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jaxb-api:2.3.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jaxb:jaxb-runtime:2.3.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jaxb:txw2:2.3.1.classpath"/>
+    <path refid="library.maven:_com.sun.istack:istack-commons-runtime:3.0.7.classpath"/>
+    <path refid="library.maven:_org.jvnet.staxex:stax-ex:1.8.classpath"/>
+    <path refid="library.maven:_com.sun.xml.fastinfoset:fastinfoset:1.2.15.classpath"/>
+    <path refid="library.maven:_org.postgresql:postgresql:42.2.10.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-java:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-api:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-chrome-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_com.google.auto.service:auto-service-annotations:1.0-rc6.classpath"/>
+    <path refid="library.maven:_com.google.auto.service:auto-service:1.0-rc6.classpath"/>
+    <path refid="library.maven:_com.google.auto:auto-common:0.10.classpath"/>
+    <path refid="library.maven:_com.google.guava:guava:28.2-jre.classpath"/>
+    <path refid="library.maven:_com.google.guava:failureaccess:1.0.1.classpath"/>
+    <path refid="library.maven:_com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava.classpath"/>
+    <path refid="library.maven:_com.google.code.findbugs:jsr305:3.0.2.classpath"/>
+    <path refid="library.maven:_org.checkerframework:checker-qual:2.10.0.classpath"/>
+    <path refid="library.maven:_com.google.errorprone:error_prone_annotations:2.3.4.classpath"/>
+    <path refid="library.maven:_com.google.j2objc:j2objc-annotations:1.3.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-chromium-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-devtools:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-http:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-json:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-edge-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-edgehtml-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-firefox-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-firefox-xpi-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-ie-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-opera-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-remote-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_com.squareup.okhttp3:okhttp:4.4.1.classpath"/>
+    <path refid="library.maven:_org.jetbrains.kotlin:kotlin-stdlib:1.3.61.classpath"/>
+    <path refid="library.maven:_org.jetbrains:annotations:13.0.classpath"/>
+    <path refid="library.maven:_com.squareup.okio:okio:2.4.3.classpath"/>
+    <path refid="library.maven:_org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61.classpath"/>
+    <path refid="library.maven:_com.typesafe.netty:netty-reactive-streams:2.0.4.classpath"/>
+    <path refid="library.maven:_io.netty:netty-handler:4.1.43.final.classpath"/>
+    <path refid="library.maven:_org.reactivestreams:reactive-streams:1.0.3.classpath"/>
+    <path refid="library.maven:_io.netty:netty-buffer:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-common:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-codec-http:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-codec:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport-native-epoll:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport-native-epoll:linux-x86_64:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport-native-kqueue:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport-native-kqueue:osx-x86_64:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport-native-unix-common:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-resolver:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.opentelemetry:opentelemetry-api:0.2.0.classpath"/>
+    <path refid="library.maven:_io.grpc:grpc-context:1.24.0.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-exec:1.3.classpath"/>
+    <path refid="library.maven:_org.asynchttpclient:async-http-client:2.11.0.classpath"/>
+    <path refid="library.maven:_org.asynchttpclient:async-http-client-netty-utils:2.11.0.classpath"/>
+    <path refid="library.maven:_io.netty:netty-codec-socks:4.1.46.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-handler-proxy:4.1.46.final.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.30.classpath"/>
+    <path refid="library.maven:_com.sun.activation:javax.activation:1.2.0.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-safari-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-support:4.0.0-alpha-5.classpath"/>
+  </path>
+
+  <path id="finalproject.module.classpath">
+    <path refid="${module.jdk.classpath.finalproject}"/>
+    <pathelement location="${finalproject.output.dir}"/>
+    <path refid="library.maven:_junit:junit:4.13.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-core:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-jcl:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-web:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-webmvc:5.2.5.release.classpath"/>
+    <path refid="library.maven:_javax.servlet:jstl:1.2.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-core:5.4.11.final.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging:3.3.2.final.classpath"/>
+    <path refid="library.maven:_javax.persistence:javax.persistence-api:2.2.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.24.0-ga.classpath"/>
+    <path refid="library.maven:_net.bytebuddy:byte-buddy:1.10.7.classpath"/>
+    <path refid="library.maven:_antlr:antlr:2.7.7.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.1.1.final.classpath"/>
+    <path refid="library.maven:_org.jboss:jandex:2.1.1.final.classpath"/>
+    <path refid="library.maven:_com.fasterxml:classmate:1.5.1.classpath"/>
+    <path refid="library.maven:_javax.activation:javax.activation-api:1.2.0.classpath"/>
+    <path refid="library.maven:_org.dom4j:dom4j:2.1.1.classpath"/>
+    <path refid="library.maven:_org.hibernate.common:hibernate-commons-annotations:5.1.0.final.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jaxb-api:2.3.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jaxb:jaxb-runtime:2.3.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jaxb:txw2:2.3.1.classpath"/>
+    <path refid="library.maven:_com.sun.istack:istack-commons-runtime:3.0.7.classpath"/>
+    <path refid="library.maven:_org.jvnet.staxex:stax-ex:1.8.classpath"/>
+    <path refid="library.maven:_com.sun.xml.fastinfoset:fastinfoset:1.2.15.classpath"/>
+    <path refid="library.maven:_org.postgresql:postgresql:42.2.10.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-java:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-api:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-chrome-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_com.google.auto.service:auto-service-annotations:1.0-rc6.classpath"/>
+    <path refid="library.maven:_com.google.auto.service:auto-service:1.0-rc6.classpath"/>
+    <path refid="library.maven:_com.google.auto:auto-common:0.10.classpath"/>
+    <path refid="library.maven:_com.google.guava:guava:28.2-jre.classpath"/>
+    <path refid="library.maven:_com.google.guava:failureaccess:1.0.1.classpath"/>
+    <path refid="library.maven:_com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava.classpath"/>
+    <path refid="library.maven:_com.google.code.findbugs:jsr305:3.0.2.classpath"/>
+    <path refid="library.maven:_org.checkerframework:checker-qual:2.10.0.classpath"/>
+    <path refid="library.maven:_com.google.errorprone:error_prone_annotations:2.3.4.classpath"/>
+    <path refid="library.maven:_com.google.j2objc:j2objc-annotations:1.3.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-chromium-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-devtools:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-http:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-json:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-edge-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-edgehtml-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-firefox-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-firefox-xpi-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-ie-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-opera-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-remote-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_com.squareup.okhttp3:okhttp:4.4.1.classpath"/>
+    <path refid="library.maven:_org.jetbrains.kotlin:kotlin-stdlib:1.3.61.classpath"/>
+    <path refid="library.maven:_org.jetbrains:annotations:13.0.classpath"/>
+    <path refid="library.maven:_com.squareup.okio:okio:2.4.3.classpath"/>
+    <path refid="library.maven:_org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61.classpath"/>
+    <path refid="library.maven:_com.typesafe.netty:netty-reactive-streams:2.0.4.classpath"/>
+    <path refid="library.maven:_io.netty:netty-handler:4.1.43.final.classpath"/>
+    <path refid="library.maven:_org.reactivestreams:reactive-streams:1.0.3.classpath"/>
+    <path refid="library.maven:_io.netty:netty-buffer:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-common:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-codec-http:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-codec:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport-native-epoll:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport-native-epoll:linux-x86_64:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport-native-kqueue:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport-native-kqueue:osx-x86_64:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport-native-unix-common:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-resolver:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.opentelemetry:opentelemetry-api:0.2.0.classpath"/>
+    <path refid="library.maven:_io.grpc:grpc-context:1.24.0.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-exec:1.3.classpath"/>
+    <path refid="library.maven:_org.asynchttpclient:async-http-client:2.11.0.classpath"/>
+    <path refid="library.maven:_org.asynchttpclient:async-http-client-netty-utils:2.11.0.classpath"/>
+    <path refid="library.maven:_io.netty:netty-codec-socks:4.1.46.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-handler-proxy:4.1.46.final.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.30.classpath"/>
+    <path refid="library.maven:_com.sun.activation:javax.activation:1.2.0.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-safari-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-support:4.0.0-alpha-5.classpath"/>
+  </path>
+
+  <path id="finalproject.runtime.module.classpath">
+    <pathelement location="${finalproject.testoutput.dir}"/>
+    <pathelement location="${finalproject.output.dir}"/>
+    <path refid="library.maven:_junit:junit:4.13.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-core:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-jcl:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-web:5.2.5.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-webmvc:5.2.5.release.classpath"/>
+    <path refid="library.maven:_javax.servlet:jstl:1.2.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-core:5.4.11.final.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging:3.3.2.final.classpath"/>
+    <path refid="library.maven:_javax.persistence:javax.persistence-api:2.2.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.24.0-ga.classpath"/>
+    <path refid="library.maven:_net.bytebuddy:byte-buddy:1.10.7.classpath"/>
+    <path refid="library.maven:_antlr:antlr:2.7.7.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.1.1.final.classpath"/>
+    <path refid="library.maven:_org.jboss:jandex:2.1.1.final.classpath"/>
+    <path refid="library.maven:_com.fasterxml:classmate:1.5.1.classpath"/>
+    <path refid="library.maven:_javax.activation:javax.activation-api:1.2.0.classpath"/>
+    <path refid="library.maven:_org.dom4j:dom4j:2.1.1.classpath"/>
+    <path refid="library.maven:_org.hibernate.common:hibernate-commons-annotations:5.1.0.final.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jaxb-api:2.3.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jaxb:jaxb-runtime:2.3.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jaxb:txw2:2.3.1.classpath"/>
+    <path refid="library.maven:_com.sun.istack:istack-commons-runtime:3.0.7.classpath"/>
+    <path refid="library.maven:_org.jvnet.staxex:stax-ex:1.8.classpath"/>
+    <path refid="library.maven:_com.sun.xml.fastinfoset:fastinfoset:1.2.15.classpath"/>
+    <path refid="library.maven:_org.postgresql:postgresql:42.2.10.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-java:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-api:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-chrome-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_com.google.auto.service:auto-service-annotations:1.0-rc6.classpath"/>
+    <path refid="library.maven:_com.google.auto.service:auto-service:1.0-rc6.classpath"/>
+    <path refid="library.maven:_com.google.auto:auto-common:0.10.classpath"/>
+    <path refid="library.maven:_com.google.guava:guava:28.2-jre.classpath"/>
+    <path refid="library.maven:_com.google.guava:failureaccess:1.0.1.classpath"/>
+    <path refid="library.maven:_com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava.classpath"/>
+    <path refid="library.maven:_com.google.code.findbugs:jsr305:3.0.2.classpath"/>
+    <path refid="library.maven:_org.checkerframework:checker-qual:2.10.0.classpath"/>
+    <path refid="library.maven:_com.google.errorprone:error_prone_annotations:2.3.4.classpath"/>
+    <path refid="library.maven:_com.google.j2objc:j2objc-annotations:1.3.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-chromium-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-devtools:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-http:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-json:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-edge-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-edgehtml-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-firefox-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-firefox-xpi-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-ie-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-opera-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-remote-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_com.squareup.okhttp3:okhttp:4.4.1.classpath"/>
+    <path refid="library.maven:_org.jetbrains.kotlin:kotlin-stdlib:1.3.61.classpath"/>
+    <path refid="library.maven:_org.jetbrains:annotations:13.0.classpath"/>
+    <path refid="library.maven:_com.squareup.okio:okio:2.4.3.classpath"/>
+    <path refid="library.maven:_org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61.classpath"/>
+    <path refid="library.maven:_com.typesafe.netty:netty-reactive-streams:2.0.4.classpath"/>
+    <path refid="library.maven:_io.netty:netty-handler:4.1.43.final.classpath"/>
+    <path refid="library.maven:_org.reactivestreams:reactive-streams:1.0.3.classpath"/>
+    <path refid="library.maven:_io.netty:netty-buffer:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-common:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-codec-http:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-codec:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport-native-epoll:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport-native-epoll:linux-x86_64:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport-native-kqueue:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport-native-kqueue:osx-x86_64:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport-native-unix-common:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-resolver:4.1.47.final.classpath"/>
+    <path refid="library.maven:_io.opentelemetry:opentelemetry-api:0.2.0.classpath"/>
+    <path refid="library.maven:_io.grpc:grpc-context:1.24.0.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-exec:1.3.classpath"/>
+    <path refid="library.maven:_org.asynchttpclient:async-http-client:2.11.0.classpath"/>
+    <path refid="library.maven:_org.asynchttpclient:async-http-client-netty-utils:2.11.0.classpath"/>
+    <path refid="library.maven:_io.netty:netty-codec-socks:4.1.46.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-handler-proxy:4.1.46.final.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.30.classpath"/>
+    <path refid="library.maven:_com.sun.activation:javax.activation:1.2.0.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-safari-driver:4.0.0-alpha-5.classpath"/>
+    <path refid="library.maven:_org.seleniumhq.selenium:selenium-support:4.0.0-alpha-5.classpath"/>
+  </path>
+
+
+  <patternset id="excluded.from.module.finalproject">
+    <patternset refid="ignored.files"/>
+  </patternset>
+
+  <patternset id="excluded.from.compilation.finalproject">
+    <patternset refid="excluded.from.module.finalproject"/>
+  </patternset>
+
+  <path id="finalproject.module.sourcepath">
+    <dirset dir="${module.finalproject.basedir}">
+      <include name="src/main/java"/>
+      <include name="src/main/resources"/>
+    </dirset>
+  </path>
+
+
+  <target name="compile.module.finalproject" depends="compile.module.finalproject.production,compile.module.finalproject.tests" description="Compile module FinalProject"/>
+
+  <target name="compile.module.finalproject.production" depends="register.custom.compilers" description="Compile module FinalProject; production classes">
+    <mkdir dir="${finalproject.output.dir}"/>
+    <javac2 destdir="${finalproject.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.finalproject}/javac">
+      <compilerarg line="${compiler.args.finalproject}"/>
+      <bootclasspath refid="finalproject.module.bootclasspath"/>
+      <classpath refid="finalproject.module.production.classpath"/>
+      <src refid="finalproject.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.finalproject"/>
+    </javac2>
+
+    <copy todir="${finalproject.output.dir}">
+      <fileset dir="${module.finalproject.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.finalproject.basedir}/src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="compile.module.finalproject.tests" depends="register.custom.compilers,compile.module.finalproject.production" description="compile module FinalProject; test classes" unless="skip.tests"/>
+
+  <target name="clean.module.finalproject" description="cleanup module">
+    <delete dir="${finalproject.output.dir}"/>
+    <delete dir="${finalproject.testoutput.dir}"/>
+  </target>
+
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+
+  <target name="clean" depends="clean.module.finalproject, clean.artifact.finalproject:war_exploded" description="cleanup all"/>
+
+  <target name="build.modules" depends="init, clean, compile.module.finalproject" description="build all modules"/>
+
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.finalproject:war" value="${basedir}/target"/>
+    <property name="artifact.output.finalproject:war_exploded" value="${basedir}/target/FinalProject"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+    <property name="temp.jar.path.FinalProject.war" value="${artifacts.temp.dir}/FinalProject.war"/>
+  </target>
+
+  <target name="clean.artifact.finalproject:war_exploded" description="clean FinalProject:war exploded artifact output">
+    <delete dir="${artifact.output.finalproject:war_exploded}"/>
+  </target>
+
+  <target name="artifact.finalproject:war" depends="init.artifacts, artifact.finalproject:war_exploded" description="Build &#39;FinalProject:war&#39; artifact">
+    <property name="artifact.temp.output.finalproject:war" value="${artifacts.temp.dir}/FinalProject_war"/>
+    <mkdir dir="${artifact.temp.output.finalproject:war}"/>
+    <zip destfile="${temp.jar.path.FinalProject.war}">
+      <zipfileset dir="${artifact.output.finalproject:war_exploded}"/>
+    </zip>
+    <copy file="${temp.jar.path.FinalProject.war}" tofile="${artifact.temp.output.finalproject:war}/FinalProject.war"/>
+  </target>
+
+  <target name="artifact.finalproject:war_exploded" depends="init.artifacts, compile.module.finalproject" description="Build &#39;FinalProject:war exploded&#39; artifact">
+    <mkdir dir="${artifact.output.finalproject:war_exploded}"/>
+    <mkdir dir="${artifact.output.finalproject:war_exploded}/WEB-INF"/>
+    <mkdir dir="${artifact.output.finalproject:war_exploded}/WEB-INF/classes"/>
+    <copy todir="${artifact.output.finalproject:war_exploded}/WEB-INF/classes">
+      <fileset dir="${finalproject.output.dir}"/>
+    </copy>
+    <mkdir dir="${artifact.output.finalproject:war_exploded}/WEB-INF/lib"/>
+    <copy file="${path.variable.maven_repository}/junit/junit/4.13/junit-4.13.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/junit-4.13.jar"/>
+    <copy file="${path.variable.maven_repository}/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/hamcrest-core-1.3.jar"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/spring-core/5.2.5.RELEASE/spring-core-5.2.5.RELEASE.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/spring-core-5.2.5.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/spring-jcl/5.2.5.RELEASE/spring-jcl-5.2.5.RELEASE.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/spring-jcl-5.2.5.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/spring-context/5.2.5.RELEASE/spring-context-5.2.5.RELEASE.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/spring-context-5.2.5.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/spring-aop/5.2.5.RELEASE/spring-aop-5.2.5.RELEASE.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/spring-aop-5.2.5.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/spring-beans/5.2.5.RELEASE/spring-beans-5.2.5.RELEASE.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/spring-beans-5.2.5.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/spring-expression/5.2.5.RELEASE/spring-expression-5.2.5.RELEASE.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/spring-expression-5.2.5.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/spring-web/5.2.5.RELEASE/spring-web-5.2.5.RELEASE.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/spring-web-5.2.5.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/spring-webmvc/5.2.5.RELEASE/spring-webmvc-5.2.5.RELEASE.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/spring-webmvc-5.2.5.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/javax/servlet/jstl/1.2/jstl-1.2.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/jstl-1.2.jar"/>
+    <copy file="${path.variable.maven_repository}/org/hibernate/hibernate-core/5.4.11.Final/hibernate-core-5.4.11.Final.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/hibernate-core-5.4.11.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/org/jboss/logging/jboss-logging/3.3.2.Final/jboss-logging-3.3.2.Final.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/jboss-logging-3.3.2.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/javax.persistence-api-2.2.jar"/>
+    <copy file="${path.variable.maven_repository}/org/javassist/javassist/3.24.0-GA/javassist-3.24.0-GA.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/javassist-3.24.0-GA.jar"/>
+    <copy file="${path.variable.maven_repository}/net/bytebuddy/byte-buddy/1.10.7/byte-buddy-1.10.7.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/byte-buddy-1.10.7.jar"/>
+    <copy file="${path.variable.maven_repository}/antlr/antlr/2.7.7/antlr-2.7.7.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/antlr-2.7.7.jar"/>
+    <copy file="${path.variable.maven_repository}/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.1.1.Final/jboss-transaction-api_1.2_spec-1.1.1.Final.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/jboss-transaction-api_1.2_spec-1.1.1.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/org/jboss/jandex/2.1.1.Final/jandex-2.1.1.Final.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/jandex-2.1.1.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/classmate-1.5.1.jar"/>
+    <copy file="${path.variable.maven_repository}/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/javax.activation-api-1.2.0.jar"/>
+    <copy file="${path.variable.maven_repository}/org/dom4j/dom4j/2.1.1/dom4j-2.1.1.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/dom4j-2.1.1.jar"/>
+    <copy file="${path.variable.maven_repository}/org/hibernate/common/hibernate-commons-annotations/5.1.0.Final/hibernate-commons-annotations-5.1.0.Final.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/hibernate-commons-annotations-5.1.0.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/jaxb-api-2.3.1.jar"/>
+    <copy file="${path.variable.maven_repository}/org/glassfish/jaxb/jaxb-runtime/2.3.1/jaxb-runtime-2.3.1.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/jaxb-runtime-2.3.1.jar"/>
+    <copy file="${path.variable.maven_repository}/org/glassfish/jaxb/txw2/2.3.1/txw2-2.3.1.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/txw2-2.3.1.jar"/>
+    <copy file="${path.variable.maven_repository}/com/sun/istack/istack-commons-runtime/3.0.7/istack-commons-runtime-3.0.7.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/istack-commons-runtime-3.0.7.jar"/>
+    <copy file="${path.variable.maven_repository}/org/jvnet/staxex/stax-ex/1.8/stax-ex-1.8.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/stax-ex-1.8.jar"/>
+    <copy file="${path.variable.maven_repository}/com/sun/xml/fastinfoset/FastInfoset/1.2.15/FastInfoset-1.2.15.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/FastInfoset-1.2.15.jar"/>
+    <copy file="${path.variable.maven_repository}/org/postgresql/postgresql/42.2.10/postgresql-42.2.10.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/postgresql-42.2.10.jar"/>
+    <copy file="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-java/4.0.0-alpha-5/selenium-java-4.0.0-alpha-5.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/selenium-java-4.0.0-alpha-5.jar"/>
+    <copy file="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-api/4.0.0-alpha-5/selenium-api-4.0.0-alpha-5.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/selenium-api-4.0.0-alpha-5.jar"/>
+    <copy file="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-chrome-driver/4.0.0-alpha-5/selenium-chrome-driver-4.0.0-alpha-5.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/selenium-chrome-driver-4.0.0-alpha-5.jar"/>
+    <copy file="${path.variable.maven_repository}/com/google/auto/service/auto-service-annotations/1.0-rc6/auto-service-annotations-1.0-rc6.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/auto-service-annotations-1.0-rc6.jar"/>
+    <copy file="${path.variable.maven_repository}/com/google/auto/service/auto-service/1.0-rc6/auto-service-1.0-rc6.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/auto-service-1.0-rc6.jar"/>
+    <copy file="${path.variable.maven_repository}/com/google/auto/auto-common/0.10/auto-common-0.10.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/auto-common-0.10.jar"/>
+    <copy file="${path.variable.maven_repository}/com/google/guava/guava/28.2-jre/guava-28.2-jre.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/guava-28.2-jre.jar"/>
+    <copy file="${path.variable.maven_repository}/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/failureaccess-1.0.1.jar"/>
+    <copy file="${path.variable.maven_repository}/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar"/>
+    <copy file="${path.variable.maven_repository}/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/jsr305-3.0.2.jar"/>
+    <copy file="${path.variable.maven_repository}/org/checkerframework/checker-qual/2.10.0/checker-qual-2.10.0.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/checker-qual-2.10.0.jar"/>
+    <copy file="${path.variable.maven_repository}/com/google/errorprone/error_prone_annotations/2.3.4/error_prone_annotations-2.3.4.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/error_prone_annotations-2.3.4.jar"/>
+    <copy file="${path.variable.maven_repository}/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/j2objc-annotations-1.3.jar"/>
+    <copy file="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-chromium-driver/4.0.0-alpha-5/selenium-chromium-driver-4.0.0-alpha-5.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/selenium-chromium-driver-4.0.0-alpha-5.jar"/>
+    <copy file="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-devtools/4.0.0-alpha-5/selenium-devtools-4.0.0-alpha-5.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/selenium-devtools-4.0.0-alpha-5.jar"/>
+    <copy file="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-http/4.0.0-alpha-5/selenium-http-4.0.0-alpha-5.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/selenium-http-4.0.0-alpha-5.jar"/>
+    <copy file="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-json/4.0.0-alpha-5/selenium-json-4.0.0-alpha-5.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/selenium-json-4.0.0-alpha-5.jar"/>
+    <copy file="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-edge-driver/4.0.0-alpha-5/selenium-edge-driver-4.0.0-alpha-5.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/selenium-edge-driver-4.0.0-alpha-5.jar"/>
+    <copy file="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-edgehtml-driver/4.0.0-alpha-5/selenium-edgehtml-driver-4.0.0-alpha-5.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/selenium-edgehtml-driver-4.0.0-alpha-5.jar"/>
+    <copy file="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-firefox-driver/4.0.0-alpha-5/selenium-firefox-driver-4.0.0-alpha-5.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/selenium-firefox-driver-4.0.0-alpha-5.jar"/>
+    <copy file="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-firefox-xpi-driver/4.0.0-alpha-5/selenium-firefox-xpi-driver-4.0.0-alpha-5.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/selenium-firefox-xpi-driver-4.0.0-alpha-5.jar"/>
+    <copy file="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-ie-driver/4.0.0-alpha-5/selenium-ie-driver-4.0.0-alpha-5.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/selenium-ie-driver-4.0.0-alpha-5.jar"/>
+    <copy file="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-opera-driver/4.0.0-alpha-5/selenium-opera-driver-4.0.0-alpha-5.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/selenium-opera-driver-4.0.0-alpha-5.jar"/>
+    <copy file="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-remote-driver/4.0.0-alpha-5/selenium-remote-driver-4.0.0-alpha-5.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/selenium-remote-driver-4.0.0-alpha-5.jar"/>
+    <copy file="${path.variable.maven_repository}/com/squareup/okhttp3/okhttp/4.4.1/okhttp-4.4.1.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/okhttp-4.4.1.jar"/>
+    <copy file="${path.variable.maven_repository}/org/jetbrains/kotlin/kotlin-stdlib/1.3.61/kotlin-stdlib-1.3.61.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/kotlin-stdlib-1.3.61.jar"/>
+    <copy file="${path.variable.maven_repository}/org/jetbrains/annotations/13.0/annotations-13.0.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/annotations-13.0.jar"/>
+    <copy file="${path.variable.maven_repository}/com/squareup/okio/okio/2.4.3/okio-2.4.3.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/okio-2.4.3.jar"/>
+    <copy file="${path.variable.maven_repository}/org/jetbrains/kotlin/kotlin-stdlib-common/1.3.61/kotlin-stdlib-common-1.3.61.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/kotlin-stdlib-common-1.3.61.jar"/>
+    <copy file="${path.variable.maven_repository}/com/typesafe/netty/netty-reactive-streams/2.0.4/netty-reactive-streams-2.0.4.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/netty-reactive-streams-2.0.4.jar"/>
+    <copy file="${path.variable.maven_repository}/io/netty/netty-handler/4.1.43.Final/netty-handler-4.1.43.Final.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/netty-handler-4.1.43.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/reactive-streams-1.0.3.jar"/>
+    <copy file="${path.variable.maven_repository}/io/netty/netty-buffer/4.1.47.Final/netty-buffer-4.1.47.Final.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/netty-buffer-4.1.47.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/io/netty/netty-common/4.1.47.Final/netty-common-4.1.47.Final.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/netty-common-4.1.47.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/io/netty/netty-codec-http/4.1.47.Final/netty-codec-http-4.1.47.Final.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/netty-codec-http-4.1.47.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/io/netty/netty-codec/4.1.47.Final/netty-codec-4.1.47.Final.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/netty-codec-4.1.47.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/io/netty/netty-transport-native-epoll/4.1.47.Final/netty-transport-native-epoll-4.1.47.Final.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/netty-transport-native-epoll-4.1.47.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/io/netty/netty-transport-native-epoll/4.1.47.Final/netty-transport-native-epoll-4.1.47.Final-linux-x86_64.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/netty-transport-native-epoll-4.1.47.Final-linux-x86_64.jar"/>
+    <copy file="${path.variable.maven_repository}/io/netty/netty-transport-native-kqueue/4.1.47.Final/netty-transport-native-kqueue-4.1.47.Final.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/netty-transport-native-kqueue-4.1.47.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/io/netty/netty-transport-native-kqueue/4.1.47.Final/netty-transport-native-kqueue-4.1.47.Final-osx-x86_64.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/netty-transport-native-kqueue-4.1.47.Final-osx-x86_64.jar"/>
+    <copy file="${path.variable.maven_repository}/io/netty/netty-transport-native-unix-common/4.1.47.Final/netty-transport-native-unix-common-4.1.47.Final.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/netty-transport-native-unix-common-4.1.47.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/io/netty/netty-transport/4.1.47.Final/netty-transport-4.1.47.Final.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/netty-transport-4.1.47.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/io/netty/netty-resolver/4.1.47.Final/netty-resolver-4.1.47.Final.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/netty-resolver-4.1.47.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/io/opentelemetry/opentelemetry-api/0.2.0/opentelemetry-api-0.2.0.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/opentelemetry-api-0.2.0.jar"/>
+    <copy file="${path.variable.maven_repository}/io/grpc/grpc-context/1.24.0/grpc-context-1.24.0.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/grpc-context-1.24.0.jar"/>
+    <copy file="${path.variable.maven_repository}/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/commons-exec-1.3.jar"/>
+    <copy file="${path.variable.maven_repository}/org/asynchttpclient/async-http-client/2.11.0/async-http-client-2.11.0.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/async-http-client-2.11.0.jar"/>
+    <copy file="${path.variable.maven_repository}/org/asynchttpclient/async-http-client-netty-utils/2.11.0/async-http-client-netty-utils-2.11.0.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/async-http-client-netty-utils-2.11.0.jar"/>
+    <copy file="${path.variable.maven_repository}/io/netty/netty-codec-socks/4.1.46.Final/netty-codec-socks-4.1.46.Final.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/netty-codec-socks-4.1.46.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/io/netty/netty-handler-proxy/4.1.46.Final/netty-handler-proxy-4.1.46.Final.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/netty-handler-proxy-4.1.46.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/slf4j-api-1.7.30.jar"/>
+    <copy file="${path.variable.maven_repository}/com/sun/activation/javax.activation/1.2.0/javax.activation-1.2.0.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/javax.activation-1.2.0.jar"/>
+    <copy file="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-safari-driver/4.0.0-alpha-5/selenium-safari-driver-4.0.0-alpha-5.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/selenium-safari-driver-4.0.0-alpha-5.jar"/>
+    <copy file="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-support/4.0.0-alpha-5/selenium-support-4.0.0-alpha-5.jar" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/lib/selenium-support-4.0.0-alpha-5.jar"/>
+    <mkdir dir="${artifact.output.finalproject:war_exploded}/META-INF"/>
+    <copy file="${basedir}/target/FinalProject/META-INF/MANIFEST.MF" tofile="${artifact.output.finalproject:war_exploded}/META-INF/MANIFEST.MF"/>
+    <copy todir="${artifact.output.finalproject:war_exploded}">
+      <fileset dir="${basedir}/src/main/webapp"/>
+    </copy>
+    <mkdir dir="${artifact.output.finalproject:war_exploded}/WEB-INF"/>
+    <copy file="${basedir}/src/main/webapp/WEB-INF/web.xml" tofile="${artifact.output.finalproject:war_exploded}/WEB-INF/web.xml"/>
+  </target>
+
+  <target name="build.all.artifacts" depends="artifact.finalproject:war, artifact.finalproject:war_exploded" description="Build all artifacts">
+    <mkdir dir="${artifact.output.finalproject:war}"/>
+    <copy todir="${artifact.output.finalproject:war}">
+      <fileset dir="${artifact.temp.output.finalproject:war}"/>
+    </copy>
+
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+
+  <!-- =============================================================== -->
+
+  <target name="run">
+    <java classname="Main"  fork="true">
+      <classpath>
+        <pathelement location="${module.finalproject.basedir}/out/artifacts/finalproject_jar/finalproject.jar"/>
+        <pathelement path="."/>
+      </classpath>
+    </java>
+  </target>
+
+  <path id="application" location="${module.finalproject.basedir}/out/artifacts/finalproject_jar/finalproject.jar"/>
+  <target name="finalproject.junit">
+    <junit printsummary="yes" showoutput="yes">
+      <classpath>
+        <path refid="application"/>
+      </classpath>
+      <test name="mx.test_findByID"></test>
+      <test name="mx.test_generatorClientPages"></test>
+      <test name="mx.test_generatorConnectPage"></test>
+      <test name="mx.test_generatorContactPage"></test>
+      <test name="mx.test_generatorOneClientPage"></test>
+      <test name="mx.test_generatorOneServicePage"></test>
+      <test name="mx.test_generatorServicePage"></test>
+      <test name="mx.test_generatorTariffPage"></test>
+      <test name="mx.test_IDU_ALL"></test>
+      <test name="mx.test_day"></test>
+    </junit>
+  </target>
+
+
+  <path id="application" location="${module.finalproject.basedir}/out/artifacts/finalproject_jar/finalproject.jar"/>
+  <target name="test">
+    <junit printsummary="yes" showoutput="yes">
+      <classpath>
+        <path refid="application"/>
+      </classpath>
+      <test name="selenium.balanceTest"></test>
+      <test name="selenium.clientAddTest"></test>
+      <test name="selenium.clientExtendedTest"></test>
+      <test name="selenium.connectTest"></test>
+      <test name="selenium.contactTest"></test>
+      <test name="selenium.oneClientAddDeleteContactTest"></test>
+      <test name="selenium.oneClientTest"></test>
+      <test name="selenium.oneServiceTest"></test>
+      <test name="selenium.serviceTest"></test>
+      <test name="selenium.tariffTest"></test>
+    </junit>
+  </target>
+
+
+  <target name="runServer" depends="stopServer">
+    <exec executable="${module.finalproject.basedir}/glassfish5/bin/asadmin">
+      <arg value="start-domain"/>
+    </exec>
+  </target>
+
+  <target name="stopServer">
+    <exec executable="${module.finalproject.basedir}/glassfish5/bin/asadmin">
+      <arg value="stop-domain"/>
+      <arg value="domain1"/>
+    </exec>
+  </target>
+
+  <target name="ServerDeployWar">
+    <exec executable="${module.finalproject.basedir}/glassfish5/bin/asadmin">
+      <arg value="deploy"/>
+      <arg value="--force"/>
+      <arg value="--contextroot"/>
+      <arg value="/"/>
+      <arg value="${module.finalproject.basedir}/target/FinalProject.war"/>
+    </exec>
+  </target>
+  <!-- <arg value="${module.finalproject.basedir}/out/artifacts/finalproject_war_exploded/finalproject_war_exploded.war"/> -->
+
+  <target name="ServerUndeployWar">
+    <exec executable="${module.finalproject.basedir}/glassfish5/bin/asadmin">
+      <arg value="undeploy"/>
+      <arg value="finalproject_war_exploded"/>
+    </exec>
+  </target>
+  <!-- <arg value="finalproject_war_exploded"/> -->
+
+  <target name="startApp" depends="all,runServer,ServerDeployWar" />
+  <target name="stopApp" depends="ServerUndeployWar,stopServer" />
+
+  <!-- =============================================================== -->
+
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+</project>
