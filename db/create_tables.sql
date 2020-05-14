@@ -1,3 +1,8 @@
+DROP TABLE IF EXISTS emp_pos;
+DROP TABLE IF EXISTS positions;
+DROP TABLE IF EXISTS divisions;
+DROP TABLE IF EXISTS employees;
+
 CREATE TABLE employees (
     emp_id      SERIAL  PRIMARY KEY,
     surname     TEXT    NOT NULL,
