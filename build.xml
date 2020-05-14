@@ -1012,16 +1012,22 @@
     <delete dir="${artifacts.temp.dir}"/>
   </target>
 
-  <!-- ==================================================================== -->
+  <!-- ===  Server ======================================================== -->
 
-  <target name="startServer" depends="stopServer">
+  <target name="export_AS_JAVA">
+    <exec executable="sh">
+      <arg value="-c"/>
+      <arg value="export AS_JAVA=/Library/Java/JavaVirtualMachines/jdk1.8.0_241.jdk/Contents/Home"/>
+    </exec>
+  </target>
+
+  <target name="startServer" depends="export_AS_JAVA">
       <exec executable="${module.finalproject.basedir}/glassfish5/glassfish/bin/asadmin">
         <arg value="start-domain"/>
-        <arg value="domain1"/>
       </exec>
   </target>
 
-  <target name="stopServer">
+  <target name="stopServer" depends="export_AS_JAVA">
     <exec executable="${module.finalproject.basedir}/glassfish5/glassfish/bin/asadmin">
       <arg value="stop-domain"/>
       <arg value="domain1"/>
@@ -1048,7 +1054,97 @@
   <target name="startApp" depends="all, deployWar"></target>
   <target name="stopApp" depends="stopServer"></target>
 
-  <!-- ==================================================================== -->
+  <!-- ===  Server ======================================================== -->
+  <!-- ===  DB  =========================================================== -->
+
+  <property name="psql.driver">org.postgresql.Driver</property>
+  <property name="psql.url">jdbc:postgresql://localhost:5432/lebedevnikitadb</property>
+  <property name="connection.username">postgres</property>
+  <property name="connection.password">Password</property>
+
+  <target name="drop_db">
+     <sql driver="${psql.driver}"
+      url="jdbc:postgresql://localhost/template1"
+      classpathref="library.maven:_org.postgresql:postgresql:42.2.10.classpath"
+      userid="${connection.username}"
+      password="${connection.password}"
+      autocommit="true">
+
+        DROP DATABASE IF EXISTS lebedevnikitadb;
+     </sql>
+  </target>
+
+  <target name="create_db" depends="drop_db">
+     <sql driver="${psql.driver}"
+      url="jdbc:postgresql://localhost/template1"
+      classpathref="library.maven:_org.postgresql:postgresql:42.2.10.classpath"
+      userid="${connection.username}"
+      password="${connection.password}"
+      autocommit="true">
+
+        CREATE DATABASE lebedevnikitadb;
+     </sql>
+  </target>
+
+  <target name="create_tables" depends="create_db">
+     <sql driver="${psql.driver}"
+      url="jdbc:postgresql://localhost/lebedevnikitadb"
+      classpathref="library.maven:_org.postgresql:postgresql:42.2.10.classpath"
+      userid="${connection.username}"
+      password="${connection.password}"
+      autocommit="true"
+      src="db/create_tables.sql" >
+     </sql>
+  </target>
+
+  <target name="fill_emp" depends="create_tables">
+    <sql driver="${psql.driver}"
+      url="jdbc:postgresql://localhost/lebedevnikitadb"
+      classpathref="library.maven:_org.postgresql:postgresql:42.2.10.classpath"
+      userid="${connection.username}"
+      password="${connection.password}"
+      autocommit="true"
+      src="db/fill_emp.sql" >
+    </sql>
+  </target>
+
+
+  <target name="fill_div" depends="fill_emp">
+     <sql driver="${psql.driver}"
+      url="jdbc:postgresql://localhost/lebedevnikitadb"
+      classpathref="library.maven:_org.postgresql:postgresql:42.2.10.classpath"
+      userid="${connection.username}"
+      password="${connection.password}"
+      autocommit="true"
+      src="db/fill_div.sql" >
+     </sql>
+  </target>
+
+  <target name="fill_pos" depends="fill_div">
+     <sql driver="${psql.driver}"
+      url="jdbc:postgresql://localhost/lebedevnikitadb"
+      classpathref="library.maven:_org.postgresql:postgresql:42.2.10.classpath"
+      userid="${connection.username}"
+      password="${connection.password}"
+      autocommit="true"
+      src="db/fill_pos.sql" >
+     </sql>
+  </target>
+
+  <target name="fill_emp_pos" depends="fill_pos">
+     <sql driver="${psql.driver}"
+      url="jdbc:postgresql://localhost/lebedevnikitadb"
+      classpathref="library.maven:_org.postgresql:postgresql:42.2.10.classpath"
+      userid="${connection.username}"
+      password="${connection.password}"
+      autocommit="true"
+      src="db/fill_emp_pos.sql" >
+     </sql>
+  </target>
+
+  <target name="fill_tables" depends="fill_emp, fill_div, fill_pos, fill_emp_pos"></target>
+
+  <!-- ===  DB  =========================================================== -->
 
   <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
 </project>

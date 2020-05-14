@@ -56,7 +56,7 @@ public class Employee
 
     public String getFullName() {
         String ret = surname + " " + name;
-        if (!patronymic.equals("null")) ret += " " + patronymic;
+        if (patronymic != null) { ret += " " + patronymic; }
         return ret;
     }
 

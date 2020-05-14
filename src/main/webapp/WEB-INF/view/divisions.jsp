@@ -13,7 +13,6 @@
 </head>
 
 <body>
-
     <a href="/divisions" id="btnDivisions"> <button class="selectedButton">Divisions</button> </a>
     <a href="/employees" id="btnEmployees"> <button>Employees</button> </a>
     <a href="/positions" id="btnPositions"> <button>Positions</button> </a>
@@ -70,7 +69,7 @@
                 </td>
                 <td id="chiefFullNameColumn">
                     <a href="/employees/${division.getChief().getId()}">
-                        ${division.getChief().getFullName()}
+                      ${division.getChief().getFullName()}
                     </a>
                 </td>
             </tr>

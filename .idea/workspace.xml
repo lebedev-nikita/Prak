@@ -8,6 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d9162be5-4bfd-418f-9546-fdecda66f82b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/db/entity/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/db/entity/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/divisions.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/divisions.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +82,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PositionsTest">
+  <component name="RunManager" selected="JUnit.com.webtests in FinalProject">
     <configuration name="GlassFish 5.0.1" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.0.1" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
@@ -154,6 +157,18 @@
         </option>
       </method>
     </configuration>
+    <configuration name="DivisionsTest and 2 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FinalProject" />
+      <option name="TEST_OBJECT" value="pattern" />
+      <patterns>
+        <pattern testClass="com.webtests.DivisionsTest" />
+        <pattern testClass="com.webtests.EmployeesTest" />
+        <pattern testClass="com.webtests.PositionsTest" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DivisionsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FinalProject" />
       <extension name="coverage">
@@ -164,37 +179,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.webtests" />
       <option name="MAIN_CLASS_NAME" value="com.webtests.DivisionsTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DivisionsTest.testFilter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="FinalProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.webtests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.webtests" />
-      <option name="MAIN_CLASS_NAME" value="com.webtests.DivisionsTest" />
-      <option name="METHOD_NAME" value="testFilter" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EmployeesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="FinalProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.webtests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.webtests" />
-      <option name="MAIN_CLASS_NAME" value="com.webtests.EmployeesTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -231,21 +215,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.webtests in FinalProject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FinalProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.webtests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.webtests" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="GlassFish Server.GlassFish 5.0.1" />
       <item itemvalue="JUnit.PositionsTest" />
       <item itemvalue="JUnit.DivisionsTest" />
-      <item itemvalue="JUnit.DivisionsTest.testFilter" />
-      <item itemvalue="JUnit.EmployeesTest" />
       <item itemvalue="JUnit.PositionsTest.testDelete" />
+      <item itemvalue="JUnit.DivisionsTest and 2 more" />
+      <item itemvalue="JUnit.com.webtests in FinalProject" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.com.webtests in FinalProject" />
+        <item itemvalue="JUnit.DivisionsTest and 2 more" />
+        <item itemvalue="JUnit.DivisionsTest" />
         <item itemvalue="JUnit.PositionsTest" />
         <item itemvalue="JUnit.PositionsTest.testDelete" />
-        <item itemvalue="JUnit.EmployeesTest" />
-        <item itemvalue="JUnit.DivisionsTest.testFilter" />
-        <item itemvalue="JUnit.DivisionsTest" />
       </list>
     </recent_temporary>
   </component>
@@ -263,7 +261,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="GlassFish Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -313,6 +311,8 @@
       <workItem from="1589318318761" duration="870000" />
       <workItem from="1589366522949" duration="6302000" />
       <workItem from="1589389661931" duration="1204000" />
+      <workItem from="1589452696881" duration="2751000" />
+      <workItem from="1589455732913" duration="1105000" />
     </task>
     <servers />
   </component>
@@ -331,10 +331,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="240" y="78" key="#Project_Structure/0.23.1280.777@0.23.1280.777" timestamp="1587499350398" />
-    <state x="104" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589198753628">
+    <state x="104" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589453156499">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="104" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.777@0.23.1280.777" timestamp="1589198753628" />
+    <state x="104" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.777@0.23.1280.777" timestamp="1589453156499" />
     <state x="100" y="123" width="1080" height="577" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1589294020119">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -343,38 +343,38 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="453" y="122" key="#com.intellij.ide.util.MemberChooser/0.23.1280.777@0.23.1280.777" timestamp="1589140393258" />
-    <state width="967" height="228" key="GridCell.Tab.0.bottom" timestamp="1589402065317">
+    <state width="967" height="227" key="GridCell.Tab.0.bottom" timestamp="1589460947682">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="228" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1589402065317" />
-    <state width="967" height="228" key="GridCell.Tab.0.center" timestamp="1589402065316">
+    <state width="967" height="227" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1589460947682" />
+    <state width="967" height="227" key="GridCell.Tab.0.center" timestamp="1589460947681">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="228" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1589402065316" />
-    <state width="967" height="228" key="GridCell.Tab.0.left" timestamp="1589402065315">
+    <state width="967" height="227" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1589460947681" />
+    <state width="967" height="227" key="GridCell.Tab.0.left" timestamp="1589460947680">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="228" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1589402065315" />
-    <state width="967" height="228" key="GridCell.Tab.0.right" timestamp="1589402065316">
+    <state width="967" height="227" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1589460947680" />
+    <state width="967" height="227" key="GridCell.Tab.0.right" timestamp="1589460947681">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="228" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1589402065316" />
-    <state width="967" height="228" key="GridCell.Tab.1.bottom" timestamp="1589402065318">
+    <state width="967" height="227" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1589460947681" />
+    <state width="967" height="227" key="GridCell.Tab.1.bottom" timestamp="1589460947588">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="228" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1589402065318" />
-    <state width="967" height="228" key="GridCell.Tab.1.center" timestamp="1589402065317">
+    <state width="967" height="227" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1589460947588" />
+    <state width="967" height="227" key="GridCell.Tab.1.center" timestamp="1589460947588">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="228" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1589402065317" />
-    <state width="967" height="228" key="GridCell.Tab.1.left" timestamp="1589402065317">
+    <state width="967" height="227" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1589460947588" />
+    <state width="967" height="227" key="GridCell.Tab.1.left" timestamp="1589460947587">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="228" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1589402065317" />
-    <state width="967" height="228" key="GridCell.Tab.1.right" timestamp="1589402065318">
+    <state width="967" height="227" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1589460947587" />
+    <state width="967" height="227" key="GridCell.Tab.1.right" timestamp="1589460947588">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="228" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1589402065318" />
+    <state width="967" height="227" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1589460947588" />
     <state width="967" height="173" key="GridCell.Tab.2.bottom" timestamp="1589048473415">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -391,10 +391,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state width="967" height="173" key="GridCell.Tab.2.right/0.23.1280.777@0.23.1280.777" timestamp="1589048473415" />
-    <state x="128" y="23" key="SettingsEditor" timestamp="1588856414349">
+    <state x="128" y="23" key="SettingsEditor" timestamp="1589453121378">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="128" y="23" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1588856414349" />
+    <state x="128" y="23" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1589453121378" />
     <state x="218" y="65" key="com.intellij.javaee.view.ServerArtifactsDialog" timestamp="1588953576344">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
