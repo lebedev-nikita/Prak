@@ -1,5 +1,7 @@
 <!-- <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+-->
 <html>
 
 <head>
@@ -12,7 +14,6 @@
 </head>
 
 <body>
-
     <a href="/divisions" id="btnDivisions"> <button>Divisions</button> </a>
     <a href="/employees" id="btnEmployees"> <button>Employees</button> </a>
     <a href="/positions" id="btnPositions"> <button>Positions</button> </a>
@@ -28,6 +29,19 @@
     <a href="/employees/${division.getChief().getId()}"  id="Chief">
         ${division.getChief().getFullName()}
     </a> <br>
+    <h1>Edit division: </h1>
+    <form:form method="post" action="/divisions/${division.getId()}/update" modelAttribute="divisionInfoRequest">
+        name: <form:input path="newName" id="newName"/>
+        <input type="submit" value="Change" id="ChangeName"/>
+    </form:form>
+    <form:form method="post" action="/divisions/${division.getId()}/update" modelAttribute="divisionInfoRequest">
+        head division id: <form:input path="newHeadDivisionId" id="newHeadDivisionId"/>
+        <input type="submit" value="Change" id="ChangeHead"/>
+    </form:form>
+    <form:form method="post" action="/divisions/${division.getId()}/update" modelAttribute="divisionInfoRequest">
+        chief id: <form:input path="newChiefId" id="newChiefId"/>
+        <input type="submit" value="Change" id="ChangeChief"/>
+    </form:form>
 
     <h1>List of Positions: </h1><br>
     <table>

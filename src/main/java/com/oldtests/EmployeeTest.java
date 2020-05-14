@@ -1,4 +1,4 @@
-package com.tests;
+package com.oldtests;
 
 import com.db.entity.Employee;
 import org.junit.Before;

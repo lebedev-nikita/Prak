@@ -5,6 +5,7 @@ import com.db.DAO.EmpPosTableManager;
 import com.db.DAO.EmployeeTableManager;
 import com.db.DAO.PositionTableManager;
 import com.db.entity.Division;
+import com.db.entity.EmpPos;
 import com.db.entity.Employee;
 import com.db.entity.Position;
 import org.springframework.stereotype.Controller;
@@ -59,13 +60,6 @@ public class MyController
         return "redirect:/divisions";
     }
 
-    @GetMapping("/divisions/{id}")
-    public String divisionInfo(Model model, @PathVariable String id) {
-        model.addAttribute("division", dtm.getById(Integer.parseInt(id)));
-
-        return "divisionInfo.jsp";
-    }
-
     @PostMapping("/divisions")
     public String addDivision(
         @ModelAttribute("divisionRequest") DivisionRequest dr,
@@ -78,6 +72,32 @@ public class MyController
         dtm.save(div);
 
         return "redirect:/divisions";
+    }
+
+    // /divisionInfo
+
+    @GetMapping("/divisions/{id}")
+    public String divisionInfo(Model model, @PathVariable String id) {
+        model.addAttribute("division", dtm.getById(Integer.parseInt(id)));
+        model.addAttribute("divisionInfoRequest", new DivisionInfoRequest());
+
+        return "divisionInfo.jsp";
+    }
+
+    @PostMapping("/divisions/{id}/update")
+    public String divisionInfoUpdate(
+        @ModelAttribute("divisionInfoRequest") DivisionInfoRequest divir,
+        @PathVariable String id,
+        Model model
+    ) {
+        Division div = dtm.getById(Integer.parseInt(id));
+        if (divir.getNewChiefId() != 0) { div.setChief(etm.getById(divir.getNewChiefId())); }
+        if (divir.getNewHeadDivisionId() != 0) { div.setHeadDiv(dtm.getById(divir.getNewHeadDivisionId())); }
+        if (divir.getNewName() != null) { div.setName(divir.getNewName()); }
+
+        dtm.update(div);
+
+        return "redirect:/divisions/" + id;
     }
 
     // /positions
@@ -135,13 +155,6 @@ public class MyController
 
     // /employees
 
-    @GetMapping("/employees/{id}")
-    public String employeeInfo(Model model, @PathVariable String id) {
-        model.addAttribute("employee", etm.getById(Integer.parseInt(id)));
-
-        return "employeeInfo.jsp";
-    }
-
     @GetMapping("/employees")
     public String employees(Model model) {
         List<Employee> employeeList = etm.listAllEmployees();
@@ -186,6 +199,40 @@ public class MyController
 
         return "redirect:/employees";
     }
+
+    // /employeeInfo
+
+    @GetMapping("/employees/{id}")
+    public String employeeInfo(Model model, @PathVariable String id) {
+        model.addAttribute("employee", etm.getById(Integer.parseInt(id)));
+        model.addAttribute("employeeInfoRequest", new EmployeeInfoRequest());
+
+        return "employeeInfo.jsp";
+    }
+
+    @PostMapping("/employees/{id}/update")
+    public String employeeInfoUpdate(
+        @ModelAttribute("employeeInfoRequest") EmployeeInfoRequest empir,
+        @PathVariable String id,
+        Model model
+    ) {
+        Employee emp = etm.getById(Integer.parseInt(id));
+        if (empir.getNewEducation() != null) { emp.setEducation(empir.getNewEducation()); }
+        if (empir.getNewName() != null) { emp.setName(empir.getNewName()); }
+        if (empir.getNewSurname() != null) { emp.setSurname(empir.getNewSurname()); }
+        if (empir.getNewPatronymic() != null) { emp.setPatronymic(empir.getNewPatronymic()); }
+        if (empir.getNewPositionId() != 0) {
+            System.out.println("====NewPosition==========================================");
+            EmpPos ep = new EmpPos(etm.getById(Integer.parseInt(id)), ptm.getById(empir.getNewPositionId()), empir.getNewPositionSalary());
+            eptm.save(ep);
+        }
+//        if (empir.getDeletePositionId() != 0) { eptm.delete(eptm.)}
+
+        etm.update(emp);
+
+        return "redirect:/employees/" + id;
+    }
+
 
 
     @ModelAttribute

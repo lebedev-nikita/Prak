@@ -35,6 +35,12 @@ public class EmpPos
 
 	public EmpPos() {}
 
+	public EmpPos(Employee emp, Position pos, int salary) {
+		this.emp = emp;
+		this.pos = pos;
+		this.salary = salary;
+	}
+
 	// public EmpPos(Integer employeeId, Integer positionId, String startDate, String finishDate, Integer salary) {
 	// 	this.startDate = Date.valueOf(startDate);
 	// 	this.finishDate = Date.valueOf(finishDate);
