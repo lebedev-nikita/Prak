@@ -76,8 +76,6 @@ public class DivisionTableManager
 
 	}
 
-	// unchecked
-
 	public List<Division> listAllDivisions()
 	{
 		Session session = sessionFactory.getCurrentSession();

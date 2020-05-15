@@ -117,8 +117,6 @@ public class PositionsTest {
         createNewPosition("testFilter3", 3, "Есть");
         createNewPosition("testFilter4", 4, "Спать");
 
-        // WebElement getName, headDivName, chiefName, chiefSurname, chiefPatronymic, Filter;
-        // ArrayList<WebElement> divNameColumn, headDivNameColumn, chiefFullNameColumn;
         WebElement getName, getResponsibilities, getDivisionName, getDivisionId, Filter;
         ArrayList<WebElement> idColumn, nameColumn, responsibilitiesColumn, divisionNameColumn, divisionIdColumn;
 

@@ -29,7 +29,5 @@ CREATE TABLE emp_pos (
     emp_pos_id  SERIAL,
     emp_id      INT     REFERENCES employees(emp_id),
     pos_id      INT     REFERENCES positions(pos_id),
-    start_date  DATE,
-    finish_date DATE,
     salary      INT
 );

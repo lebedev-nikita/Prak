@@ -36,7 +36,6 @@ public class EmployeesTest {
         cd.findElementById("Create").click();
     }
 
-    // вроде, работает
     private int findMaxIdOffset() {
         ArrayList<WebElement> idColumn = getColumn("idColumn");
         int maxId = 0;
@@ -120,8 +119,6 @@ public class EmployeesTest {
 
         WebElement getName, getSurname, getPatronymic, getEducation, Filter;
         ArrayList<WebElement> fullNameColumn, educationColumn;
-        // WebElement getName, headDivName, chiefName, chiefSurname, chiefPatronymic, Filter;
-        // ArrayList<WebElement> divNameColumn, headDivNameColumn, chiefFullNameColumn;
 
         // 1
         cd.get(pageURL);
@@ -262,7 +259,6 @@ public class EmployeesTest {
         System.out.println("Last divName in column: " + lastName);
 
         assertTrue(lastName.contains("testColumn_fullName"));
-        // assertEquals(lastName, "testColumn_fullName");
 
         deleteLastEmployee();
     }

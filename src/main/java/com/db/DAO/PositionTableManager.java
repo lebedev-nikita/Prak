@@ -85,8 +85,6 @@ public class PositionTableManager
 		return listPositions;
 	}
 
-// listLike(pr.getGetName(), pr.getGetResponsibilities(), pr.getGetDivisionId(), pr.getGetDivisionName());
-
 	public List<Position> listLike(String name, String responsibilities, int divisionId, String divisionName)
 	{
 		if (name == null) { name = ""; }

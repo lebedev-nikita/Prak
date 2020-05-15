@@ -1,5 +1,7 @@
 package com.db.entity;
 
+import com.db.DAO.DivisionTableManager;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -15,9 +17,6 @@ public class Position
 	@ManyToOne
 	@JoinColumn(name = "div_id")
 	private Division division;
-
-//	@Column(name="div_id")
-//	private Integer divisionId;
 
 	@Column(name="pos_name")
 	private String name;
@@ -47,7 +46,7 @@ public class Position
 	public Position() {}
 
 	public Position(Integer divisionId, String name, String responsibilities) {
-//		this.divisionId = divisionId;
+        this.division = new DivisionTableManager().getById(divisionId);
 		this.name = name;
 		this.responsibilities = responsibilities;
 	}
@@ -59,14 +58,6 @@ public class Position
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
-//	public Integer getDivisionId() {
-//		return divisionId;
-//	}
-//
-//	public void setDivisionId(Integer divisionId) {
-//		this.divisionId = divisionId;
-//	}
 
 	public String getName() {
 		return name;
@@ -87,6 +78,5 @@ public class Position
 	@Override
 	public String toString() {
 		return "Position [id=" + id + ", name=" + name + ", responsibilities=" + responsibilities + "]";
-//		return "Position [id=" + id + ", divisionId=" + divisionId + ", name=" + name + ", responsibilities=" + responsibilities + "]";
 	}
 }
