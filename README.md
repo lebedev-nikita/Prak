@@ -1,8 +1,6 @@
 # Система управления персоналом
-Полноценный build.xml пока не готов.  
+> ant fillTables  
+ant startApp  
+ant stopApp
 
-**Чтобы создать таблицы:**
-> cd db  
-ant tables
-
-**На сервер пока деплоится из Intellij Idea**
+http://localhost:8080/

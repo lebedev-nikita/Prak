@@ -50,6 +50,7 @@
         New position salary: <form:input path="newPositionSalary" id="newPositionSalary"/> <br><br>
         <input type="submit" value="Add position" id="addPosition" /> <br>
     </form:form>
+
     <h1>Delete position</h1>
     <form:form method="post" action="/employees/${employee.getId()}/update" modelAttribute="employeeInfoRequest">
         Position id: <form:input path="deletePositionId" id="deletePositionId"/> <br><br>

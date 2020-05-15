@@ -7,21 +7,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9162be5-4bfd-418f-9546-fdecda66f82b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/controller/DivisionInfoRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/controller/EmployeeInfoRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/controller/requests/PositionInfoRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deleteMe/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/DivisionInfoRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/requests/DivisionInfoRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/DivisionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/requests/DivisionRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/EmployeeInfoRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/requests/EmployeeInfoRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/EmployeeRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/requests/EmployeeRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/MyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/MyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/db/entity/EmpPos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/db/entity/EmpPos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deleteMe/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tests/DivisionTableManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oldtests/DivisionTableManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tests/DivisionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oldtests/DivisionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tests/EmpPosTableManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oldtests/EmpPosTableManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tests/EmpPosTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oldtests/EmpPosTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tests/EmployeeTableManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oldtests/EmployeeTableManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tests/EmployeeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oldtests/EmployeeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tests/PositionTableManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oldtests/PositionTableManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tests/PositionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oldtests/PositionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/divisionInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/divisionInfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/PositionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/requests/PositionRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/db/DAO/EmpPosTableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/db/DAO/EmpPosTableManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webtests/DivisionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webtests/DivisionsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/divisions.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/divisions.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/employeeInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/employeeInfo.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/positionInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/positionInfo.jsp" afterDir="false" />
     </list>
@@ -87,15 +87,31 @@
     <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.controller.requests" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.com.webtests in FinalProject">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.deleteMe.Main" />
+      <module name="FinalProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.deleteMe.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GlassFish 5.0.1" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.0.1" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
@@ -170,19 +186,7 @@
         </option>
       </method>
     </configuration>
-    <configuration name="DivisionsTest and 2 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="FinalProject" />
-      <option name="TEST_OBJECT" value="pattern" />
-      <patterns>
-        <pattern testClass="com.webtests.DivisionsTest" />
-        <pattern testClass="com.webtests.EmployeesTest" />
-        <pattern testClass="com.webtests.PositionsTest" />
-      </patterns>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DivisionsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DivisionsTest.testColumn_id_and_DivisionName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FinalProject" />
       <extension name="coverage">
         <pattern>
@@ -192,12 +196,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.webtests" />
       <option name="MAIN_CLASS_NAME" value="com.webtests.DivisionsTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="testColumn_id_and_DivisionName" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PositionsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DivisionsTest.testDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FinalProject" />
       <extension name="coverage">
         <pattern>
@@ -206,23 +211,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.webtests" />
-      <option name="MAIN_CLASS_NAME" value="com.webtests.PositionsTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PositionsTest.testDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="FinalProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.webtests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.webtests" />
-      <option name="MAIN_CLASS_NAME" value="com.webtests.PositionsTest" />
+      <option name="MAIN_CLASS_NAME" value="com.webtests.DivisionsTest" />
       <option name="METHOD_NAME" value="testDelete" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmployeesTest.testColumn_id_and_EmployeeFullNameLink" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FinalProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.webtests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.webtests" />
+      <option name="MAIN_CLASS_NAME" value="com.webtests.EmployeesTest" />
+      <option name="METHOD_NAME" value="testColumn_id_and_EmployeeFullNameLink" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -244,19 +250,19 @@
     </configuration>
     <list>
       <item itemvalue="GlassFish Server.GlassFish 5.0.1" />
-      <item itemvalue="JUnit.PositionsTest" />
-      <item itemvalue="JUnit.DivisionsTest" />
-      <item itemvalue="JUnit.PositionsTest.testDelete" />
-      <item itemvalue="JUnit.DivisionsTest and 2 more" />
       <item itemvalue="JUnit.com.webtests in FinalProject" />
+      <item itemvalue="JUnit.DivisionsTest.testDelete" />
+      <item itemvalue="JUnit.DivisionsTest.testColumn_id_and_DivisionName" />
+      <item itemvalue="JUnit.EmployeesTest.testColumn_id_and_EmployeeFullNameLink" />
+      <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.com.webtests in FinalProject" />
-        <item itemvalue="JUnit.DivisionsTest and 2 more" />
-        <item itemvalue="JUnit.DivisionsTest" />
-        <item itemvalue="JUnit.PositionsTest" />
-        <item itemvalue="JUnit.PositionsTest.testDelete" />
+        <item itemvalue="JUnit.DivisionsTest.testColumn_id_and_DivisionName" />
+        <item itemvalue="JUnit.EmployeesTest.testColumn_id_and_EmployeeFullNameLink" />
+        <item itemvalue="JUnit.DivisionsTest.testDelete" />
       </list>
     </recent_temporary>
   </component>
@@ -325,7 +331,8 @@
       <workItem from="1589366522949" duration="6302000" />
       <workItem from="1589389661931" duration="1204000" />
       <workItem from="1589452696881" duration="2751000" />
-      <workItem from="1589455732913" duration="8371000" />
+      <workItem from="1589455732913" duration="9913000" />
+      <workItem from="1589490206618" duration="9500000" />
     </task>
     <servers />
   </component>
@@ -352,42 +359,46 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="100" y="123" width="1080" height="577" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.23.1280.777@0.23.1280.777" timestamp="1589294020119" />
-    <state x="453" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1589488111321">
+    <state x="453" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1589508748256">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="453" y="122" key="#com.intellij.ide.util.MemberChooser/0.23.1280.777@0.23.1280.777" timestamp="1589488111321" />
-    <state width="967" height="180" key="GridCell.Tab.0.bottom" timestamp="1589487469686">
+    <state x="453" y="122" key="#com.intellij.ide.util.MemberChooser/0.23.1280.777@0.23.1280.777" timestamp="1589508748256" />
+    <state x="404" y="301" width="471" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1589507375646">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="180" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1589487469686" />
-    <state width="967" height="180" key="GridCell.Tab.0.center" timestamp="1589487469684">
+    <state x="404" y="301" width="471" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1280.777@0.23.1280.777" timestamp="1589507375646" />
+    <state width="1238" height="164" key="GridCell.Tab.0.bottom" timestamp="1589508501834">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="180" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1589487469684" />
-    <state width="967" height="180" key="GridCell.Tab.0.left" timestamp="1589487469683">
+    <state width="1238" height="164" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1589508501834" />
+    <state width="1238" height="164" key="GridCell.Tab.0.center" timestamp="1589508501832">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="180" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1589487469683" />
-    <state width="967" height="180" key="GridCell.Tab.0.right" timestamp="1589487469685">
+    <state width="1238" height="164" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1589508501832" />
+    <state width="1238" height="164" key="GridCell.Tab.0.left" timestamp="1589508501831">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="180" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1589487469685" />
-    <state width="967" height="180" key="GridCell.Tab.1.bottom" timestamp="1589488348458">
+    <state width="1238" height="164" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1589508501831" />
+    <state width="1238" height="164" key="GridCell.Tab.0.right" timestamp="1589508501833">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="180" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1589488348458" />
-    <state width="967" height="180" key="GridCell.Tab.1.center" timestamp="1589488348453">
+    <state width="1238" height="164" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1589508501833" />
+    <state width="967" height="179" key="GridCell.Tab.1.bottom" timestamp="1589507916909">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="180" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1589488348453" />
-    <state width="967" height="180" key="GridCell.Tab.1.left" timestamp="1589488348452">
+    <state width="967" height="179" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1589507916909" />
+    <state width="967" height="179" key="GridCell.Tab.1.center" timestamp="1589507916908">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="180" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1589488348452" />
-    <state width="967" height="180" key="GridCell.Tab.1.right" timestamp="1589488348453">
+    <state width="967" height="179" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1589507916908" />
+    <state width="967" height="179" key="GridCell.Tab.1.left" timestamp="1589507916908">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="180" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1589488348453" />
+    <state width="967" height="179" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1589507916908" />
+    <state width="967" height="179" key="GridCell.Tab.1.right" timestamp="1589507916909">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state width="967" height="179" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1589507916909" />
     <state width="967" height="173" key="GridCell.Tab.2.bottom" timestamp="1589048473415">
       <screen x="0" y="23" width="1280" height="777" />
     </state>

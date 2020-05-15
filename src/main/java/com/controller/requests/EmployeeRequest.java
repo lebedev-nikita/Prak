@@ -1,4 +1,4 @@
-package com.controller;
+package com.controller.requests;
 
 public class EmployeeRequest {
     public String getName;

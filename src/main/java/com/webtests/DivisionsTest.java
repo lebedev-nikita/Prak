@@ -15,7 +15,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
+import static java.lang.Thread.sleep;
 import static org.junit.Assert.*;
 
 public class DivisionsTest {
@@ -226,19 +228,29 @@ public class DivisionsTest {
     }
 
     @Test
-    public void testDelete() {
+    public void testDelete() throws InterruptedException {
         createNewDivision("testDelete", 1,1);
 
         System.out.println("Title: " + cd.getTitle());
         int size1 = getColumn("idColumn").size();
         String lastId1 = getLastValue("idColumn");
+        System.out.println("size1: " + size1);
+        System.out.println("lastId1: " + lastId1);
 
-        cd.findElementById("deleteId").clear();
-        cd.findElementById("deleteId").sendKeys(lastId1);
+        WebElement deleteId = cd.findElementById("deleteId");
+        deleteId.clear();
+        deleteId.click();
+        deleteId.sendKeys(lastId1);
+        System.out.println("ID TO DELETE: " + deleteId.getAttribute("value"));
         cd.findElementById("Delete").click();
+
+        cd.get(pageURL);
 
         int size2 = getColumn("idColumn").size();
         String lastId2 = getLastValue("idColumn");
+
+        System.out.println("size2: " + size2);
+        System.out.println("lastId2: " + lastId2);
 
         assertNotEquals(lastId1, lastId2);
         assertEquals(size1 - 1, size2);
@@ -248,18 +260,20 @@ public class DivisionsTest {
     public void testColumn_id_and_DivisionName() {
         createNewDivision("testColumn_id_and_DivisionName", 1, 1);
 
-        ArrayList<WebElement> divName = getColumn("divNameColumn");
+        ArrayList<WebElement> divNameColumn = getColumn("divNameColumn");
 
         String valueInColumn = getLastValue("idColumn");
         System.out.println("Value in column: " + valueInColumn);
 
-        System.out.println("divNameColumn size: " + divName.size());
-        divName.get(findMaxIdOffset()).click();
+        System.out.println("divNameColumn size: " + divNameColumn.size());
+        WebElement divName = divNameColumn.get(findMaxIdOffset());
+        System.out.println("href: " + divName.getAttribute("href"));
+        divName.click();
 
-        String valueInDivisionInfo = cd.findElementById("ID").getText();
-        System.out.println(valueInDivisionInfo);
+        String idInDivisionInfo = cd.findElementById("ID").getText();
+        System.out.println("idInDivisionInfo: " + idInDivisionInfo);
 
-        assertEquals(valueInDivisionInfo, valueInColumn);
+        assertEquals(idInDivisionInfo, valueInColumn);
 
         deleteLastDivision();
     }

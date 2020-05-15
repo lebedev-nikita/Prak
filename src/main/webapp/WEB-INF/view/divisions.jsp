@@ -56,8 +56,9 @@
                 <td id="idColumn">
                     ${division.getId()}
                 </td>
-                <td id="divNameColumn">
-                    <a href="/divisions/${division.getId()}">
+                <td>
+                    <a href="/divisions/${division.getId()}"
+                       id="divNameColumn">
                         ${division.getName()}
                     </a>
                 </td>

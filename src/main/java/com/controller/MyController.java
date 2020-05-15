@@ -1,5 +1,6 @@
 package com.controller;
 
+import com.controller.requests.*;
 import com.db.DAO.DivisionTableManager;
 import com.db.DAO.EmpPosTableManager;
 import com.db.DAO.EmployeeTableManager;
@@ -111,13 +112,6 @@ public class MyController
         return "positions.jsp";
     }
 
-    @GetMapping("/positions/{id}")
-    public String positionInfo(Model model, @PathVariable String id) {
-        model.addAttribute("position", ptm.getById(Integer.parseInt(id)));
-
-        return "positionInfo.jsp";
-    }
-
     @GetMapping("/positions/delete")
     public String positionsDelete(
         @ModelAttribute("positionRequest") PositionRequest pr,
@@ -151,6 +145,41 @@ public class MyController
         ptm.save(pos);
 
         return "redirect:/positions";
+    }
+
+    @GetMapping("/positions/{id}")
+    public String positionInfo(Model model, @PathVariable String id) {
+        model.addAttribute("position", ptm.getById(Integer.parseInt(id)));
+        model.addAttribute("positionInfoRequest", new PositionInfoRequest());
+
+        return "positionInfo.jsp";
+    }
+
+    @PostMapping("/positions/{id}/update")
+    public String positionInfo(
+        @ModelAttribute("positionInfoRequest") PositionInfoRequest posir,
+        @PathVariable String id,
+        Model model
+    ) {
+        Position pos = ptm.getById(Integer.parseInt(id));
+        if (posir.getNewEmployeeId() != 0) {
+            Employee emp = etm.getById(posir.getNewEmployeeId());
+            EmpPos ep = new EmpPos(emp, pos, posir.getNewEmployeeSalary());
+            eptm.save(ep);
+        } else if (posir.getDeleteEmployeeId() != 0) {
+            for (EmpPos ep: eptm.getByIdPair(posir.getDeleteEmployeeId(), Integer.parseInt(id))) {
+                eptm.delete(ep);
+            }
+        } else {
+            if (posir.getNewName() != null) { pos.setName(posir.getNewName()); }
+            if (posir.getNewResponsibilities() != null) { pos.setResponsibilities(posir.getNewResponsibilities()); }
+            if (posir.getNewDivisionId() != 0) { pos.setDivision(dtm.getById(posir.getNewDivisionId())); }
+
+            ptm.update(pos);
+        }
+
+
+        return "redirect:/positions/" + id;
     }
 
     // /employees
@@ -216,19 +245,22 @@ public class MyController
         @PathVariable String id,
         Model model
     ) {
-        Employee emp = etm.getById(Integer.parseInt(id));
-        if (empir.getNewEducation() != null) { emp.setEducation(empir.getNewEducation()); }
-        if (empir.getNewName() != null) { emp.setName(empir.getNewName()); }
-        if (empir.getNewSurname() != null) { emp.setSurname(empir.getNewSurname()); }
-        if (empir.getNewPatronymic() != null) { emp.setPatronymic(empir.getNewPatronymic()); }
         if (empir.getNewPositionId() != 0) {
-            System.out.println("====NewPosition==========================================");
             EmpPos ep = new EmpPos(etm.getById(Integer.parseInt(id)), ptm.getById(empir.getNewPositionId()), empir.getNewPositionSalary());
             eptm.save(ep);
-        }
-//        if (empir.getDeletePositionId() != 0) { eptm.delete(eptm.)}
+        } else if(empir.getDeletePositionId() != 0) {
+            for (EmpPos ep: eptm.getByIdPair(Integer.parseInt(id), empir.getDeletePositionId())) {
+                eptm.delete(ep);
+            }
+        } else {
+            Employee emp = etm.getById(Integer.parseInt(id));
+            if (empir.getNewEducation() != null) { emp.setEducation(empir.getNewEducation()); }
+            if (empir.getNewName() != null) { emp.setName(empir.getNewName()); }
+            if (empir.getNewSurname() != null) { emp.setSurname(empir.getNewSurname()); }
+            if (empir.getNewPatronymic() != null) { emp.setPatronymic(empir.getNewPatronymic()); }
 
-        etm.update(emp);
+            etm.update(emp);
+        }
 
         return "redirect:/employees/" + id;
     }

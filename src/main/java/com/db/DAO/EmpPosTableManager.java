@@ -2,6 +2,7 @@ package com.db.DAO;
 
 import java.util.List;
 
+import com.db.entity.Division;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -55,6 +56,22 @@ public class EmpPosTableManager
 		session.close();
 	}
 
+	public List<EmpPos> getByIdPair(int empId, int posId) {
+		Session session = sessionFactory.getCurrentSession();
+		session.beginTransaction();
+
+		List<EmpPos> listEmpPos = session.createQuery(
+			"from EmpPos ep where"
+            + " ep.emp.id=" + empId
+            + " and ep.pos.id=" + posId
+        ).list();
+
+		session.getTransaction().commit();
+		session.close();
+
+		return listEmpPos;
+	}
+
 	public EmpPos getById(int id)
 	{
 
@@ -64,7 +81,6 @@ public class EmpPosTableManager
 		EmpPos ret = session.get(EmpPos.class, id);
 
 		session.getTransaction().commit();
-
 		session.close();
 
 		return ret;
