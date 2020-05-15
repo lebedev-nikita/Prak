@@ -15,16 +15,16 @@
 
 <body>
 
-    <a href="/divisions"> <button>Divisions</button> </a>
-    <a href="/employees"> <button>Employees</button> </a>
-    <a href="/positions"> <button>Positions</button> </a>
+    <a href="/divisions" id="btnDivisions"> <button>Divisions</button> </a>
+    <a href="/employees" id="btnEmployees"> <button>Employees</button> </a>
+    <a href="/positions" id="btnPositions"> <button>Positions</button> </a>
     <br>
 
-    ID: <p id="ID">${employee.getId()}</p> <br>
-    surname: ${employee.getSurname()} <br>
-    name: ${employee.getName()} <br>
-    patronymic: ${employee.getPatronymic()} <br>
-    education: ${employee.getEducation()} <br>
+    ID: <span id="ID">${employee.getId()}</span> <br>
+    surname: <span id="Surname">${employee.getSurname()}</span> <br>
+    name: <span id="Name">${employee.getName()}</span> <br>
+    patronymic: <span id="Patronymic">${employee.getPatronymic()}</span> <br>
+    education: <span id="Education">${employee.getEducation()}</span> <br>
 
     <h1>Edit employee: </h1>
     <form:form method="post" action="/employees/${employee.getId()}/update" modelAttribute="employeeInfoRequest">
@@ -44,17 +44,17 @@
         <input type="submit" value="Change" id="ChangeEducation"/>
     </form:form>
 
-    <h1>New position: </h1>
+    <h1>Add position: </h1>
     <form:form method="post" action="/employees/${employee.getId()}/update" modelAttribute="employeeInfoRequest">
         New position id: <form:input path="newPositionId" id="newPositionId"/> <br>
         New position salary: <form:input path="newPositionSalary" id="newPositionSalary"/> <br><br>
         <input type="submit" value="Add position" id="addPosition" /> <br>
     </form:form>
 
-    <h1>Delete position</h1>
+    <h1>Remove position</h1>
     <form:form method="post" action="/employees/${employee.getId()}/update" modelAttribute="employeeInfoRequest">
         Position id: <form:input path="deletePositionId" id="deletePositionId"/> <br><br>
-        <input type="submit" value="Delete" id="deletePosition" /> <br>
+        <input type="submit" value="Remove position" id="removePosition" /> <br>
     </form:form>
 
     <h1>Positions:</h1>
@@ -68,20 +68,22 @@
         <c:forEach items="${employee.getEmpPos()}" var="emp_pos">
             <tr>
                 <td>
-                    ${emp_pos.getPos().getId()}
+                    <span id="idColumn">${emp_pos.getPos().getId()}</span>
                 </td>
                 <td>
-                    <a href="/positions/${emp_pos.getPos().getId()}">
+                    <a href="/positions/${emp_pos.getPos().getId()}"
+                       id="positionNameColumn">
                         ${emp_pos.getPos().getName()}
                     </a>
                 </td>
                 <td>
-                    <a href="/divisions/${emp_pos.getPos().getDivision().getId()}">
+                    <a href="/divisions/${emp_pos.getPos().getDivision().getId()}"
+                       id="divisionNameColumn">
                         ${emp_pos.getPos().getDivision().getName()}
                     </a>
                 </td>
                 <td>
-                    ${emp_pos.getSalary()}
+                    <span id="salaryColumn">${emp_pos.getSalary()}</span>
                 </td>
             </tr>
         </c:forEach>

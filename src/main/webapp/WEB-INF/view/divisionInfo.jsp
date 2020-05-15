@@ -19,16 +19,17 @@
     <a href="/positions" id="btnPositions"> <button>Positions</button> </a>
     <br>
 
-    ID: <p id="ID">${division.getId()}</p> <br>
-    Name: <p id="Name">${division.getName()}</p> <br>
+    ID: <span id="ID">${division.getId()}</span> <br>
+    Name: <span id="Name">${division.getName()}</span> <br>
     Head division:
     <a href="/divisions/${division.getHeadDiv().getId()}" id="Head division">
-        <p>${division.getHeadDiv().getName()}</p>
+        <span>${division.getHeadDiv().getName()}</span>
     </a> <br>
     Chief:
     <a href="/employees/${division.getChief().getId()}"  id="Chief">
         ${division.getChief().getFullName()}
     </a> <br>
+
     <h1>Edit division: </h1>
     <form:form method="post" action="/divisions/${division.getId()}/update" modelAttribute="divisionInfoRequest">
         name: <form:input path="newName" id="newName"/>

@@ -2,20 +2,14 @@ package com.webtests;
 
 import com.db.DAO.DivisionTableManager;
 import com.db.DAO.EmployeeTableManager;
-import com.db.entity.Division;
-import com.sun.source.tree.AssertTree;
-import com.sun.xml.internal.xsom.impl.scd.Iterators;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import static java.lang.Thread.sleep;
 import static org.junit.Assert.*;
@@ -230,27 +224,19 @@ public class DivisionsTest {
     @Test
     public void testDelete() throws InterruptedException {
         createNewDivision("testDelete", 1,1);
-
-        System.out.println("Title: " + cd.getTitle());
+        cd.get(pageURL);
         int size1 = getColumn("idColumn").size();
         String lastId1 = getLastValue("idColumn");
-        System.out.println("size1: " + size1);
-        System.out.println("lastId1: " + lastId1);
 
         WebElement deleteId = cd.findElementById("deleteId");
         deleteId.clear();
-        deleteId.click();
+//        deleteId.click();
         deleteId.sendKeys(lastId1);
-        System.out.println("ID TO DELETE: " + deleteId.getAttribute("value"));
         cd.findElementById("Delete").click();
 
         cd.get(pageURL);
-
         int size2 = getColumn("idColumn").size();
         String lastId2 = getLastValue("idColumn");
-
-        System.out.println("size2: " + size2);
-        System.out.println("lastId2: " + lastId2);
 
         assertNotEquals(lastId1, lastId2);
         assertEquals(size1 - 1, size2);
@@ -258,24 +244,13 @@ public class DivisionsTest {
 
     @Test
     public void testColumn_id_and_DivisionName() {
-        createNewDivision("testColumn_id_and_DivisionName", 1, 1);
-
+        boolean noWrongNames = true;
+        ArrayList<WebElement> idColumn = getColumn("idColumn");
         ArrayList<WebElement> divNameColumn = getColumn("divNameColumn");
-
-        String valueInColumn = getLastValue("idColumn");
-        System.out.println("Value in column: " + valueInColumn);
-
-        System.out.println("divNameColumn size: " + divNameColumn.size());
-        WebElement divName = divNameColumn.get(findMaxIdOffset());
-        System.out.println("href: " + divName.getAttribute("href"));
-        divName.click();
-
-        String idInDivisionInfo = cd.findElementById("ID").getText();
-        System.out.println("idInDivisionInfo: " + idInDivisionInfo);
-
-        assertEquals(idInDivisionInfo, valueInColumn);
-
-        deleteLastDivision();
+        for (int i = 0; i < idColumn.size(); i++) {
+            noWrongNames = noWrongNames && dtm.getById(Integer.parseInt(idColumn.get(i).getText())).getName().equals(divNameColumn.get(i).getText());
+        }
+        assertTrue(noWrongNames);
     }
 
     @Test

@@ -20,14 +20,14 @@ CREATE TABLE divisions (
 
 CREATE TABLE positions (
     pos_id           SERIAL PRIMARY KEY,
-    div_id           INT    REFERENCES divisions(div_id),
+    div_id           INT    REFERENCES divisions(div_id) ON DELETE CASCADE,
     pos_name         TEXT,
     responsibilities TEXT
 );
 
 CREATE TABLE emp_pos (
     emp_pos_id  SERIAL,
-    emp_id      INT     REFERENCES employees(emp_id),
-    pos_id      INT     REFERENCES positions(pos_id),
+    emp_id      INT     REFERENCES employees(emp_id) ON DELETE CASCADE,
+    pos_id      INT     REFERENCES positions(pos_id) ON DELETE CASCADE,
     salary      INT
 );

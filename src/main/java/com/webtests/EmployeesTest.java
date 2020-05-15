@@ -1,6 +1,5 @@
 package com.webtests;
 
-import com.db.DAO.DivisionTableManager;
 import com.db.DAO.EmployeeTableManager;
 import org.junit.After;
 import org.junit.Before;

@@ -7,11 +7,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9162be5-4bfd-418f-9546-fdecda66f82b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webtests/DivisionInfoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webtests/EmployeeInfoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webtests/PositionInfoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/db/DAO/DivisionTableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/db/DAO/DivisionTableManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/db/DAO/PositionTableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/db/DAO/PositionTableManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/db/entity/EmpPos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/db/entity/EmpPos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/db/entity/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/db/entity/Position.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/create_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/create_tables.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/requests/PositionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/requests/PositionRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deleteMe/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webtests/DivisionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webtests/DivisionsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webtests/EmployeesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webtests/EmployeesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/divisionInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/divisionInfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/employeeInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/employeeInfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/positionInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/positionInfo.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,20 +93,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.deleteMe.Main" />
-      <module name="FinalProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.deleteMe.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.com.webtests in FinalProject">
     <configuration name="GlassFish 5.0.1" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.0.1" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
@@ -206,7 +200,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EmployeesTest.testColumn_id_and_EmployeeFullNameLink" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PositionInfoTest.testAddEmployee_and_RemoveEmployee" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FinalProject" />
       <extension name="coverage">
         <pattern>
@@ -215,8 +209,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.webtests" />
-      <option name="MAIN_CLASS_NAME" value="com.webtests.EmployeesTest" />
-      <option name="METHOD_NAME" value="testColumn_id_and_EmployeeFullNameLink" />
+      <option name="MAIN_CLASS_NAME" value="com.webtests.PositionInfoTest" />
+      <option name="METHOD_NAME" value="testAddEmployee_and_RemoveEmployee" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PositionInfoTest.testEditPosition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FinalProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.webtests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.webtests" />
+      <option name="MAIN_CLASS_NAME" value="com.webtests.PositionInfoTest" />
+      <option name="METHOD_NAME" value="testEditPosition" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -237,20 +247,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
       <item itemvalue="GlassFish Server.GlassFish 5.0.1" />
+      <item itemvalue="JUnit.PositionInfoTest.testEditPosition" />
+      <item itemvalue="JUnit.PositionInfoTest.testAddEmployee_and_RemoveEmployee" />
       <item itemvalue="JUnit.com.webtests in FinalProject" />
-      <item itemvalue="JUnit.DivisionsTest.testDelete" />
       <item itemvalue="JUnit.DivisionsTest.testColumn_id_and_DivisionName" />
-      <item itemvalue="JUnit.EmployeesTest.testColumn_id_and_EmployeeFullNameLink" />
+      <item itemvalue="JUnit.DivisionsTest.testDelete" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.com.webtests in FinalProject" />
-        <item itemvalue="JUnit.DivisionsTest.testColumn_id_and_DivisionName" />
-        <item itemvalue="JUnit.EmployeesTest.testColumn_id_and_EmployeeFullNameLink" />
         <item itemvalue="JUnit.DivisionsTest.testDelete" />
+        <item itemvalue="JUnit.DivisionsTest.testColumn_id_and_DivisionName" />
+        <item itemvalue="JUnit.PositionInfoTest.testAddEmployee_and_RemoveEmployee" />
+        <item itemvalue="JUnit.PositionInfoTest.testEditPosition" />
       </list>
     </recent_temporary>
   </component>
@@ -268,7 +278,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="GlassFish Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -322,7 +332,7 @@
       <workItem from="1589455732913" duration="9913000" />
       <workItem from="1589490206618" duration="9768000" />
       <workItem from="1589510082566" duration="78000" />
-      <workItem from="1589510174074" duration="390000" />
+      <workItem from="1589510174074" duration="11327000" />
     </task>
     <servers />
   </component>
@@ -357,38 +367,38 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="404" y="301" width="471" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1280.777@0.23.1280.777" timestamp="1589507375646" />
-    <state width="967" height="179" key="GridCell.Tab.0.bottom" timestamp="1589510372119">
+    <state width="1238" height="161" key="GridCell.Tab.0.bottom" timestamp="1589562206455">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="179" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1589510372119" />
-    <state width="967" height="179" key="GridCell.Tab.0.center" timestamp="1589510372118">
+    <state width="1238" height="161" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1589562206455" />
+    <state width="1238" height="161" key="GridCell.Tab.0.center" timestamp="1589562206454">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="179" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1589510372118" />
-    <state width="967" height="179" key="GridCell.Tab.0.left" timestamp="1589510372118">
+    <state width="1238" height="161" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1589562206454" />
+    <state width="1238" height="161" key="GridCell.Tab.0.left" timestamp="1589562206454">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="179" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1589510372118" />
-    <state width="967" height="179" key="GridCell.Tab.0.right" timestamp="1589510372119">
+    <state width="1238" height="161" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1589562206454" />
+    <state width="1238" height="161" key="GridCell.Tab.0.right" timestamp="1589562206455">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="179" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1589510372119" />
-    <state width="967" height="179" key="GridCell.Tab.1.bottom" timestamp="1589510372120">
+    <state width="1238" height="161" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1589562206455" />
+    <state width="967" height="179" key="GridCell.Tab.1.bottom" timestamp="1589560928604">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="179" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1589510372120" />
-    <state width="967" height="179" key="GridCell.Tab.1.center" timestamp="1589510372120">
+    <state width="967" height="179" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1589560928604" />
+    <state width="967" height="179" key="GridCell.Tab.1.center" timestamp="1589560928604">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="179" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1589510372120" />
-    <state width="967" height="179" key="GridCell.Tab.1.left" timestamp="1589510372119">
+    <state width="967" height="179" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1589560928604" />
+    <state width="967" height="179" key="GridCell.Tab.1.left" timestamp="1589560928604">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="179" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1589510372119" />
-    <state width="967" height="179" key="GridCell.Tab.1.right" timestamp="1589510372120">
+    <state width="967" height="179" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1589560928604" />
+    <state width="967" height="179" key="GridCell.Tab.1.right" timestamp="1589560928604">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="967" height="179" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1589510372120" />
+    <state width="967" height="179" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1589560928604" />
     <state width="967" height="173" key="GridCell.Tab.2.bottom" timestamp="1589048473415">
       <screen x="0" y="23" width="1280" height="777" />
     </state>

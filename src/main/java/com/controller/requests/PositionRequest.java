@@ -4,8 +4,8 @@ public class PositionRequest {
     private int id;
     private String getName;
     private String getResponsibilities;
-    private int getDivisionId;
     private String getDivisionName;
+    private int getDivisionId;
 
     private String postName;
     private int postDivisionId;
