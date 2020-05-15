@@ -92,22 +92,6 @@ public class DivisionsTest {
     }
 
 
-//     @Test
-//     public void example() {
-// //        cd.findElement(By.id("employeesButton")).click();
-// //        if (!cd.getTitle().equals("Employees")) {
-// //            Assert.fail();
-// //        }
-//
-// //        cd.findElementById("createDivisionPostName")
-//         cd.findElement(By.id("simpleId")).clear();
-//         cd.findElement(By.id("simpleId")).sendKeys("Отдел продаж");
-//         System.out.println(cd.findElement(By.id("simpleId")).getAttribute("value"));
-//
-//         List<WebElement> webElementList = cd.findElements(By.id("multipleId")); // находит List<WebElement>
-//
-//    }
-
     @Test
     public void testFilter() {
 
